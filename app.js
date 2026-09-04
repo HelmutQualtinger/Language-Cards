@@ -80,8 +80,7 @@ const I18N = {
     typeFilterNoun: (n) => `Sostantivi (${n})`,
     typeFilterVerb: (n) => `Verbi (${n})`,
     typeFilterAdjective: (n) => `Aggettivi (${n})`,
-    typeFilterAdverb: (n) => `Avverbi (${n})`,
-    voiceWarning: "Il browser nasconde le voci di sintesi vocale (tipico di Brave con protezione anti-fingerprinting attiva): l'audio potrebbe usare la voce sbagliata. Clicca l'icona 🦁 nella barra degli indirizzi → abbassa \"Blocco fingerprinting\" per questo sito, poi ricarica. In alternativa prova con Chrome."
+    typeFilterAdverb: (n) => `Avverbi (${n})`
   },
   de: {
     pageTitle: 'Wortkarten',
@@ -113,8 +112,7 @@ const I18N = {
     typeFilterNoun: (n) => `Substantive (${n})`,
     typeFilterVerb: (n) => `Verben (${n})`,
     typeFilterAdjective: (n) => `Adjektive (${n})`,
-    typeFilterAdverb: (n) => `Adverbien (${n})`,
-    voiceWarning: 'Der Browser verbirgt die Sprachausgabe-Stimmen (typisch bei Brave mit aktivem Fingerprint-Schutz): die Audiowiedergabe könnte die falsche Stimme verwenden. Klicke auf das 🦁-Symbol in der Adressleiste → senke "Fingerprinting-Schutz" für diese Seite und lade neu. Alternativ funktioniert es in Chrome.'
+    typeFilterAdverb: (n) => `Adverbien (${n})`
   },
   en: {
     pageTitle: 'Word Cards',
@@ -146,8 +144,7 @@ const I18N = {
     typeFilterNoun: (n) => `Nouns (${n})`,
     typeFilterVerb: (n) => `Verbs (${n})`,
     typeFilterAdjective: (n) => `Adjectives (${n})`,
-    typeFilterAdverb: (n) => `Adverbs (${n})`,
-    voiceWarning: 'The browser is hiding its speech-synthesis voices (typical of Brave with fingerprinting protection on): audio playback may use the wrong voice. Click the 🦁 icon in the address bar → lower "Fingerprinting blocking" for this site, then reload. Chrome works around this too.'
+    typeFilterAdverb: (n) => `Adverbs (${n})`
   }
 };
 
@@ -238,10 +235,7 @@ const el = {
   keyHint: document.getElementById('key-hint'),
   historyTitle: document.getElementById('history-title'),
   historyList: document.getElementById('history-list'),
-  historyCount: document.getElementById('history-count'),
-  voiceWarning: document.getElementById('voice-warning'),
-  voiceWarningText: document.getElementById('voice-warning-text'),
-  voiceWarningDismiss: document.getElementById('voice-warning-dismiss')
+  historyCount: document.getElementById('history-count')
 };
 
 // LocalStorage helpers
@@ -380,7 +374,6 @@ function applyUILanguage() {
 
   buildTypeFilterOptions();
   updateStatsUI();
-  renderVoiceWarning();
 }
 
 // Populate Filter Options (localized, preserves current selection)
@@ -540,7 +533,10 @@ function pickVoiceForLang(langPrefix) {
 // browser populates it — speaking then risks silently falling back to the
 // browser's default UI-language voice. Wait for the list instead of guessing.
 function withVoicesReady(callback) {
-  if (!('speechSynthesis' in window)) return;
+  if (!('speechSynthesis' in window)) {
+    callback(); // no local TTS at all — proceed straight to the network fallback
+    return;
+  }
   if (window.speechSynthesis.getVoices().length === 0) {
     window.speechSynthesis.addEventListener('voiceschanged', callback, { once: true });
     window.speechSynthesis.getVoices(); // nudge the engine to populate the list
@@ -549,16 +545,13 @@ function withVoicesReady(callback) {
   }
 }
 
-function buildUtterance(text, langPrefix) {
-  const voice = pickVoiceForLang(langPrefix);
+function buildUtterance(text, langPrefix, voice) {
   const utterance = new SpeechSynthesisUtterance(text);
   if (voice) utterance.voice = voice;
   // Force the canonical lang tag unconditionally — never trust voice.lang, since
-  // privacy-hardened browsers (e.g. Brave's fingerprinting protection) can return
-  // voice objects with farbled/inconsistent lang values. Setting this explicitly,
-  // regardless of whether a matching voice object was found, gives the engine the
-  // best chance of selecting the right language and never drifting to the
-  // browser's default UI-language voice.
+  // privacy-hardened browsers can return voice objects with farbled/inconsistent
+  // lang values. Setting this explicitly gives the engine the best chance of
+  // selecting the right language.
   utterance.lang = FALLBACK_LANG_TAG[langPrefix];
   utterance.rate = 0.92;
   utterance.pitch = 1;
@@ -570,62 +563,82 @@ function stripSentenceMarkers(sentence) {
   return (sentence || '').replace(/\*\*/g, '');
 }
 
+// Network TTS fallback (Google Translate's public endpoint — no API key) for when the
+// browser exposes no local voice for a language at all (e.g. Brave's fingerprinting
+// protection hides the local voice list). This guarantees a correct-language voice is
+// always available, regardless of what the browser chooses to expose locally.
+let currentNetworkAudio = null;
+
+function stopAllSpeech() {
+  if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+  if (currentNetworkAudio) {
+    currentNetworkAudio.pause();
+    currentNetworkAudio = null;
+  }
+}
+
+function playNetworkTTS(text, langPrefix) {
+  return new Promise((resolve) => {
+    const url = `https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=${langPrefix}&q=${encodeURIComponent(text)}`;
+    const audio = new Audio(url);
+    currentNetworkAudio = audio;
+    const finish = () => {
+      if (currentNetworkAudio === audio) currentNetworkAudio = null;
+      resolve();
+    };
+    audio.addEventListener('ended', finish);
+    audio.addEventListener('error', finish);
+    audio.play().catch(finish);
+  });
+}
+
+// Speak one piece of text in one language, waiting for playback to finish before
+// resolving — local voice if the browser has one for that language, otherwise the
+// network fallback.
+function speakOne(text, langPrefix) {
+  return new Promise((resolve) => {
+    const voice = pickVoiceForLang(langPrefix);
+    if (voice) {
+      const utterance = buildUtterance(text, langPrefix, voice);
+      utterance.onend = () => resolve();
+      utterance.onerror = () => resolve();
+      window.speechSynthesis.speak(utterance);
+    } else {
+      playNetworkTTS(text, langPrefix).then(resolve);
+    }
+  });
+}
+
+// Speak a sequence of {text, langPrefix} items back to back, stopping whatever was
+// playing before.
+async function speakSequence(items) {
+  stopAllSpeech();
+  for (const item of items) {
+    if (!item.text) continue;
+    await speakOne(item.text, item.langPrefix);
+  }
+}
+
 function speakSpanishWord(word) {
-  if (!('speechSynthesis' in window)) return;
+  if (!word) return;
   withVoicesReady(() => {
-    window.speechSynthesis.cancel();
-    window.speechSynthesis.speak(buildUtterance(word, 'es'));
+    speakSequence([{ text: word, langPrefix: 'es' }]);
   });
 }
 
 // Speak the Spanish sentence followed by the target-language sentence, each in its own voice.
-// speechSynthesis queues utterances automatically when speak() is called without an
-// intervening cancel(), so the two play back to back.
 function speakBilingualSentences(sentenceEs, sentenceTarget, targetLangCode) {
-  if (!('speechSynthesis' in window)) return;
   withVoicesReady(() => {
-    window.speechSynthesis.cancel();
-    if (sentenceEs) window.speechSynthesis.speak(buildUtterance(stripSentenceMarkers(sentenceEs), 'es'));
-    if (sentenceTarget) window.speechSynthesis.speak(buildUtterance(stripSentenceMarkers(sentenceTarget), targetLangCode));
+    const items = [];
+    if (sentenceEs) items.push({ text: stripSentenceMarkers(sentenceEs), langPrefix: 'es' });
+    if (sentenceTarget) items.push({ text: stripSentenceMarkers(sentenceTarget), langPrefix: targetLangCode });
+    speakSequence(items);
   });
 }
 
 // Warm up the voice list as early as possible so the first click doesn't race it.
 if ('speechSynthesis' in window) {
   window.speechSynthesis.getVoices();
-}
-
-// Detect browsers that hide their TTS voice list from JS (e.g. Brave's fingerprinting
-// protection) and surface a visible, actionable warning instead of silently speaking
-// with the wrong voice.
-const VOICE_WARNING_DISMISSED_KEY = 'spanish_cards_voice_warning_dismissed_v1';
-let voiceWarningState = { checked: false, shouldWarn: false };
-
-function isVoiceWarningDismissed() {
-  try {
-    return localStorage.getItem(VOICE_WARNING_DISMISSED_KEY) === '1';
-  } catch (e) {
-    return false;
-  }
-}
-
-function checkVoiceAvailability() {
-  if (!('speechSynthesis' in window)) return;
-  withVoicesReady(() => {
-    const voices = window.speechSynthesis.getVoices();
-    const hasSpanishVoice = voices.some(v => v.lang && v.lang.toLowerCase().startsWith('es'));
-    voiceWarningState = { checked: true, shouldWarn: !hasSpanishVoice };
-    renderVoiceWarning();
-  });
-}
-
-function renderVoiceWarning() {
-  if (!voiceWarningState.checked || !voiceWarningState.shouldWarn || isVoiceWarningDismissed()) {
-    el.voiceWarning.classList.add('hidden');
-    return;
-  }
-  el.voiceWarningText.textContent = I18N[state.targetLang].voiceWarning;
-  el.voiceWarning.classList.remove('hidden');
 }
 
 // Render UI Statistics
@@ -858,14 +871,6 @@ function initEventListeners() {
       speakBilingualSentences(null, state.currentWord[meta.sentenceField], meta.code);
     }
   });
-  el.voiceWarningDismiss.addEventListener('click', () => {
-    try {
-      localStorage.setItem(VOICE_WARNING_DISMISSED_KEY, '1');
-    } catch (e) {
-      console.warn('Could not save dismissal:', e);
-    }
-    el.voiceWarning.classList.add('hidden');
-  });
   window.addEventListener('keydown', handleKeydown);
 }
 
@@ -878,7 +883,6 @@ function init() {
   applyFilter();
   initEventListeners();
   updateStatsUI();
-  checkVoiceAvailability();
   nextQuestion();
 }
 

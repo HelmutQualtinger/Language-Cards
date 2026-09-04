@@ -190,39 +190,6 @@ select:focus {
   gap: 6px;
 }
 
-.voice-warning {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  background: rgba(251, 191, 36, 0.12);
-  border: 1px solid rgba(251, 191, 36, 0.35);
-  color: #fde68a;
-  padding: 8px 12px;
-  border-radius: var(--radius-md);
-  font-size: 0.8rem;
-  line-height: 1.4;
-}
-
-.voice-warning.hidden {
-  display: none;
-}
-
-.voice-warning-dismiss {
-  background: transparent;
-  border: none;
-  color: #fde68a;
-  font-size: 0.9rem;
-  line-height: 1;
-  padding: 2px 4px;
-  flex-shrink: 0;
-  opacity: 0.8;
-}
-
-.voice-warning-dismiss:hover {
-  opacity: 1;
-}
-
 button {
   font-family: inherit;
   cursor: pointer;
