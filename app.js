@@ -80,7 +80,8 @@ const I18N = {
     typeFilterNoun: (n) => `Sostantivi (${n})`,
     typeFilterVerb: (n) => `Verbi (${n})`,
     typeFilterAdjective: (n) => `Aggettivi (${n})`,
-    typeFilterAdverb: (n) => `Avverbi (${n})`
+    typeFilterAdverb: (n) => `Avverbi (${n})`,
+    voiceWarning: "Il browser nasconde le voci di sintesi vocale (tipico di Brave con protezione anti-fingerprinting attiva): l'audio potrebbe usare la voce sbagliata. Clicca l'icona 🦁 nella barra degli indirizzi → abbassa \"Blocco fingerprinting\" per questo sito, poi ricarica. In alternativa prova con Chrome."
   },
   de: {
     pageTitle: 'Wortkarten',
@@ -112,7 +113,8 @@ const I18N = {
     typeFilterNoun: (n) => `Substantive (${n})`,
     typeFilterVerb: (n) => `Verben (${n})`,
     typeFilterAdjective: (n) => `Adjektive (${n})`,
-    typeFilterAdverb: (n) => `Adverbien (${n})`
+    typeFilterAdverb: (n) => `Adverbien (${n})`,
+    voiceWarning: 'Der Browser verbirgt die Sprachausgabe-Stimmen (typisch bei Brave mit aktivem Fingerprint-Schutz): die Audiowiedergabe könnte die falsche Stimme verwenden. Klicke auf das 🦁-Symbol in der Adressleiste → senke "Fingerprinting-Schutz" für diese Seite und lade neu. Alternativ funktioniert es in Chrome.'
   },
   en: {
     pageTitle: 'Word Cards',
@@ -144,7 +146,8 @@ const I18N = {
     typeFilterNoun: (n) => `Nouns (${n})`,
     typeFilterVerb: (n) => `Verbs (${n})`,
     typeFilterAdjective: (n) => `Adjectives (${n})`,
-    typeFilterAdverb: (n) => `Adverbs (${n})`
+    typeFilterAdverb: (n) => `Adverbs (${n})`,
+    voiceWarning: 'The browser is hiding its speech-synthesis voices (typical of Brave with fingerprinting protection on): audio playback may use the wrong voice. Click the 🦁 icon in the address bar → lower "Fingerprinting blocking" for this site, then reload. Chrome works around this too.'
   }
 };
 
@@ -235,7 +238,10 @@ const el = {
   keyHint: document.getElementById('key-hint'),
   historyTitle: document.getElementById('history-title'),
   historyList: document.getElementById('history-list'),
-  historyCount: document.getElementById('history-count')
+  historyCount: document.getElementById('history-count'),
+  voiceWarning: document.getElementById('voice-warning'),
+  voiceWarningText: document.getElementById('voice-warning-text'),
+  voiceWarningDismiss: document.getElementById('voice-warning-dismiss')
 };
 
 // LocalStorage helpers
@@ -374,6 +380,7 @@ function applyUILanguage() {
 
   buildTypeFilterOptions();
   updateStatsUI();
+  renderVoiceWarning();
 }
 
 // Populate Filter Options (localized, preserves current selection)
@@ -584,6 +591,39 @@ function speakBilingualSentences(sentenceEs, sentenceTarget, targetLangCode) {
 // Warm up the voice list as early as possible so the first click doesn't race it.
 if ('speechSynthesis' in window) {
   window.speechSynthesis.getVoices();
+}
+
+// Detect browsers that hide their TTS voice list from JS (e.g. Brave's fingerprinting
+// protection) and surface a visible, actionable warning instead of silently speaking
+// with the wrong voice.
+const VOICE_WARNING_DISMISSED_KEY = 'spanish_cards_voice_warning_dismissed_v1';
+let voiceWarningState = { checked: false, shouldWarn: false };
+
+function isVoiceWarningDismissed() {
+  try {
+    return localStorage.getItem(VOICE_WARNING_DISMISSED_KEY) === '1';
+  } catch (e) {
+    return false;
+  }
+}
+
+function checkVoiceAvailability() {
+  if (!('speechSynthesis' in window)) return;
+  withVoicesReady(() => {
+    const voices = window.speechSynthesis.getVoices();
+    const hasSpanishVoice = voices.some(v => v.lang && v.lang.toLowerCase().startsWith('es'));
+    voiceWarningState = { checked: true, shouldWarn: !hasSpanishVoice };
+    renderVoiceWarning();
+  });
+}
+
+function renderVoiceWarning() {
+  if (!voiceWarningState.checked || !voiceWarningState.shouldWarn || isVoiceWarningDismissed()) {
+    el.voiceWarning.classList.add('hidden');
+    return;
+  }
+  el.voiceWarningText.textContent = I18N[state.targetLang].voiceWarning;
+  el.voiceWarning.classList.remove('hidden');
 }
 
 // Render UI Statistics
@@ -816,6 +856,14 @@ function initEventListeners() {
       speakBilingualSentences(null, state.currentWord[meta.sentenceField], meta.code);
     }
   });
+  el.voiceWarningDismiss.addEventListener('click', () => {
+    try {
+      localStorage.setItem(VOICE_WARNING_DISMISSED_KEY, '1');
+    } catch (e) {
+      console.warn('Could not save dismissal:', e);
+    }
+    el.voiceWarning.classList.add('hidden');
+  });
   window.addEventListener('keydown', handleKeydown);
 }
 
@@ -828,6 +876,7 @@ function init() {
   applyFilter();
   initEventListeners();
   updateStatsUI();
+  checkVoiceAvailability();
   nextQuestion();
 }
 
