@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="it" id="html-root">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="page-title">Carte di Vocaboli Spagnolo-Italiano</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="header-content">
+        <span class="logo-icon">🎴</span>
+        <div>
+          <h1 id="app-title">Carte di Vocaboli</h1>
+          <p class="subtitle"><span id="subtitle-spanish">Spagnolo</span> ➔ <span id="subtitle-lang">Italiano</span> <span id="subtitle-suffix">Allenamento del vocabolario</span></p>
+        </div>
+      </div>
+
+      <!-- Scoreboard -->
+      <div class="stats-bar">
+        <div class="stat-pill correct-stat" id="stat-correct-pill" title="Risposte corrette">
+          <span class="stat-icon">✓</span>
+          <span class="stat-label" id="stat-correct-label">Corrette:</span>
+          <strong id="correct-count">0</strong>
+        </div>
+        <div class="stat-pill incorrect-stat" id="stat-incorrect-pill" title="Risposte sbagliate">
+          <span class="stat-icon">✗</span>
+          <span class="stat-label" id="stat-incorrect-label">Sbagliate:</span>
+          <strong id="incorrect-count">0</strong>
+        </div>
+        <div class="stat-pill total-stat" id="stat-accuracy-pill" title="Percentuale di successo">
+          <span class="stat-icon">🎯</span>
+          <span class="stat-label" id="stat-accuracy-label">Precisione:</span>
+          <strong id="accuracy-rate">0%</strong>
+        </div>
+        <div class="stat-pill streak-stat" id="stat-streak-pill" title="Serie attuale">
+          <span class="stat-icon">🔥</span>
+          <span class="stat-label" id="stat-streak-label">Serie:</span>
+          <strong id="streak-count">0</strong>
+        </div>
+      </div>
+    </header>
+
+    <!-- Filter / Settings Bar -->
+    <div class="filter-bar">
+      <div class="filter-group">
+        <label for="lang-target" id="lang-target-label">Lingua di destinazione:</label>
+        <select id="lang-target">
+          <option value="it">🇮🇹 Italiano</option>
+          <option value="de">🇩🇪 Tedesco</option>
+          <option value="en">🇬🇧 Inglese</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="type-filter" id="type-filter-label">Filtro per categoria grammaticale:</label>
+        <select id="type-filter">
+          <option value="all">Tutte le categorie (200 parole)</option>
+        </select>
+      </div>
+      <div class="filter-actions">
+        <button id="btn-sound" class="btn-icon" title="Ascolta la pronuncia spagnola">🔊 Ascolta</button>
+        <button id="btn-reset-stats" class="btn-secondary" title="Reimposta le statistiche">Reimposta statistiche</button>
+      </div>
+    </div>
+
+    <!-- Main Card Game Area -->
+    <main class="game-main">
+      <div class="flashcard" id="flashcard">
+        <div class="card-meta">
+          <span class="badge word-type-badge" id="card-type-badge">Categoria</span>
+          <span class="badge word-gender-badge" id="card-gender-badge">Genere</span>
+          <span class="card-progress" id="card-progress-counter">Carta #1</span>
+        </div>
+
+        <div class="card-question">
+          <div class="word-symbol" id="word-symbol" aria-hidden="true"></div>
+          <h2 class="spanish-word" id="spanish-word">...</h2>
+          <p class="word-hint" id="word-hint">Trova la traduzione italiana corretta con la stessa categoria grammaticale:</p>
+        </div>
+
+        <!-- 5 Alternatives -->
+        <div class="options-grid" id="options-container">
+          <!-- Populated by JS -->
+        </div>
+
+        <!-- Feedback & Reveal Details Area -->
+        <div class="feedback-area hidden" id="feedback-area">
+          <div class="feedback-banner" id="feedback-banner">
+            <span class="feedback-icon" id="feedback-icon">✓</span>
+            <span class="feedback-text" id="feedback-text">Corretto!</span>
+          </div>
+
+          <div class="sentence-box" id="sentence-box">
+            <div class="sentence-item">
+              <div class="sentence-item-head">
+                <span class="detail-label" id="sentence-es-label">Frase in spagnolo</span>
+                <button id="btn-play-es" class="btn-play" title="Ascolta la frase in spagnolo" aria-label="Ascolta la frase in spagnolo">🔊</button>
+              </div>
+              <p class="sentence-text" id="sentence-spanish">-</p>
+            </div>
+            <div class="sentence-item">
+              <div class="sentence-item-head">
+                <span class="detail-label" id="sentence-target-label">Frase in italiano</span>
+                <button id="btn-play-target" class="btn-play" title="Ascolta la frase" aria-label="Ascolta la frase">🔊</button>
+              </div>
+              <p class="sentence-text" id="sentence-target">-</p>
+            </div>
+          </div>
+
+          <div class="word-details-box" id="word-details-box">
+            <div class="detail-item">
+              <span class="detail-label" id="detail-label-italian">Italiano:</span>
+              <span class="detail-value" id="detail-italian">-</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label" id="detail-label-german">Tedesco:</span>
+              <span class="detail-value" id="detail-german">-</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label" id="detail-label-english">Inglese:</span>
+              <span class="detail-value" id="detail-english">-</span>
+            </div>
+          </div>
+
+          <button id="btn-next" class="btn-primary">
+            <span id="btn-next-label">Prossima carta ➔</span> <span class="key-hint" id="key-hint">(Barra spaziatrice o Invio)</span>
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <!-- History / Review Drawer -->
+    <section class="history-section">
+      <div class="history-header">
+        <h3 id="history-title">Parole recenti</h3>
+        <span class="history-count" id="history-count">0 voci</span>
+      </div>
+      <div class="history-list" id="history-list">
+        <p class="empty-history-text">Nessuna parola ancora giocata. Scegli un'opzione qui sopra!</p>
+      </div>
+    </section>
+  </div>
+
+  <script src="words_data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
