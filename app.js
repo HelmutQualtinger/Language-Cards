@@ -511,15 +511,17 @@ function normalizeName(str) {
 function pickVoiceForLang(langPrefix) {
   if (!('speechSynthesis' in window)) return null;
   const voices = window.speechSynthesis.getVoices();
-
-  const preferredNames = PREFERRED_VOICE_NAMES[langPrefix] || [];
-  for (const name of preferredNames) {
-    const match = voices.find(v => normalizeName(v.name).includes(name));
-    if (match) return match;
-  }
-
   const langVoices = voices.filter(v => v.lang && v.lang.toLowerCase().startsWith(langPrefix));
   if (langVoices.length === 0) return null;
+
+  // Only search for the preferred name among voices already confirmed to have the
+  // right lang prefix — never trust a name match whose own declared lang disagrees,
+  // that's how a mislabeled/farbled voice entry could end up speaking the wrong language.
+  const preferredNames = PREFERRED_VOICE_NAMES[langPrefix] || [];
+  for (const name of preferredNames) {
+    const match = langVoices.find(v => normalizeName(v.name).includes(name));
+    if (match) return match;
+  }
 
   const scoreVoice = (v) => {
     let score = 0;
