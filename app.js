@@ -544,9 +544,13 @@ function buildUtterance(text, langPrefix) {
   const voice = pickVoiceForLang(langPrefix);
   const utterance = new SpeechSynthesisUtterance(text);
   if (voice) utterance.voice = voice;
-  // Always set lang explicitly (even with a voice assigned) so the engine
-  // never silently drifts to the browser's UI-language default.
-  utterance.lang = voice ? voice.lang : FALLBACK_LANG_TAG[langPrefix];
+  // Force the canonical lang tag unconditionally — never trust voice.lang, since
+  // privacy-hardened browsers (e.g. Brave's fingerprinting protection) can return
+  // voice objects with farbled/inconsistent lang values. Setting this explicitly,
+  // regardless of whether a matching voice object was found, gives the engine the
+  // best chance of selecting the right language and never drifting to the
+  // browser's default UI-language voice.
+  utterance.lang = FALLBACK_LANG_TAG[langPrefix];
   utterance.rate = 0.92;
   utterance.pitch = 1;
   return utterance;
