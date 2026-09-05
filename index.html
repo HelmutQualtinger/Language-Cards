@@ -124,6 +124,17 @@
           <p class="word-hint" id="word-hint">Trova la traduzione italiana corretta con la stessa categoria grammaticale:</p>
         </div>
 
+        <!-- Source-language example sentence, shown/spoken before the user answers -->
+        <div class="sentence-box sentence-box-preview" id="sentence-preview-box">
+          <div class="sentence-item">
+            <div class="sentence-item-head">
+              <span class="detail-label" id="sentence-es-label">Frase in spagnolo</span>
+              <button id="btn-play-es" class="btn-play" title="Ascolta la frase in spagnolo" aria-label="Ascolta la frase in spagnolo">🔊</button>
+            </div>
+            <p class="sentence-text" id="sentence-spanish">-</p>
+          </div>
+        </div>
+
         <!-- 5 Alternatives -->
         <div class="options-grid" id="options-container">
           <!-- Populated by JS -->
@@ -137,13 +148,6 @@
           </div>
 
           <div class="sentence-box" id="sentence-box">
-            <div class="sentence-item">
-              <div class="sentence-item-head">
-                <span class="detail-label" id="sentence-es-label">Frase in spagnolo</span>
-                <button id="btn-play-es" class="btn-play" title="Ascolta la frase in spagnolo" aria-label="Ascolta la frase in spagnolo">🔊</button>
-              </div>
-              <p class="sentence-text" id="sentence-spanish">-</p>
-            </div>
             <div class="sentence-item">
               <div class="sentence-item-head">
                 <span class="detail-label" id="sentence-target-label">Frase in italiano</span>

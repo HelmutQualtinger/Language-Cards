@@ -989,6 +989,13 @@ function nextQuestion() {
 
   el.spanishWord.textContent = word[LANG_META[state.sourceLang].field];
 
+  // Show and speak the source-language example sentence up front, before the user
+  // answers — it gives usage context without revealing the target-language translation.
+  const sourceMeta = LANG_META[state.sourceLang];
+  const sourceSentence = word[sourceMeta.sentenceField];
+  el.sentenceSpanish.innerHTML = renderSentenceHTML(sourceSentence);
+  speakBilingualSentences(sourceSentence, null, sourceMeta.code, null);
+
   // Render 5 alternative buttons
   el.optionsContainer.innerHTML = '';
   state.currentOptions.forEach((option, idx) => {
@@ -1020,7 +1027,6 @@ function handleOptionSelect(selectedIndex) {
   const sourceMeta = LANG_META[state.sourceLang];
   const targetText = word[meta.field];
   const sourceText = word[sourceMeta.field];
-  const sourceSentence = word[sourceMeta.sentenceField];
 
   // Update stats
   if (isCorrect) {
@@ -1072,7 +1078,6 @@ function handleOptionSelect(selectedIndex) {
     el.feedbackText.textContent = t.feedbackIncorrect(symbolPrefix, sourceText, targetText);
   }
 
-  el.sentenceSpanish.innerHTML = renderSentenceHTML(sourceSentence);
   el.sentenceTarget.innerHTML = renderSentenceHTML(word[meta.sentenceField]);
 
   DETAIL_LANGS.forEach(lang => {
@@ -1085,9 +1090,9 @@ function handleOptionSelect(selectedIndex) {
     }
   });
 
-  // Automatically read the full example sentence aloud, source then target language,
-  // each with its own voice.
-  speakBilingualSentences(sourceSentence, word[meta.sentenceField], sourceMeta.code, meta.code);
+  // The source sentence was already shown/spoken before the user answered (see
+  // nextQuestion) — only the target-language sentence is new information now.
+  speakBilingualSentences(null, word[meta.sentenceField], null, meta.code);
 }
 
 // Keyboard navigation (1-5 for options, Space/Enter for Next)
