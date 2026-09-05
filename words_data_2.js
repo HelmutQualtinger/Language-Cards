@@ -8,12 +8,14 @@ const WORDS_DATA_2 = [
     "german": "können",
     "english": "to be able to / can",
     "french": "pouvoir",
+    "hungarian": "tudni",
     "symbol": "💪",
     "sentence_es": "No **puedo** salir hoy.",
     "sentence_it": "Non **posso** uscire oggi.",
     "sentence_de": "Ich **kann** heute nicht ausgehen.",
     "sentence_en": "I **can't** go out today.",
-    "sentence_fr": "Je ne **peux** pas sortir aujourd'hui."
+    "sentence_fr": "Je ne **peux** pas sortir aujourd'hui.",
+    "sentence_hu": "Ma nem **tudok** kimenni."
   },
   {
     "spanish": "querer",
@@ -24,12 +26,14 @@ const WORDS_DATA_2 = [
     "german": "wollen",
     "english": "to want",
     "french": "vouloir",
+    "hungarian": "akarni",
     "symbol": "❤️",
     "sentence_es": "**Quiero** una taza de café.",
     "sentence_it": "**Voglio** una tazza di caffè.",
     "sentence_de": "Ich **möchte** eine Tasse Kaffee.",
     "sentence_en": "I **want** a cup of coffee.",
-    "sentence_fr": "Je **veux** une tasse de café."
+    "sentence_fr": "Je **veux** une tasse de café.",
+    "sentence_hu": "**Akarok** egy csésze kávét."
   },
   {
     "spanish": "deber",
@@ -40,12 +44,14 @@ const WORDS_DATA_2 = [
     "german": "müssen / sollen",
     "english": "should / to have to",
     "french": "devoir",
+    "hungarian": "kell",
     "symbol": "☑️",
     "sentence_es": "**Debo** terminar este informe.",
     "sentence_it": "**Devo** finire questo rapporto.",
     "sentence_de": "Ich **muss** diesen Bericht fertigstellen.",
     "sentence_en": "I **must** finish this report.",
-    "sentence_fr": "Je **dois** finir ce rapport."
+    "sentence_fr": "Je **dois** finir ce rapport.",
+    "sentence_hu": "Be **kell** fejeznem ezt a jelentést."
   },
   {
     "spanish": "saber",
@@ -56,12 +62,14 @@ const WORDS_DATA_2 = [
     "german": "wissen",
     "english": "to know (a fact)",
     "french": "savoir",
+    "hungarian": "tudni",
     "symbol": "🧠",
     "sentence_es": "No **sé** la respuesta.",
     "sentence_it": "Non **so** la risposta.",
     "sentence_de": "Ich **weiß** die Antwort nicht.",
     "sentence_en": "I don't **know** the answer.",
-    "sentence_fr": "Je ne **sais** pas la réponse."
+    "sentence_fr": "Je ne **sais** pas la réponse.",
+    "sentence_hu": "Nem **tudom** a választ."
   },
   {
     "spanish": "conocer",
@@ -72,12 +80,14 @@ const WORDS_DATA_2 = [
     "german": "kennen",
     "english": "to know (a person/place)",
     "french": "connaître",
+    "hungarian": "ismerni",
     "symbol": "🤝",
     "sentence_es": "**Conozco** a tu hermano.",
     "sentence_it": "**Conosco** tuo fratello.",
     "sentence_de": "Ich **kenne** deinen Bruder.",
     "sentence_en": "I **know** your brother.",
-    "sentence_fr": "Je **connais** ton frère."
+    "sentence_fr": "Je **connais** ton frère.",
+    "sentence_hu": "**Ismerem** a bátyádat."
   },
   {
     "spanish": "decir",
@@ -88,12 +98,14 @@ const WORDS_DATA_2 = [
     "german": "sagen",
     "english": "to say / to tell",
     "french": "dire",
+    "hungarian": "mondani",
     "symbol": "💬",
     "sentence_es": "Ella **dice** la verdad.",
     "sentence_it": "Lei **dice** la verità.",
     "sentence_de": "Sie **sagt** die Wahrheit.",
     "sentence_en": "She **tells** the truth.",
-    "sentence_fr": "Elle **dit** la vérité."
+    "sentence_fr": "Elle **dit** la vérité.",
+    "sentence_hu": "Igazat **mond**."
   },
   {
     "spanish": "dar",
@@ -104,12 +116,14 @@ const WORDS_DATA_2 = [
     "german": "geben",
     "english": "to give",
     "french": "donner",
+    "hungarian": "adni",
     "symbol": "🎁",
     "sentence_es": "Le **doy** un regalo a mi madre.",
     "sentence_it": "**Do** un regalo a mia madre.",
     "sentence_de": "Ich **gebe** meiner Mutter ein Geschenk.",
     "sentence_en": "I **give** my mother a gift.",
-    "sentence_fr": "Je **donne** un cadeau à ma mère."
+    "sentence_fr": "Je **donne** un cadeau à ma mère.",
+    "sentence_hu": "Ajándékot **adok** az anyámnak."
   },
   {
     "spanish": "poner",
@@ -120,12 +134,14 @@ const WORDS_DATA_2 = [
     "german": "legen / stellen",
     "english": "to put",
     "french": "mettre",
+    "hungarian": "tenni",
     "symbol": "📦",
     "sentence_es": "**Pongo** el libro en la mesa.",
     "sentence_it": "**Metto** il libro sul tavolo.",
     "sentence_de": "Ich **lege** das Buch auf den Tisch.",
     "sentence_en": "I **put** the book on the table.",
-    "sentence_fr": "Je **mets** le livre sur la table."
+    "sentence_fr": "Je **mets** le livre sur la table.",
+    "sentence_hu": "A könyvet az asztalra **teszem**."
   },
   {
     "spanish": "hacer",
@@ -136,12 +152,14 @@ const WORDS_DATA_2 = [
     "german": "machen / tun",
     "english": "to do / to make",
     "french": "faire",
+    "hungarian": "csinálni / tenni",
     "symbol": "🔨",
     "sentence_es": "**Hago** la tarea por la tarde.",
     "sentence_it": "**Faccio** i compiti nel pomeriggio.",
     "sentence_de": "Ich **mache** die Hausaufgaben am Nachmittag.",
     "sentence_en": "I **do** my homework in the afternoon.",
-    "sentence_fr": "Je **fais** mes devoirs l'après-midi."
+    "sentence_fr": "Je **fais** mes devoirs l'après-midi.",
+    "sentence_hu": "Délután **csinálom** a házi feladatot."
   },
   {
     "spanish": "ver",
@@ -152,12 +170,14 @@ const WORDS_DATA_2 = [
     "german": "sehen",
     "english": "to see",
     "french": "voir",
+    "hungarian": "látni",
     "symbol": "👀",
     "sentence_es": "**Veo** las montañas desde aquí.",
     "sentence_it": "**Vedo** le montagne da qui.",
     "sentence_de": "Ich **sehe** von hier die Berge.",
     "sentence_en": "I **see** the mountains from here.",
-    "sentence_fr": "Je **vois** les montagnes d'ici."
+    "sentence_fr": "Je **vois** les montagnes d'ici.",
+    "sentence_hu": "Innen **látom** a hegyeket."
   },
   {
     "spanish": "ir",
@@ -168,12 +188,14 @@ const WORDS_DATA_2 = [
     "german": "gehen / fahren",
     "english": "to go",
     "french": "aller",
+    "hungarian": "menni",
     "symbol": "🚶",
     "sentence_es": "**Voy** al mercado los sábados.",
     "sentence_it": "**Vado** al mercato il sabato.",
     "sentence_de": "Ich **gehe** samstags auf den Markt.",
     "sentence_en": "I **go** to the market on Saturdays.",
-    "sentence_fr": "Je **vais** au marché le samedi."
+    "sentence_fr": "Je **vais** au marché le samedi.",
+    "sentence_hu": "Szombatonként a piacra **megyek**."
   },
   {
     "spanish": "venir",
@@ -184,12 +206,14 @@ const WORDS_DATA_2 = [
     "german": "kommen",
     "english": "to come",
     "french": "venir",
+    "hungarian": "jönni",
     "symbol": "🚶‍♂️",
     "sentence_es": "Mi amigo **viene** a mi casa.",
     "sentence_it": "Il mio amico **viene** a casa mia.",
     "sentence_de": "Mein Freund **kommt** zu mir nach Hause.",
     "sentence_en": "My friend **comes** to my house.",
-    "sentence_fr": "Mon ami **vient** chez moi."
+    "sentence_fr": "Mon ami **vient** chez moi.",
+    "sentence_hu": "A barátom **eljön** hozzám."
   },
   {
     "spanish": "tener",
@@ -200,12 +224,14 @@ const WORDS_DATA_2 = [
     "german": "haben",
     "english": "to have",
     "french": "avoir",
+    "hungarian": "birtokolni",
     "symbol": "🤲",
     "sentence_es": "**Tengo** dos hermanas.",
     "sentence_it": "**Ho** due sorelle.",
     "sentence_de": "Ich **habe** zwei Schwestern.",
     "sentence_en": "I **have** two sisters.",
-    "sentence_fr": "J'**ai** deux sœurs."
+    "sentence_fr": "J'**ai** deux sœurs.",
+    "sentence_hu": "Két húgom **van**."
   },
   {
     "spanish": "ser",
@@ -216,12 +242,14 @@ const WORDS_DATA_2 = [
     "german": "sein",
     "english": "to be (permanent)",
     "french": "être",
+    "hungarian": "lenni",
     "symbol": "🪪",
     "sentence_es": "Ella **es** médica.",
     "sentence_it": "Lei **è** medica.",
     "sentence_de": "Sie **ist** Ärztin.",
     "sentence_en": "She **is** a doctor.",
-    "sentence_fr": "Elle **est** médecin."
+    "sentence_fr": "Elle **est** médecin.",
+    "sentence_hu": "Orvos **vagyok**."
   },
   {
     "spanish": "estar",
@@ -232,12 +260,14 @@ const WORDS_DATA_2 = [
     "german": "sein (Zustand/Ort)",
     "english": "to be (state/location)",
     "french": "être (état/lieu)",
+    "hungarian": "lenni",
     "symbol": "📍",
     "sentence_es": "**Estoy** en la oficina.",
     "sentence_it": "**Sono** in ufficio.",
     "sentence_de": "Ich **bin** im Büro.",
     "sentence_en": "I **am** at the office.",
-    "sentence_fr": "Je **suis** au bureau."
+    "sentence_fr": "Je **suis** au bureau.",
+    "sentence_hu": "Az irodában **vagyok**."
   },
   {
     "spanish": "sentir",
@@ -248,12 +278,14 @@ const WORDS_DATA_2 = [
     "german": "fühlen",
     "english": "to feel",
     "french": "sentir",
+    "hungarian": "érezni",
     "symbol": "🫶",
     "sentence_es": "**Siento** mucha alegría hoy.",
     "sentence_it": "**Sento** molta gioia oggi.",
     "sentence_de": "Ich **fühle** heute große Freude.",
     "sentence_en": "I **feel** a lot of joy today.",
-    "sentence_fr": "Je **sens** une grande joie aujourd'hui."
+    "sentence_fr": "Je **sens** une grande joie aujourd'hui.",
+    "sentence_hu": "Ma nagy örömöt **érzek**."
   },
   {
     "spanish": "creer",
@@ -264,12 +296,14 @@ const WORDS_DATA_2 = [
     "german": "glauben",
     "english": "to believe",
     "french": "croire",
+    "hungarian": "hinni",
     "symbol": "🙏",
     "sentence_es": "**Creo** que va a llover.",
     "sentence_it": "**Credo** che pioverà.",
     "sentence_de": "Ich **glaube**, dass es regnen wird.",
     "sentence_en": "I **believe** it will rain.",
-    "sentence_fr": "Je **crois** qu'il va pleuvoir."
+    "sentence_fr": "Je **crois** qu'il va pleuvoir.",
+    "sentence_hu": "Azt **hiszem**, esni fog."
   },
   {
     "spanish": "pensar",
@@ -280,12 +314,14 @@ const WORDS_DATA_2 = [
     "german": "denken",
     "english": "to think",
     "french": "penser",
+    "hungarian": "gondolni",
     "symbol": "🤔",
     "sentence_es": "**Pienso** en ti todos los días.",
     "sentence_it": "**Penso** a te ogni giorno.",
     "sentence_de": "Ich **denke** jeden Tag an dich.",
     "sentence_en": "I **think** about you every day.",
-    "sentence_fr": "Je **pense** à toi tous les jours."
+    "sentence_fr": "Je **pense** à toi tous les jours.",
+    "sentence_hu": "Minden nap rád **gondolok**."
   },
   {
     "spanish": "gustar",
@@ -296,12 +332,14 @@ const WORDS_DATA_2 = [
     "german": "gefallen / mögen",
     "english": "to like / to please",
     "french": "plaire / aimer",
+    "hungarian": "tetszeni / szeretni",
     "symbol": "😍",
     "sentence_es": "Me **gusta** la música clásica.",
     "sentence_it": "Mi **piace** la musica classica.",
     "sentence_de": "Mir **gefällt** klassische Musik.",
     "sentence_en": "I **like** classical music.",
-    "sentence_fr": "J'**aime** la musique classique."
+    "sentence_fr": "J'**aime** la musique classique.",
+    "sentence_hu": "**Szeretem** a klasszikus zenét."
   },
   {
     "spanish": "necesitar",
@@ -312,12 +350,14 @@ const WORDS_DATA_2 = [
     "german": "brauchen",
     "english": "to need",
     "french": "avoir besoin de",
+    "hungarian": "igényelni",
     "symbol": "🆘",
     "sentence_es": "**Necesito** más tiempo.",
     "sentence_it": "Ho **bisogno** di più tempo.",
     "sentence_de": "Ich **brauche** mehr Zeit.",
     "sentence_en": "I **need** more time.",
-    "sentence_fr": "J'ai **besoin** de plus de temps."
+    "sentence_fr": "J'ai **besoin** de plus de temps.",
+    "sentence_hu": "Több időre **van szükségem**."
   },
   {
     "spanish": "trabajar",
@@ -328,12 +368,14 @@ const WORDS_DATA_2 = [
     "german": "arbeiten",
     "english": "to work",
     "french": "travailler",
+    "hungarian": "dolgozni",
     "symbol": "💼",
     "sentence_es": "**Trabajo** en un hospital.",
     "sentence_it": "**Lavoro** in un ospedale.",
     "sentence_de": "Ich **arbeite** in einem Krankenhaus.",
     "sentence_en": "I **work** at a hospital.",
-    "sentence_fr": "Je **travaille** dans un hôpital."
+    "sentence_fr": "Je **travaille** dans un hôpital.",
+    "sentence_hu": "Egy kórházban **dolgozom**."
   },
   {
     "spanish": "estudiar",
@@ -344,12 +386,14 @@ const WORDS_DATA_2 = [
     "german": "studieren / lernen",
     "english": "to study",
     "french": "étudier",
+    "hungarian": "tanulni",
     "symbol": "📚",
     "sentence_es": "**Estudio** medicina en la universidad.",
     "sentence_it": "**Studio** medicina all'università.",
     "sentence_de": "Ich **studiere** Medizin an der Universität.",
     "sentence_en": "I **study** medicine at university.",
-    "sentence_fr": "J'**étudie** la médecine à l'université."
+    "sentence_fr": "J'**étudie** la médecine à l'université.",
+    "sentence_hu": "Orvostudományt **tanulok** az egyetemen."
   },
   {
     "spanish": "jugar",
@@ -360,12 +404,14 @@ const WORDS_DATA_2 = [
     "german": "spielen",
     "english": "to play",
     "french": "jouer",
+    "hungarian": "játszani",
     "symbol": "⚽",
     "sentence_es": "Los niños **juegan** en el parque.",
     "sentence_it": "I bambini **giocano** nel parco.",
     "sentence_de": "Die Kinder **spielen** im Park.",
     "sentence_en": "The children **play** in the park.",
-    "sentence_fr": "Les enfants **jouent** dans le parc."
+    "sentence_fr": "Les enfants **jouent** dans le parc.",
+    "sentence_hu": "A gyerekek a parkban **játszanak**."
   },
   {
     "spanish": "comer",
@@ -376,12 +422,14 @@ const WORDS_DATA_2 = [
     "german": "essen",
     "english": "to eat",
     "french": "manger",
+    "hungarian": "enni",
     "symbol": "🍽️",
     "sentence_es": "**Comemos** juntos a las dos.",
     "sentence_it": "**Mangiamo** insieme alle due.",
     "sentence_de": "Wir **essen** um zwei Uhr zusammen.",
     "sentence_en": "We **eat** together at two.",
-    "sentence_fr": "Nous **mangeons** ensemble à deux heures."
+    "sentence_fr": "Nous **mangeons** ensemble à deux heures.",
+    "sentence_hu": "Kettőkor együtt **eszünk**."
   },
   {
     "spanish": "beber",
@@ -392,12 +440,14 @@ const WORDS_DATA_2 = [
     "german": "trinken",
     "english": "to drink",
     "french": "boire",
+    "hungarian": "inni",
     "symbol": "🥤",
     "sentence_es": "**Bebo** agua durante el día.",
     "sentence_it": "**Bevo** acqua durante il giorno.",
     "sentence_de": "Ich **trinke** tagsüber Wasser.",
     "sentence_en": "I **drink** water during the day.",
-    "sentence_fr": "Je **bois** de l'eau pendant la journée."
+    "sentence_fr": "Je **bois** de l'eau pendant la journée.",
+    "sentence_hu": "Napközben vizet **iszom**."
   },
   {
     "spanish": "dormir",
@@ -408,12 +458,14 @@ const WORDS_DATA_2 = [
     "german": "schlafen",
     "english": "to sleep",
     "french": "dormir",
+    "hungarian": "aludni",
     "symbol": "😴",
     "sentence_es": "**Duermo** ocho horas cada noche.",
     "sentence_it": "**Dormo** otto ore ogni notte.",
     "sentence_de": "Ich **schlafe** jede Nacht acht Stunden.",
     "sentence_en": "I **sleep** eight hours every night.",
-    "sentence_fr": "Je **dors** huit heures chaque nuit."
+    "sentence_fr": "Je **dors** huit heures chaque nuit.",
+    "sentence_hu": "Minden éjjel nyolc órát **alszom**."
   },
   {
     "spanish": "correr",
@@ -424,12 +476,14 @@ const WORDS_DATA_2 = [
     "german": "laufen / rennen",
     "english": "to run",
     "french": "courir",
+    "hungarian": "futni",
     "symbol": "🏃",
     "sentence_es": "**Corro** por el parque cada mañana.",
     "sentence_it": "**Corro** nel parco ogni mattina.",
     "sentence_de": "Ich **laufe** jeden Morgen im Park.",
     "sentence_en": "I **run** in the park every morning.",
-    "sentence_fr": "Je **cours** dans le parc chaque matin."
+    "sentence_fr": "Je **cours** dans le parc chaque matin.",
+    "sentence_hu": "Minden reggel **futok** a parkban."
   },
   {
     "spanish": "caminar",
@@ -440,12 +494,14 @@ const WORDS_DATA_2 = [
     "german": "gehen / spazieren",
     "english": "to walk",
     "french": "marcher",
+    "hungarian": "sétálni",
     "symbol": "🚶‍♀️",
     "sentence_es": "**Caminamos** por la playa al atardecer.",
     "sentence_it": "**Camminiamo** sulla spiaggia al tramonto.",
     "sentence_de": "Wir **gehen** bei Sonnenuntergang am Strand spazieren.",
     "sentence_en": "We **walk** on the beach at sunset.",
-    "sentence_fr": "Nous **marchons** sur la plage au coucher du soleil."
+    "sentence_fr": "Nous **marchons** sur la plage au coucher du soleil.",
+    "sentence_hu": "Alkonyatkor **sétálunk** a parton."
   },
   {
     "spanish": "viajar",
@@ -456,12 +512,14 @@ const WORDS_DATA_2 = [
     "german": "reisen",
     "english": "to travel",
     "french": "voyager",
+    "hungarian": "utazni",
     "symbol": "🧳",
     "sentence_es": "Nos gusta **viajar** en verano.",
     "sentence_it": "Ci piace **viaggiare** in estate.",
     "sentence_de": "Wir **reisen** gerne im Sommer.",
     "sentence_en": "We like to **travel** in summer.",
-    "sentence_fr": "Nous aimons **voyager** en été."
+    "sentence_fr": "Nous aimons **voyager** en été.",
+    "sentence_hu": "Szeretünk nyáron **utazni**."
   },
   {
     "spanish": "comprar",
@@ -472,12 +530,14 @@ const WORDS_DATA_2 = [
     "german": "kaufen",
     "english": "to buy",
     "french": "acheter",
+    "hungarian": "vásárolni",
     "symbol": "🛒",
     "sentence_es": "**Compro** fruta en el mercado.",
     "sentence_it": "**Compro** frutta al mercato.",
     "sentence_de": "Ich **kaufe** Obst auf dem Markt.",
     "sentence_en": "I **buy** fruit at the market.",
-    "sentence_fr": "J'**achète** des fruits au marché."
+    "sentence_fr": "J'**achète** des fruits au marché.",
+    "sentence_hu": "Gyümölcsöt **veszek** a piacon."
   },
   {
     "spanish": "vender",
@@ -488,12 +548,14 @@ const WORDS_DATA_2 = [
     "german": "verkaufen",
     "english": "to sell",
     "french": "vendre",
+    "hungarian": "eladni",
     "symbol": "🏷️",
     "sentence_es": "**Vendo** mi bicicleta vieja.",
     "sentence_it": "**Vendo** la mia vecchia bicicletta.",
     "sentence_de": "Ich **verkaufe** mein altes Fahrrad.",
     "sentence_en": "I **sell** my old bicycle.",
-    "sentence_fr": "Je **vends** mon vieux vélo."
+    "sentence_fr": "Je **vends** mon vieux vélo.",
+    "sentence_hu": "**Eladom** a régi biciklimet."
   },
   {
     "spanish": "pagar",
@@ -504,12 +566,14 @@ const WORDS_DATA_2 = [
     "german": "bezahlen",
     "english": "to pay",
     "french": "payer",
+    "hungarian": "fizetni",
     "symbol": "💳",
     "sentence_es": "**Pago** la cuenta con tarjeta.",
     "sentence_it": "**Pago** il conto con la carta.",
     "sentence_de": "Ich **bezahle** die Rechnung mit Karte.",
     "sentence_en": "I **pay** the bill with a card.",
-    "sentence_fr": "Je **paie** l'addition par carte."
+    "sentence_fr": "Je **paie** l'addition par carte.",
+    "sentence_hu": "Kártyával **fizetem** a számlát."
   },
   {
     "spanish": "cocinar",
@@ -520,12 +584,14 @@ const WORDS_DATA_2 = [
     "german": "kochen",
     "english": "to cook",
     "french": "cuisiner",
+    "hungarian": "főzni",
     "symbol": "👩‍🍳",
     "sentence_es": "**Cocino** la cena todos los días.",
     "sentence_it": "**Cucino** la cena tutti i giorni.",
     "sentence_de": "Ich **koche** jeden Tag das Abendessen.",
     "sentence_en": "I **cook** dinner every day.",
-    "sentence_fr": "Je **cuisine** le dîner tous les jours."
+    "sentence_fr": "Je **cuisine** le dîner tous les jours.",
+    "sentence_hu": "Minden nap **főzöm** a vacsorát."
   },
   {
     "spanish": "limpiar",
@@ -536,12 +602,14 @@ const WORDS_DATA_2 = [
     "german": "putzen / reinigen",
     "english": "to clean",
     "french": "nettoyer",
+    "hungarian": "takarítani",
     "symbol": "🧹",
     "sentence_es": "**Limpio** la casa los domingos.",
     "sentence_it": "**Pulisco** la casa la domenica.",
     "sentence_de": "Ich **putze** sonntags das Haus.",
     "sentence_en": "I **clean** the house on Sundays.",
-    "sentence_fr": "Je **nettoie** la maison le dimanche."
+    "sentence_fr": "Je **nettoie** la maison le dimanche.",
+    "sentence_hu": "Vasárnaponként **takarítom** a házat."
   },
   {
     "spanish": "lavar",
@@ -552,12 +620,14 @@ const WORDS_DATA_2 = [
     "german": "waschen",
     "english": "to wash",
     "french": "laver",
+    "hungarian": "mosni",
     "symbol": "🧼",
     "sentence_es": "**Lavo** los platos después de comer.",
     "sentence_it": "**Lavo** i piatti dopo aver mangiato.",
     "sentence_de": "Ich **wasche** nach dem Essen das Geschirr.",
     "sentence_en": "I **wash** the dishes after eating.",
-    "sentence_fr": "Je **lave** la vaisselle après avoir mangé."
+    "sentence_fr": "Je **lave** la vaisselle après avoir mangé.",
+    "sentence_hu": "Evés után **elmosom** az edényeket."
   },
   {
     "spanish": "abrir",
@@ -568,12 +638,14 @@ const WORDS_DATA_2 = [
     "german": "öffnen",
     "english": "to open",
     "french": "ouvrir",
+    "hungarian": "kinyitni",
     "symbol": "🔓",
     "sentence_es": "**Abro** la puerta de la oficina.",
     "sentence_it": "**Apro** la porta dell'ufficio.",
     "sentence_de": "Ich **öffne** die Bürotür.",
     "sentence_en": "I **open** the office door.",
-    "sentence_fr": "J'**ouvre** la porte du bureau."
+    "sentence_fr": "J'**ouvre** la porte du bureau.",
+    "sentence_hu": "**Kinyitom** az iroda ajtaját."
   },
   {
     "spanish": "cerrar",
@@ -584,12 +656,14 @@ const WORDS_DATA_2 = [
     "german": "schließen",
     "english": "to close",
     "french": "fermer",
+    "hungarian": "becsukni",
     "symbol": "🔒",
     "sentence_es": "**Cierro** la ventana por la noche.",
     "sentence_it": "**Chiudo** la finestra di notte.",
     "sentence_de": "Ich **schließe** nachts das Fenster.",
     "sentence_en": "I **close** the window at night.",
-    "sentence_fr": "Je **ferme** la fenêtre la nuit."
+    "sentence_fr": "Je **ferme** la fenêtre la nuit.",
+    "sentence_hu": "Este **becsukom** az ablakot."
   },
   {
     "spanish": "entrar",
@@ -600,12 +674,14 @@ const WORDS_DATA_2 = [
     "german": "hineingehen / eintreten",
     "english": "to enter",
     "french": "entrer",
+    "hungarian": "belépni",
     "symbol": "🚪",
     "sentence_es": "**Entramos** en la tienda juntos.",
     "sentence_it": "**Entriamo** insieme nel negozio.",
     "sentence_de": "Wir **betreten** gemeinsam das Geschäft.",
     "sentence_en": "We **enter** the store together.",
-    "sentence_fr": "Nous **entrons** ensemble dans le magasin."
+    "sentence_fr": "Nous **entrons** ensemble dans le magasin.",
+    "sentence_hu": "Együtt **bemegyünk** a boltba."
   },
   {
     "spanish": "subir",
@@ -616,12 +692,14 @@ const WORDS_DATA_2 = [
     "german": "hinaufgehen / steigen",
     "english": "to go up / to climb",
     "french": "monter",
+    "hungarian": "felmenni",
     "symbol": "⬆️",
     "sentence_es": "**Subo** las escaleras a pie.",
     "sentence_it": "**Salgo** le scale a piedi.",
     "sentence_de": "Ich **steige** die Treppe zu Fuß hoch.",
     "sentence_en": "I **go up** the stairs on foot.",
-    "sentence_fr": "Je **monte** les escaliers à pied."
+    "sentence_fr": "Je **monte** les escaliers à pied.",
+    "sentence_hu": "Gyalog **felmegyek** a lépcsőn."
   },
   {
     "spanish": "bajar",
@@ -632,12 +710,14 @@ const WORDS_DATA_2 = [
     "german": "hinuntergehen",
     "english": "to go down",
     "french": "descendre",
+    "hungarian": "leszállni",
     "symbol": "⬇️",
     "sentence_es": "**Bajo** del autobús en la próxima parada.",
     "sentence_it": "**Scendo** dall'autobus alla prossima fermata.",
     "sentence_de": "Ich **steige** an der nächsten Haltestelle aus dem Bus.",
     "sentence_en": "I **get off** the bus at the next stop.",
-    "sentence_fr": "Je **descends** du bus au prochain arrêt."
+    "sentence_fr": "Je **descends** du bus au prochain arrêt.",
+    "sentence_hu": "A következő megállónál **leszállok** a buszról."
   },
   {
     "spanish": "cambiar",
@@ -648,12 +728,14 @@ const WORDS_DATA_2 = [
     "german": "ändern / wechseln",
     "english": "to change",
     "french": "changer",
+    "hungarian": "változtatni",
     "symbol": "🔄",
     "sentence_es": "**Cambio** de trabajo este mes.",
     "sentence_it": "**Cambio** lavoro questo mese.",
     "sentence_de": "Ich **wechsle** diesen Monat den Job.",
     "sentence_en": "I'm **changing** jobs this month.",
-    "sentence_fr": "Je **change** de travail ce mois-ci."
+    "sentence_fr": "Je **change** de travail ce mois-ci.",
+    "sentence_hu": "Ebben a hónapban munkahelyet **váltok**."
   },
   {
     "spanish": "mover",
@@ -664,12 +746,14 @@ const WORDS_DATA_2 = [
     "german": "bewegen",
     "english": "to move",
     "french": "bouger / déplacer",
+    "hungarian": "mozgatni",
     "symbol": "🤸",
     "sentence_es": "**Muevo** la silla hacia la ventana.",
     "sentence_it": "**Muovo** la sedia verso la finestra.",
     "sentence_de": "Ich **bewege** den Stuhl zum Fenster.",
     "sentence_en": "I **move** the chair toward the window.",
-    "sentence_fr": "Je **déplace** la chaise vers la fenêtre."
+    "sentence_fr": "Je **déplace** la chaise vers la fenêtre.",
+    "sentence_hu": "Az ablak felé **mozgatom** a széket."
   },
   {
     "spanish": "tocar",
@@ -680,12 +764,14 @@ const WORDS_DATA_2 = [
     "german": "berühren / spielen (Instrument)",
     "english": "to touch / to play (an instrument)",
     "french": "toucher / jouer (d'un instrument)",
+    "hungarian": "játszani",
     "symbol": "🎸",
     "sentence_es": "**Toco** la guitarra por las tardes.",
     "sentence_it": "**Suono** la chitarra nel pomeriggio.",
     "sentence_de": "Ich **spiele** nachmittags Gitarre.",
     "sentence_en": "I **play** the guitar in the afternoons.",
-    "sentence_fr": "Je **joue** de la guitare l'après-midi."
+    "sentence_fr": "Je **joue** de la guitare l'après-midi.",
+    "sentence_hu": "Délutánonként **gitározom**."
   },
   {
     "spanish": "sentarse",
@@ -696,12 +782,14 @@ const WORDS_DATA_2 = [
     "german": "sich setzen",
     "english": "to sit down",
     "french": "s'asseoir",
+    "hungarian": "leülni",
     "symbol": "🪑",
     "sentence_es": "**Me siento** junto a la ventana.",
     "sentence_it": "**Mi siedo** vicino alla finestra.",
     "sentence_de": "Ich **setze mich** neben das Fenster.",
     "sentence_en": "I **sit down** next to the window.",
-    "sentence_fr": "Je **m'assieds** près de la fenêtre."
+    "sentence_fr": "Je **m'assieds** près de la fenêtre.",
+    "sentence_hu": "Az ablak mellé **leülök**."
   },
   {
     "spanish": "vestirse",
@@ -712,12 +800,14 @@ const WORDS_DATA_2 = [
     "german": "sich anziehen",
     "english": "to get dressed",
     "french": "s'habiller",
+    "hungarian": "felöltözni",
     "symbol": "👕",
     "sentence_es": "**Me visto** rápido por la mañana.",
     "sentence_it": "**Mi vesto** in fretta al mattino.",
     "sentence_de": "Ich **ziehe mich** morgens schnell **an**.",
     "sentence_en": "I **get dressed** quickly in the morning.",
-    "sentence_fr": "Je **m'habille** vite le matin."
+    "sentence_fr": "Je **m'habille** vite le matin.",
+    "sentence_hu": "Reggel gyorsan **felöltözöm**."
   },
   {
     "spanish": "ducharse",
@@ -728,12 +818,14 @@ const WORDS_DATA_2 = [
     "german": "duschen",
     "english": "to shower",
     "french": "se doucher",
+    "hungarian": "zuhanyozni",
     "symbol": "🚿",
     "sentence_es": "**Me ducho** antes de desayunar.",
     "sentence_it": "**Mi faccio la doccia** prima di fare colazione.",
     "sentence_de": "Ich **dusche**, bevor ich frühstücke.",
     "sentence_en": "I **shower** before having breakfast.",
-    "sentence_fr": "Je **me douche** avant de prendre le petit-déjeuner."
+    "sentence_fr": "Je **me douche** avant de prendre le petit-déjeuner.",
+    "sentence_hu": "Reggeli előtt **zuhanyozom**."
   },
   {
     "spanish": "casarse",
@@ -744,12 +836,14 @@ const WORDS_DATA_2 = [
     "german": "heiraten",
     "english": "to get married",
     "french": "se marier",
+    "hungarian": "összeházasodni",
     "symbol": "💍",
     "sentence_es": "Mis amigos **se casan** en junio.",
     "sentence_it": "I miei amici **si sposano** a giugno.",
     "sentence_de": "Meine Freunde **heiraten** im Juni.",
     "sentence_en": "My friends are **getting married** in June.",
-    "sentence_fr": "Mes amis **se marient** en juin."
+    "sentence_fr": "Mes amis **se marient** en juin.",
+    "sentence_hu": "A barátaim júniusban **összeházasodnak**."
   },
   {
     "spanish": "nacer",
@@ -760,12 +854,14 @@ const WORDS_DATA_2 = [
     "german": "geboren werden",
     "english": "to be born",
     "french": "naître",
+    "hungarian": "születni",
     "symbol": "👶",
     "sentence_es": "Mi sobrino **nació** en abril.",
     "sentence_it": "Mio nipote **è nato** ad aprile.",
     "sentence_de": "Mein Neffe **wurde** im April **geboren**.",
     "sentence_en": "My nephew **was born** in April.",
-    "sentence_fr": "Mon neveu **est né** en avril."
+    "sentence_fr": "Mon neveu **est né** en avril.",
+    "sentence_hu": "Az unokaöcsém áprilisban **született**."
   },
   {
     "spanish": "morir",
@@ -776,12 +872,14 @@ const WORDS_DATA_2 = [
     "german": "sterben",
     "english": "to die",
     "french": "mourir",
+    "hungarian": "meghalni",
     "symbol": "🕊️",
     "sentence_es": "El anciano **murió** en paz.",
     "sentence_it": "L'anziano **è morto** in pace.",
     "sentence_de": "Der alte Mann **starb** friedlich.",
     "sentence_en": "The old man **died** peacefully.",
-    "sentence_fr": "Le vieil homme **est mort** paisiblement."
+    "sentence_fr": "Le vieil homme **est mort** paisiblement.",
+    "sentence_hu": "Az idős férfi békében **halt meg**."
   },
   {
     "spanish": "crecer",
@@ -792,12 +890,14 @@ const WORDS_DATA_2 = [
     "german": "wachsen",
     "english": "to grow",
     "french": "grandir",
+    "hungarian": "nőni",
     "symbol": "🌱",
     "sentence_es": "Las plantas **crecen** rápido en verano.",
     "sentence_it": "Le piante **crescono** in fretta in estate.",
     "sentence_de": "Die Pflanzen **wachsen** im Sommer schnell.",
     "sentence_en": "Plants **grow** fast in summer.",
-    "sentence_fr": "Les plantes **poussent** vite en été."
+    "sentence_fr": "Les plantes **poussent** vite en été.",
+    "sentence_hu": "A növények nyáron gyorsan **nőnek**."
   },
   {
     "spanish": "vivir",
@@ -808,12 +908,14 @@ const WORDS_DATA_2 = [
     "german": "leben / wohnen",
     "english": "to live",
     "french": "vivre / habiter",
+    "hungarian": "élni",
     "symbol": "🏡",
     "sentence_es": "**Vivo** en esta ciudad desde niño.",
     "sentence_it": "**Vivo** in questa città da bambino.",
     "sentence_de": "Ich **lebe** seit meiner Kindheit in dieser Stadt.",
     "sentence_en": "I have **lived** in this city since I was a child.",
-    "sentence_fr": "Je **vis** dans cette ville depuis mon enfance."
+    "sentence_fr": "Je **vis** dans cette ville depuis mon enfance.",
+    "sentence_hu": "Gyerekkorom óta ebben a városban **élek**."
   },
   {
     "spanish": "escribir",
@@ -824,12 +926,14 @@ const WORDS_DATA_2 = [
     "german": "schreiben",
     "english": "to write",
     "french": "écrire",
+    "hungarian": "írni",
     "symbol": "✍️",
     "sentence_es": "**Escribo** una carta a mi abuela.",
     "sentence_it": "**Scrivo** una lettera a mia nonna.",
     "sentence_de": "Ich **schreibe** meiner Großmutter einen Brief.",
     "sentence_en": "I **write** a letter to my grandmother.",
-    "sentence_fr": "J'**écris** une lettre à ma grand-mère."
+    "sentence_fr": "J'**écris** une lettre à ma grand-mère.",
+    "sentence_hu": "Levelet **írok** a nagymamámnak."
   },
   {
     "spanish": "leer",
@@ -840,12 +944,14 @@ const WORDS_DATA_2 = [
     "german": "lesen",
     "english": "to read",
     "french": "lire",
+    "hungarian": "olvasni",
     "symbol": "📖",
     "sentence_es": "**Leo** un libro antes de dormir.",
     "sentence_it": "**Leggo** un libro prima di dormire.",
     "sentence_de": "Ich **lese** ein Buch, bevor ich schlafe.",
     "sentence_en": "I **read** a book before sleeping.",
-    "sentence_fr": "Je **lis** un livre avant de dormir."
+    "sentence_fr": "Je **lis** un livre avant de dormir.",
+    "sentence_hu": "Alvás előtt **olvasok** egy könyvet."
   },
   {
     "spanish": "cantar",
@@ -856,12 +962,14 @@ const WORDS_DATA_2 = [
     "german": "singen",
     "english": "to sing",
     "french": "chanter",
+    "hungarian": "énekelni",
     "symbol": "🎤",
     "sentence_es": "Ella **canta** en la ducha.",
     "sentence_it": "Lei **canta** sotto la doccia.",
     "sentence_de": "Sie **singt** unter der Dusche.",
     "sentence_en": "She **sings** in the shower.",
-    "sentence_fr": "Elle **chante** sous la douche."
+    "sentence_fr": "Elle **chante** sous la douche.",
+    "sentence_hu": "A zuhany alatt **énekel**."
   },
   {
     "spanish": "bailar",
@@ -872,12 +980,14 @@ const WORDS_DATA_2 = [
     "german": "tanzen",
     "english": "to dance",
     "french": "danser",
+    "hungarian": "táncolni",
     "symbol": "💃",
     "sentence_es": "**Bailamos** en la fiesta toda la noche.",
     "sentence_it": "**Balliamo** alla festa tutta la notte.",
     "sentence_de": "Wir **tanzen** die ganze Nacht auf der Party.",
     "sentence_en": "We **dance** all night at the party.",
-    "sentence_fr": "Nous **dansons** toute la nuit à la fête."
+    "sentence_fr": "Nous **dansons** toute la nuit à la fête.",
+    "sentence_hu": "Egész éjjel **táncolunk** a buliban."
   },
   {
     "spanish": "reír",
@@ -888,12 +998,14 @@ const WORDS_DATA_2 = [
     "german": "lachen",
     "english": "to laugh",
     "french": "rire",
+    "hungarian": "nevetni",
     "symbol": "😂",
     "sentence_es": "Los niños **ríen** con la película.",
     "sentence_it": "I bambini **ridono** con il film.",
     "sentence_de": "Die Kinder **lachen** über den Film.",
     "sentence_en": "The children **laugh** at the movie.",
-    "sentence_fr": "Les enfants **rient** devant le film."
+    "sentence_fr": "Les enfants **rient** devant le film.",
+    "sentence_hu": "A gyerekek **nevetnek** a filmen."
   },
   {
     "spanish": "llorar",
@@ -904,12 +1016,14 @@ const WORDS_DATA_2 = [
     "german": "weinen",
     "english": "to cry",
     "french": "pleurer",
+    "hungarian": "sírni",
     "symbol": "😭",
     "sentence_es": "El bebé **llora** por la noche.",
     "sentence_it": "Il bambino **piange** di notte.",
     "sentence_de": "Das Baby **weint** nachts.",
     "sentence_en": "The baby **cries** at night.",
-    "sentence_fr": "Le bébé **pleure** la nuit."
+    "sentence_fr": "Le bébé **pleure** la nuit.",
+    "sentence_hu": "A baba éjszaka **sír**."
   },
   {
     "spanish": "gritar",
@@ -920,12 +1034,14 @@ const WORDS_DATA_2 = [
     "german": "schreien",
     "english": "to shout",
     "french": "crier",
+    "hungarian": "kiabálni",
     "symbol": "📢",
     "sentence_es": "No **grites**, te puedo oír bien.",
     "sentence_it": "Non **gridare**, ti sento bene.",
     "sentence_de": "**Schrei** nicht, ich kann dich gut hören.",
     "sentence_en": "Don't **shout**, I can hear you well.",
-    "sentence_fr": "Ne **crie** pas, je t'entends bien."
+    "sentence_fr": "Ne **crie** pas, je t'entends bien.",
+    "sentence_hu": "Ne **kiabálj**, jól hallak."
   },
   {
     "spanish": "escuchar",
@@ -936,12 +1052,14 @@ const WORDS_DATA_2 = [
     "german": "zuhören",
     "english": "to listen",
     "french": "écouter",
+    "hungarian": "hallgatni",
     "symbol": "👂",
     "sentence_es": "**Escucho** música mientras trabajo.",
     "sentence_it": "**Ascolto** la musica mentre lavoro.",
     "sentence_de": "Ich **höre** Musik, während ich arbeite.",
     "sentence_en": "I **listen** to music while I work.",
-    "sentence_fr": "J'**écoute** de la musique en travaillant."
+    "sentence_fr": "J'**écoute** de la musique en travaillant.",
+    "sentence_hu": "Munka közben zenét **hallgatok**."
   },
   {
     "spanish": "oír",
@@ -952,12 +1070,14 @@ const WORDS_DATA_2 = [
     "german": "hören",
     "english": "to hear",
     "french": "entendre",
+    "hungarian": "hallani",
     "symbol": "👂",
     "sentence_es": "**Oigo** ruido en la calle.",
     "sentence_it": "**Sento** rumore in strada.",
     "sentence_de": "Ich **höre** Lärm auf der Straße.",
     "sentence_en": "I **hear** noise in the street.",
-    "sentence_fr": "J'**entends** du bruit dans la rue."
+    "sentence_fr": "J'**entends** du bruit dans la rue.",
+    "sentence_hu": "Zajt **hallok** az utcán."
   },
   {
     "spanish": "pintar",
@@ -968,12 +1088,14 @@ const WORDS_DATA_2 = [
     "german": "malen",
     "english": "to paint",
     "french": "peindre",
+    "hungarian": "festeni",
     "symbol": "🎨",
     "sentence_es": "**Pinto** las paredes de azul.",
     "sentence_it": "**Dipingo** le pareti di blu.",
     "sentence_de": "Ich **male** die Wände blau.",
     "sentence_en": "I **paint** the walls blue.",
-    "sentence_fr": "Je **peins** les murs en bleu."
+    "sentence_fr": "Je **peins** les murs en bleu.",
+    "sentence_hu": "Kékre **festem** a falakat."
   },
   {
     "spanish": "romper",
@@ -984,12 +1106,14 @@ const WORDS_DATA_2 = [
     "german": "zerbrechen / kaputt machen",
     "english": "to break",
     "french": "casser",
+    "hungarian": "eltörni",
     "symbol": "💔",
     "sentence_es": "**Rompí** el vaso sin querer.",
     "sentence_it": "**Ho rotto** il bicchiere senza volerlo.",
     "sentence_de": "Ich habe das Glas versehentlich **zerbrochen**.",
     "sentence_en": "I **broke** the glass by accident.",
-    "sentence_fr": "J'ai **cassé** le verre par accident."
+    "sentence_fr": "J'ai **cassé** le verre par accident.",
+    "sentence_hu": "Véletlenül **eltörtem** a poharat."
   },
   {
     "spanish": "ayudar",
@@ -1000,12 +1124,14 @@ const WORDS_DATA_2 = [
     "german": "helfen",
     "english": "to help",
     "french": "aider",
+    "hungarian": "segíteni",
     "symbol": "🤝",
     "sentence_es": "**Ayudo** a mi vecino con las bolsas.",
     "sentence_it": "**Aiuto** il mio vicino con le borse.",
     "sentence_de": "Ich **helfe** meinem Nachbarn mit den Taschen.",
     "sentence_en": "I **help** my neighbor with the bags.",
-    "sentence_fr": "J'**aide** mon voisin avec les sacs."
+    "sentence_fr": "J'**aide** mon voisin avec les sacs.",
+    "sentence_hu": "**Segítek** a szomszédomnak a szatyrokkal."
   },
   {
     "spanish": "visitar",
@@ -1016,12 +1142,14 @@ const WORDS_DATA_2 = [
     "german": "besuchen",
     "english": "to visit",
     "french": "visiter / rendre visite à",
+    "hungarian": "meglátogatni",
     "symbol": "🗺️",
     "sentence_es": "**Visitamos** a los abuelos cada domingo.",
     "sentence_it": "**Visitiamo** i nonni ogni domenica.",
     "sentence_de": "Wir **besuchen** jeden Sonntag die Großeltern.",
     "sentence_en": "We **visit** our grandparents every Sunday.",
-    "sentence_fr": "Nous **rendons visite** à nos grands-parents chaque dimanche."
+    "sentence_fr": "Nous **rendons visite** à nos grands-parents chaque dimanche.",
+    "sentence_hu": "Minden vasárnap **meglátogatjuk** a nagyszülőket."
   },
   {
     "spanish": "saludar",
@@ -1032,12 +1160,14 @@ const WORDS_DATA_2 = [
     "german": "grüßen",
     "english": "to greet",
     "french": "saluer",
+    "hungarian": "köszönteni",
     "symbol": "👋",
     "sentence_es": "**Saludo** a mis compañeros cada mañana.",
     "sentence_it": "**Saluto** i miei colleghi ogni mattina.",
     "sentence_de": "Ich **grüße** jeden Morgen meine Kollegen.",
     "sentence_en": "I **greet** my colleagues every morning.",
-    "sentence_fr": "Je **salue** mes collègues chaque matin."
+    "sentence_fr": "Je **salue** mes collègues chaque matin.",
+    "sentence_hu": "Minden reggel **köszönök** a kollégáimnak."
   },
   {
     "spanish": "prometer",
@@ -1048,12 +1178,14 @@ const WORDS_DATA_2 = [
     "german": "versprechen",
     "english": "to promise",
     "french": "promettre",
+    "hungarian": "megígérni",
     "symbol": "🤞",
     "sentence_es": "Te **prometo** que llegaré a tiempo.",
     "sentence_it": "Ti **prometto** che arriverò in tempo.",
     "sentence_de": "Ich **verspreche** dir, dass ich rechtzeitig ankomme.",
     "sentence_en": "I **promise** you I'll arrive on time.",
-    "sentence_fr": "Je te **promets** que j'arriverai à l'heure."
+    "sentence_fr": "Je te **promets** que j'arriverai à l'heure.",
+    "sentence_hu": "**Megígérem**, hogy időben érkezem."
   },
   {
     "spanish": "mentir",
@@ -1064,12 +1196,14 @@ const WORDS_DATA_2 = [
     "german": "lügen",
     "english": "to lie",
     "french": "mentir",
+    "hungarian": "hazudni",
     "symbol": "🤥",
     "sentence_es": "Nunca le **miento** a mi familia.",
     "sentence_it": "Non **mento** mai alla mia famiglia.",
     "sentence_de": "Ich **lüge** meine Familie nie an.",
     "sentence_en": "I never **lie** to my family.",
-    "sentence_fr": "Je ne **mens** jamais à ma famille."
+    "sentence_fr": "Je ne **mens** jamais à ma famille.",
+    "sentence_hu": "Sosem **hazudok** a családomnak."
   },
   {
     "spanish": "decidir",
@@ -1080,12 +1214,14 @@ const WORDS_DATA_2 = [
     "german": "entscheiden",
     "english": "to decide",
     "french": "décider",
+    "hungarian": "eldönteni",
     "symbol": "🧭",
     "sentence_es": "**Decidimos** viajar en tren.",
     "sentence_it": "**Decidiamo** di viaggiare in treno.",
     "sentence_de": "Wir **entscheiden uns**, mit dem Zug zu reisen.",
     "sentence_en": "We **decide** to travel by train.",
-    "sentence_fr": "Nous **décidons** de voyager en train."
+    "sentence_fr": "Nous **décidons** de voyager en train.",
+    "sentence_hu": "**Eldöntjük**, hogy vonattal utazunk."
   },
   {
     "spanish": "recordar",
@@ -1096,12 +1232,14 @@ const WORDS_DATA_2 = [
     "german": "sich erinnern",
     "english": "to remember",
     "french": "se souvenir de",
+    "hungarian": "emlékezni",
     "symbol": "💭",
     "sentence_es": "**Recuerdo** ese verano con cariño.",
     "sentence_it": "**Ricordo** quell'estate con affetto.",
     "sentence_de": "Ich **erinnere mich** gern an diesen Sommer.",
     "sentence_en": "I **remember** that summer fondly.",
-    "sentence_fr": "Je me **souviens** de cet été avec tendresse."
+    "sentence_fr": "Je me **souviens** de cet été avec tendresse.",
+    "sentence_hu": "Szívesen **emlékszem** arra a nyárra."
   },
   {
     "spanish": "aceptar",
@@ -1112,12 +1250,14 @@ const WORDS_DATA_2 = [
     "german": "akzeptieren / annehmen",
     "english": "to accept",
     "french": "accepter",
+    "hungarian": "elfogadni",
     "symbol": "🤝",
     "sentence_es": "**Acepto** tu invitación con gusto.",
     "sentence_it": "**Accetto** volentieri il tuo invito.",
     "sentence_de": "Ich **nehme** deine Einladung gerne **an**.",
     "sentence_en": "I gladly **accept** your invitation.",
-    "sentence_fr": "J'**accepte** ton invitation avec plaisir."
+    "sentence_fr": "J'**accepte** ton invitation avec plaisir.",
+    "sentence_hu": "Örömmel **elfogadom** a meghívásodat."
   },
   {
     "spanish": "terminar",
@@ -1128,12 +1268,14 @@ const WORDS_DATA_2 = [
     "german": "beenden / fertig werden",
     "english": "to finish",
     "french": "terminer / finir",
+    "hungarian": "befejezni",
     "symbol": "🏁",
     "sentence_es": "**Termino** el proyecto esta semana.",
     "sentence_it": "**Finisco** il progetto questa settimana.",
     "sentence_de": "Ich **beende** das Projekt diese Woche.",
     "sentence_en": "I **finish** the project this week.",
-    "sentence_fr": "Je **termine** le projet cette semaine."
+    "sentence_fr": "Je **termine** le projet cette semaine.",
+    "sentence_hu": "Ezen a héten **befejezem** a projektet."
   },
   {
     "spanish": "seguir",
@@ -1144,12 +1286,14 @@ const WORDS_DATA_2 = [
     "german": "folgen / weitermachen",
     "english": "to follow / to continue",
     "french": "suivre / continuer",
+    "hungarian": "követni",
     "symbol": "➡️",
     "sentence_es": "**Sigo** el mismo camino cada día.",
     "sentence_it": "**Seguo** lo stesso percorso ogni giorno.",
     "sentence_de": "Ich **folge** jeden Tag demselben Weg.",
     "sentence_en": "I **follow** the same route every day.",
-    "sentence_fr": "Je **suis** le même chemin chaque jour."
+    "sentence_fr": "Je **suis** le même chemin chaque jour.",
+    "sentence_hu": "Minden nap ugyanazt az utat **követem**."
   },
   {
     "spanish": "la madre",
@@ -1160,12 +1304,14 @@ const WORDS_DATA_2 = [
     "german": "die Mutter",
     "english": "mother",
     "french": "mère",
+    "hungarian": "anya",
     "symbol": "👩",
     "sentence_es": "Mi **madre** cocina muy bien.",
     "sentence_it": "Mia **madre** cucina molto bene.",
     "sentence_de": "Meine **Mutter** kocht sehr gut.",
     "sentence_en": "My **mother** cooks very well.",
-    "sentence_fr": "Ma **mère** cuisine très bien."
+    "sentence_fr": "Ma **mère** cuisine très bien.",
+    "sentence_hu": "**Anyám** nagyon jól főz."
   },
   {
     "spanish": "el padre",
@@ -1176,12 +1322,14 @@ const WORDS_DATA_2 = [
     "german": "der Vater",
     "english": "father",
     "french": "père",
+    "hungarian": "apa",
     "symbol": "👨",
     "sentence_es": "Mi **padre** trabaja en una oficina.",
     "sentence_it": "Mio **padre** lavora in un ufficio.",
     "sentence_de": "Mein **Vater** arbeitet in einem Büro.",
     "sentence_en": "My **father** works in an office.",
-    "sentence_fr": "Mon **père** travaille dans un bureau."
+    "sentence_fr": "Mon **père** travaille dans un bureau.",
+    "sentence_hu": "**Apám** egy irodában dolgozik."
   },
   {
     "spanish": "el hermano",
@@ -1192,12 +1340,14 @@ const WORDS_DATA_2 = [
     "german": "der Bruder",
     "english": "brother",
     "french": "frère",
+    "hungarian": "fiútestvér",
     "symbol": "👦",
     "sentence_es": "Mi **hermano** vive en Madrid.",
     "sentence_it": "Mio **fratello** vive a Madrid.",
     "sentence_de": "Mein **Bruder** lebt in Madrid.",
     "sentence_en": "My **brother** lives in Madrid.",
-    "sentence_fr": "Mon **frère** vit à Madrid."
+    "sentence_fr": "Mon **frère** vit à Madrid.",
+    "sentence_hu": "**Fiútestvérem** Madridban él."
   },
   {
     "spanish": "la hermana",
@@ -1208,12 +1358,14 @@ const WORDS_DATA_2 = [
     "german": "die Schwester",
     "english": "sister",
     "french": "sœur",
+    "hungarian": "lánytestvér",
     "symbol": "👧",
     "sentence_es": "Mi **hermana** estudia derecho.",
     "sentence_it": "Mia **sorella** studia legge.",
     "sentence_de": "Meine **Schwester** studiert Jura.",
     "sentence_en": "My **sister** studies law.",
-    "sentence_fr": "Ma **sœur** étudie le droit."
+    "sentence_fr": "Ma **sœur** étudie le droit.",
+    "sentence_hu": "**Lánytestvérem** jogot tanul."
   },
   {
     "spanish": "el abuelo",
@@ -1224,12 +1376,14 @@ const WORDS_DATA_2 = [
     "german": "der Großvater",
     "english": "grandfather",
     "french": "grand-père",
+    "hungarian": "nagyapa",
     "symbol": "👴",
     "sentence_es": "Mi **abuelo** cuenta buenas historias.",
     "sentence_it": "Mio **nonno** racconta belle storie.",
     "sentence_de": "Mein **Großvater** erzählt gute Geschichten.",
     "sentence_en": "My **grandfather** tells good stories.",
-    "sentence_fr": "Mon **grand-père** raconte de bonnes histoires."
+    "sentence_fr": "Mon **grand-père** raconte de bonnes histoires.",
+    "sentence_hu": "**Nagyapám** jó történeteket mesél."
   },
   {
     "spanish": "la abuela",
@@ -1240,12 +1394,14 @@ const WORDS_DATA_2 = [
     "german": "die Großmutter",
     "english": "grandmother",
     "french": "grand-mère",
+    "hungarian": "nagymama",
     "symbol": "👵",
     "sentence_es": "Mi **abuela** hace pan casero.",
     "sentence_it": "Mia **nonna** fa il pane fatto in casa.",
     "sentence_de": "Meine **Großmutter** backt hausgemachtes Brot.",
     "sentence_en": "My **grandmother** makes homemade bread.",
-    "sentence_fr": "Ma **grand-mère** fait du pain maison."
+    "sentence_fr": "Ma **grand-mère** fait du pain maison.",
+    "sentence_hu": "**Nagymamám** otthon süt kenyeret."
   },
   {
     "spanish": "el hijo",
@@ -1256,12 +1412,14 @@ const WORDS_DATA_2 = [
     "german": "der Sohn",
     "english": "son",
     "french": "fils",
+    "hungarian": "fiú",
     "symbol": "👦",
     "sentence_es": "Su **hijo** juega al fútbol.",
     "sentence_it": "Suo **figlio** gioca a calcio.",
     "sentence_de": "Sein **Sohn** spielt Fußball.",
     "sentence_en": "His **son** plays soccer.",
-    "sentence_fr": "Son **fils** joue au foot."
+    "sentence_fr": "Son **fils** joue au foot.",
+    "sentence_hu": "A **fia** focizik."
   },
   {
     "spanish": "la hija",
@@ -1272,12 +1430,14 @@ const WORDS_DATA_2 = [
     "german": "die Tochter",
     "english": "daughter",
     "french": "fille",
+    "hungarian": "lány",
     "symbol": "👧",
     "sentence_es": "Su **hija** toca el piano.",
     "sentence_it": "Sua **figlia** suona il piano.",
     "sentence_de": "Seine **Tochter** spielt Klavier.",
     "sentence_en": "His **daughter** plays the piano.",
-    "sentence_fr": "Sa **fille** joue du piano."
+    "sentence_fr": "Sa **fille** joue du piano.",
+    "sentence_hu": "A **lánya** zongorázik."
   },
   {
     "spanish": "el esposo",
@@ -1288,12 +1448,14 @@ const WORDS_DATA_2 = [
     "german": "der Ehemann",
     "english": "husband",
     "french": "mari",
+    "hungarian": "férj",
     "symbol": "🤵",
     "sentence_es": "Su **esposo** trabaja de noche.",
     "sentence_it": "Suo **marito** lavora di notte.",
     "sentence_de": "Ihr **Ehemann** arbeitet nachts.",
     "sentence_en": "Her **husband** works at night.",
-    "sentence_fr": "Son **mari** travaille la nuit."
+    "sentence_fr": "Son **mari** travaille la nuit.",
+    "sentence_hu": "A **férje** éjszaka dolgozik."
   },
   {
     "spanish": "la esposa",
@@ -1304,12 +1466,14 @@ const WORDS_DATA_2 = [
     "german": "die Ehefrau",
     "english": "wife",
     "french": "épouse",
+    "hungarian": "feleség",
     "symbol": "👰",
     "sentence_es": "Su **esposa** es profesora.",
     "sentence_it": "Sua **moglie** è insegnante.",
     "sentence_de": "Seine **Ehefrau** ist Lehrerin.",
     "sentence_en": "His **wife** is a teacher.",
-    "sentence_fr": "Son **épouse** est enseignante."
+    "sentence_fr": "Son **épouse** est enseignante.",
+    "sentence_hu": "A **felesége** tanárnő."
   },
   {
     "spanish": "el día",
@@ -1320,12 +1484,14 @@ const WORDS_DATA_2 = [
     "german": "der Tag",
     "english": "day",
     "french": "jour",
+    "hungarian": "nap",
     "symbol": "📅",
     "sentence_es": "Hoy es un buen **día**.",
     "sentence_it": "Oggi è una bella **giornata**.",
     "sentence_de": "Heute ist ein guter **Tag**.",
     "sentence_en": "Today is a good **day**.",
-    "sentence_fr": "Aujourd'hui est un bon **jour**."
+    "sentence_fr": "Aujourd'hui est un bon **jour**.",
+    "sentence_hu": "Ma jó **nap** van."
   },
   {
     "spanish": "la noche",
@@ -1336,12 +1502,14 @@ const WORDS_DATA_2 = [
     "german": "die Nacht",
     "english": "night",
     "french": "nuit",
+    "hungarian": "éjszaka",
     "symbol": "🌙",
     "sentence_es": "Las estrellas salen por la **noche**.",
     "sentence_it": "Le stelle escono di **notte**.",
     "sentence_de": "Die Sterne kommen in der **Nacht** heraus.",
     "sentence_en": "The stars come out at **night**.",
-    "sentence_fr": "Les étoiles sortent la **nuit**."
+    "sentence_fr": "Les étoiles sortent la **nuit**.",
+    "sentence_hu": "A csillagok **éjszaka** jönnek elő."
   },
   {
     "spanish": "la semana",
@@ -1352,12 +1520,14 @@ const WORDS_DATA_2 = [
     "german": "die Woche",
     "english": "week",
     "french": "semaine",
+    "hungarian": "hét",
     "symbol": "📅",
     "sentence_es": "Trabajo cinco días a la **semana**.",
     "sentence_it": "Lavoro cinque giorni alla **settimana**.",
     "sentence_de": "Ich arbeite fünf Tage die **Woche**.",
     "sentence_en": "I work five days a **week**.",
-    "sentence_fr": "Je travaille cinq jours par **semaine**."
+    "sentence_fr": "Je travaille cinq jours par **semaine**.",
+    "sentence_hu": "Öt napot dolgozom egy **héten**."
   },
   {
     "spanish": "el mes",
@@ -1368,12 +1538,14 @@ const WORDS_DATA_2 = [
     "german": "der Monat",
     "english": "month",
     "french": "mois",
+    "hungarian": "hónap",
     "symbol": "📅",
     "sentence_es": "Nos vemos el próximo **mes**.",
     "sentence_it": "Ci vediamo il prossimo **mese**.",
     "sentence_de": "Wir sehen uns nächsten **Monat**.",
     "sentence_en": "We'll see each other next **month**.",
-    "sentence_fr": "On se voit le **mois** prochain."
+    "sentence_fr": "On se voit le **mois** prochain.",
+    "sentence_hu": "Jövő **hónapban** találkozunk."
   },
   {
     "spanish": "el año",
@@ -1384,12 +1556,14 @@ const WORDS_DATA_2 = [
     "german": "das Jahr",
     "english": "year",
     "french": "an / année",
+    "hungarian": "év",
     "symbol": "🎆",
     "sentence_es": "Este **año** viajamos a Francia.",
     "sentence_it": "Quest'**anno** viaggiamo in Francia.",
     "sentence_de": "Dieses **Jahr** reisen wir nach Frankreich.",
     "sentence_en": "This **year** we're traveling to France.",
-    "sentence_fr": "Cette **année**, nous voyageons en France."
+    "sentence_fr": "Cette **année**, nous voyageons en France.",
+    "sentence_hu": "Ebben az **évben** Franciaországba utazunk."
   },
   {
     "spanish": "la hora",
@@ -1400,12 +1574,14 @@ const WORDS_DATA_2 = [
     "german": "die Stunde / die Uhrzeit",
     "english": "hour / time",
     "french": "heure",
+    "hungarian": "óra",
     "symbol": "⏰",
     "sentence_es": "¿Puedes decirme la **hora**?",
     "sentence_it": "Puoi dirmi l'**ora**?",
     "sentence_de": "Kannst du mir die **Uhrzeit** sagen?",
     "sentence_en": "Can you tell me the **time**?",
-    "sentence_fr": "Peux-tu me dire l'**heure** ?"
+    "sentence_fr": "Peux-tu me dire l'**heure** ?",
+    "sentence_hu": "Meg tudod mondani, hány **óra** van?"
   },
   {
     "spanish": "el médico",
@@ -1416,12 +1592,14 @@ const WORDS_DATA_2 = [
     "german": "der Arzt",
     "english": "doctor",
     "french": "médecin",
+    "hungarian": "orvos",
     "symbol": "👨‍⚕️",
     "sentence_es": "El **médico** revisa a los pacientes.",
     "sentence_it": "Il **medico** visita i pazienti.",
     "sentence_de": "Der **Arzt** untersucht die Patienten.",
     "sentence_en": "The **doctor** examines the patients.",
-    "sentence_fr": "Le **médecin** examine les patients."
+    "sentence_fr": "Le **médecin** examine les patients.",
+    "sentence_hu": "Az **orvos** megvizsgálja a betegeket."
   },
   {
     "spanish": "el profesor",
@@ -1432,12 +1610,14 @@ const WORDS_DATA_2 = [
     "german": "der Lehrer",
     "english": "teacher",
     "french": "professeur",
+    "hungarian": "tanár",
     "symbol": "👨‍🏫",
     "sentence_es": "El **profesor** explica la lección.",
     "sentence_it": "Il **professore** spiega la lezione.",
     "sentence_de": "Der **Lehrer** erklärt die Lektion.",
     "sentence_en": "The **teacher** explains the lesson.",
-    "sentence_fr": "Le **professeur** explique la leçon."
+    "sentence_fr": "Le **professeur** explique la leçon.",
+    "sentence_hu": "A **tanár** elmagyarázza a leckét."
   },
   {
     "spanish": "el estudiante",
@@ -1448,12 +1628,14 @@ const WORDS_DATA_2 = [
     "german": "der Student / die Studentin",
     "english": "student",
     "french": "étudiant(e)",
+    "hungarian": "diák",
     "symbol": "🎓",
     "sentence_es": "El **estudiante** llega temprano a clase.",
     "sentence_it": "Lo **studente** arriva presto a lezione.",
     "sentence_de": "Der **Student** kommt früh zum Unterricht.",
     "sentence_en": "The **student** arrives early to class.",
-    "sentence_fr": "L'**étudiant** arrive tôt en classe."
+    "sentence_fr": "L'**étudiant** arrive tôt en classe.",
+    "sentence_hu": "A **diák** korán érkezik az órára."
   },
   {
     "spanish": "el amigo",
@@ -1464,12 +1646,14 @@ const WORDS_DATA_2 = [
     "german": "der Freund",
     "english": "friend",
     "french": "ami",
+    "hungarian": "barát",
     "symbol": "🧑‍🤝‍🧑",
     "sentence_es": "Mi **amigo** vive cerca de aquí.",
     "sentence_it": "Il mio **amico** vive vicino a qui.",
     "sentence_de": "Mein **Freund** wohnt hier in der Nähe.",
     "sentence_en": "My **friend** lives near here.",
-    "sentence_fr": "Mon **ami** habite près d'ici."
+    "sentence_fr": "Mon **ami** habite près d'ici.",
+    "sentence_hu": "A **barátom** a közelben lakik."
   },
   {
     "spanish": "el vecino",
@@ -1480,12 +1664,14 @@ const WORDS_DATA_2 = [
     "german": "der Nachbar",
     "english": "neighbor",
     "french": "voisin",
+    "hungarian": "szomszéd",
     "symbol": "🏘️",
     "sentence_es": "Mi **vecino** riega las plantas.",
     "sentence_it": "Il mio **vicino** annaffia le piante.",
     "sentence_de": "Mein **Nachbar** gießt die Pflanzen.",
     "sentence_en": "My **neighbor** waters the plants.",
-    "sentence_fr": "Mon **voisin** arrose les plantes."
+    "sentence_fr": "Mon **voisin** arrose les plantes.",
+    "sentence_hu": "A **szomszédom** locsolja a növényeket."
   },
   {
     "spanish": "el policía",
@@ -1496,12 +1682,14 @@ const WORDS_DATA_2 = [
     "german": "der Polizist / die Polizistin",
     "english": "police officer",
     "french": "policier / policière",
+    "hungarian": "rendőr",
     "symbol": "👮",
     "sentence_es": "El **policía** dirige el tráfico.",
     "sentence_it": "Il **poliziotto** dirige il traffico.",
     "sentence_de": "Der **Polizist** regelt den Verkehr.",
     "sentence_en": "The **police officer** directs traffic.",
-    "sentence_fr": "Le **policier** dirige la circulation."
+    "sentence_fr": "Le **policier** dirige la circulation.",
+    "sentence_hu": "A **rendőr** irányítja a forgalmat."
   },
   {
     "spanish": "la ciudad",
@@ -1512,12 +1700,14 @@ const WORDS_DATA_2 = [
     "german": "die Stadt",
     "english": "city",
     "french": "ville",
+    "hungarian": "város",
     "symbol": "🏙️",
     "sentence_es": "Esta **ciudad** tiene mucha historia.",
     "sentence_it": "Questa **città** ha molta storia.",
     "sentence_de": "Diese **Stadt** hat viel Geschichte.",
     "sentence_en": "This **city** has a lot of history.",
-    "sentence_fr": "Cette **ville** a beaucoup d'histoire."
+    "sentence_fr": "Cette **ville** a beaucoup d'histoire.",
+    "sentence_hu": "Ennek a **városnak** nagy története van."
   },
   {
     "spanish": "el país",
@@ -1528,12 +1718,14 @@ const WORDS_DATA_2 = [
     "german": "das Land",
     "english": "country",
     "french": "pays",
+    "hungarian": "ország",
     "symbol": "🌎",
     "sentence_es": "Mi **país** tiene playas hermosas.",
     "sentence_it": "Il mio **paese** ha spiagge bellissime.",
     "sentence_de": "Mein **Land** hat wunderschöne Strände.",
     "sentence_en": "My **country** has beautiful beaches.",
-    "sentence_fr": "Mon **pays** a de belles plages."
+    "sentence_fr": "Mon **pays** a de belles plages.",
+    "sentence_hu": "Az **országomban** gyönyörű strandok vannak."
   },
   {
     "spanish": "el pueblo",
@@ -1544,12 +1736,14 @@ const WORDS_DATA_2 = [
     "german": "das Dorf",
     "english": "town / village",
     "french": "village",
+    "hungarian": "falu",
     "symbol": "🏘️",
     "sentence_es": "Mis abuelos viven en un **pueblo** pequeño.",
     "sentence_it": "I miei nonni vivono in un **paese** piccolo.",
     "sentence_de": "Meine Großeltern leben in einem kleinen **Dorf**.",
     "sentence_en": "My grandparents live in a small **town**.",
-    "sentence_fr": "Mes grands-parents vivent dans un petit **village**."
+    "sentence_fr": "Mes grands-parents vivent dans un petit **village**.",
+    "sentence_hu": "A nagyszüleim egy kis **faluban** élnek."
   },
   {
     "spanish": "la calle",
@@ -1560,12 +1754,14 @@ const WORDS_DATA_2 = [
     "german": "die Straße",
     "english": "street",
     "french": "rue",
+    "hungarian": "utca",
     "symbol": "🛣️",
     "sentence_es": "Vivo en esta **calle** desde hace años.",
     "sentence_it": "Vivo in questa **via** da anni.",
     "sentence_de": "Ich wohne seit Jahren in dieser **Straße**.",
     "sentence_en": "I've lived on this **street** for years.",
-    "sentence_fr": "J'habite dans cette **rue** depuis des années."
+    "sentence_fr": "J'habite dans cette **rue** depuis des années.",
+    "sentence_hu": "Évek óta ebben az **utcában** lakom."
   },
   {
     "spanish": "la escuela",
@@ -1576,12 +1772,14 @@ const WORDS_DATA_2 = [
     "german": "die Schule",
     "english": "school",
     "french": "école",
+    "hungarian": "iskola",
     "symbol": "🏫",
     "sentence_es": "Los niños van a la **escuela** a pie.",
     "sentence_it": "I bambini vanno a **scuola** a piedi.",
     "sentence_de": "Die Kinder gehen zu Fuß zur **Schule**.",
     "sentence_en": "The children walk to **school**.",
-    "sentence_fr": "Les enfants vont à l'**école** à pied."
+    "sentence_fr": "Les enfants vont à l'**école** à pied.",
+    "sentence_hu": "A gyerekek gyalog mennek az **iskolába**."
   },
   {
     "spanish": "el hospital",
@@ -1592,12 +1790,14 @@ const WORDS_DATA_2 = [
     "german": "das Krankenhaus",
     "english": "hospital",
     "french": "hôpital",
+    "hungarian": "kórház",
     "symbol": "🏥",
     "sentence_es": "Nació en este **hospital**.",
     "sentence_it": "È nato in questo **ospedale**.",
     "sentence_de": "Er wurde in diesem **Krankenhaus** geboren.",
     "sentence_en": "He was born in this **hospital**.",
-    "sentence_fr": "Il est né dans cet **hôpital**."
+    "sentence_fr": "Il est né dans cet **hôpital**.",
+    "sentence_hu": "Ebben a **kórházban** született."
   },
   {
     "spanish": "la oficina",
@@ -1608,12 +1808,14 @@ const WORDS_DATA_2 = [
     "german": "das Büro",
     "english": "office",
     "french": "bureau",
+    "hungarian": "iroda",
     "symbol": "🏢",
     "sentence_es": "Llego a la **oficina** a las nueve.",
     "sentence_it": "Arrivo in **ufficio** alle nove.",
     "sentence_de": "Ich komme um neun Uhr im **Büro** an.",
     "sentence_en": "I get to the **office** at nine.",
-    "sentence_fr": "J'arrive au **bureau** à neuf heures."
+    "sentence_fr": "J'arrive au **bureau** à neuf heures.",
+    "sentence_hu": "Kilenckor érek az **irodába**."
   },
   {
     "spanish": "la playa",
@@ -1624,12 +1826,14 @@ const WORDS_DATA_2 = [
     "german": "der Strand",
     "english": "beach",
     "french": "plage",
+    "hungarian": "strand",
     "symbol": "🏖️",
     "sentence_es": "Nadamos en la **playa** todo el día.",
     "sentence_it": "Nuotiamo in **spiaggia** tutto il giorno.",
     "sentence_de": "Wir schwimmen den ganzen Tag am **Strand**.",
     "sentence_en": "We swim at the **beach** all day.",
-    "sentence_fr": "Nous nageons à la **plage** toute la journée."
+    "sentence_fr": "Nous nageons à la **plage** toute la journée.",
+    "sentence_hu": "Egész nap a **strandon** úszunk."
   },
   {
     "spanish": "la montaña",
@@ -1640,12 +1844,14 @@ const WORDS_DATA_2 = [
     "german": "der Berg",
     "english": "mountain",
     "french": "montagne",
+    "hungarian": "hegy",
     "symbol": "⛰️",
     "sentence_es": "Subimos a la **montaña** en verano.",
     "sentence_it": "Saliamo sulla **montagna** in estate.",
     "sentence_de": "Wir besteigen den **Berg** im Sommer.",
     "sentence_en": "We climb the **mountain** in summer.",
-    "sentence_fr": "Nous gravissons la **montagne** en été."
+    "sentence_fr": "Nous gravissons la **montagne** en été.",
+    "sentence_hu": "Nyáron felmegyünk a **hegyre**."
   },
   {
     "spanish": "el río",
@@ -1656,12 +1862,14 @@ const WORDS_DATA_2 = [
     "german": "der Fluss",
     "english": "river",
     "french": "rivière / fleuve",
+    "hungarian": "folyó",
     "symbol": "🏞️",
     "sentence_es": "El **río** pasa por el centro del pueblo.",
     "sentence_it": "Il **fiume** attraversa il centro del paese.",
     "sentence_de": "Der **Fluss** fließt durch die Dorfmitte.",
     "sentence_en": "The **river** runs through the center of town.",
-    "sentence_fr": "La **rivière** traverse le centre du village."
+    "sentence_fr": "La **rivière** traverse le centre du village.",
+    "sentence_hu": "A **folyó** a falu közepén folyik át."
   },
   {
     "spanish": "la casa",
@@ -1672,12 +1880,14 @@ const WORDS_DATA_2 = [
     "german": "das Haus",
     "english": "house",
     "french": "maison",
+    "hungarian": "ház",
     "symbol": "🏠",
     "sentence_es": "Mi **casa** tiene un jardín pequeño.",
     "sentence_it": "La mia **casa** ha un piccolo giardino.",
     "sentence_de": "Mein **Haus** hat einen kleinen Garten.",
     "sentence_en": "My **house** has a small garden.",
-    "sentence_fr": "Ma **maison** a un petit jardin."
+    "sentence_fr": "Ma **maison** a un petit jardin.",
+    "sentence_hu": "A **házamnak** kicsi kertje van."
   },
   {
     "spanish": "el cuerpo",
@@ -1688,12 +1898,14 @@ const WORDS_DATA_2 = [
     "german": "der Körper",
     "english": "body",
     "french": "corps",
+    "hungarian": "test",
     "symbol": "🧍",
     "sentence_es": "El ejercicio es bueno para el **cuerpo**.",
     "sentence_it": "L'esercizio fa bene al **corpo**.",
     "sentence_de": "Sport ist gut für den **Körper**.",
     "sentence_en": "Exercise is good for the **body**.",
-    "sentence_fr": "L'exercice est bon pour le **corps**."
+    "sentence_fr": "L'exercice est bon pour le **corps**.",
+    "sentence_hu": "A testmozgás jót tesz a **testnek**."
   },
   {
     "spanish": "la cabeza",
@@ -1704,12 +1916,14 @@ const WORDS_DATA_2 = [
     "german": "der Kopf",
     "english": "head",
     "french": "tête",
+    "hungarian": "fej",
     "symbol": "🙂",
     "sentence_es": "Me duele la **cabeza** hoy.",
     "sentence_it": "Mi fa male la **testa** oggi.",
     "sentence_de": "Mir tut heute der **Kopf** weh.",
     "sentence_en": "My **head** hurts today.",
-    "sentence_fr": "J'ai mal à la **tête** aujourd'hui."
+    "sentence_fr": "J'ai mal à la **tête** aujourd'hui.",
+    "sentence_hu": "Ma fáj a **fejem**."
   },
   {
     "spanish": "la mano",
@@ -1720,12 +1934,14 @@ const WORDS_DATA_2 = [
     "german": "die Hand",
     "english": "hand",
     "french": "main",
+    "hungarian": "kéz",
     "symbol": "✋",
     "sentence_es": "Se lava las **manos** antes de comer.",
     "sentence_it": "Si lava le **mani** prima di mangiare.",
     "sentence_de": "Er wäscht sich vor dem Essen die **Hände**.",
     "sentence_en": "He washes his **hands** before eating.",
-    "sentence_fr": "Il se lave les **mains** avant de manger."
+    "sentence_fr": "Il se lave les **mains** avant de manger.",
+    "sentence_hu": "Evés előtt megmossa a **kezét**."
   },
   {
     "spanish": "el pie",
@@ -1736,12 +1952,14 @@ const WORDS_DATA_2 = [
     "german": "der Fuß",
     "english": "foot",
     "french": "pied",
+    "hungarian": "láb",
     "symbol": "🦶",
     "sentence_es": "Me duele el **pie** izquierdo.",
     "sentence_it": "Mi fa male il **piede** sinistro.",
     "sentence_de": "Mein linker **Fuß** tut weh.",
     "sentence_en": "My left **foot** hurts.",
-    "sentence_fr": "J'ai mal au **pied** gauche."
+    "sentence_fr": "J'ai mal au **pied** gauche.",
+    "sentence_hu": "Fáj a bal **lábam**."
   },
   {
     "spanish": "el ojo",
@@ -1752,12 +1970,14 @@ const WORDS_DATA_2 = [
     "german": "das Auge",
     "english": "eye",
     "french": "œil",
+    "hungarian": "szem",
     "symbol": "👁️",
     "sentence_es": "Tiene los **ojos** verdes.",
     "sentence_it": "Ha gli **occhi** verdi.",
     "sentence_de": "Sie hat grüne **Augen**.",
     "sentence_en": "She has green **eyes**.",
-    "sentence_fr": "Elle a les **yeux** verts."
+    "sentence_fr": "Elle a les **yeux** verts.",
+    "sentence_hu": "Zöld **szeme** van."
   },
   {
     "spanish": "la oreja",
@@ -1768,12 +1988,14 @@ const WORDS_DATA_2 = [
     "german": "das Ohr",
     "english": "ear",
     "french": "oreille",
+    "hungarian": "fül",
     "symbol": "👂",
     "sentence_es": "Le duele la **oreja** derecha.",
     "sentence_it": "Gli fa male l'**orecchio** destro.",
     "sentence_de": "Sein rechtes **Ohr** tut weh.",
     "sentence_en": "His right **ear** hurts.",
-    "sentence_fr": "Son **oreille** droite lui fait mal."
+    "sentence_fr": "Son **oreille** droite lui fait mal.",
+    "sentence_hu": "Fáj a jobb **füle**."
   },
   {
     "spanish": "la nariz",
@@ -1784,12 +2006,14 @@ const WORDS_DATA_2 = [
     "german": "die Nase",
     "english": "nose",
     "french": "nez",
+    "hungarian": "orr",
     "symbol": "👃",
     "sentence_es": "El payaso tiene una **nariz** roja.",
     "sentence_it": "Il pagliaccio ha un **naso** rosso.",
     "sentence_de": "Der Clown hat eine rote **Nase**.",
     "sentence_en": "The clown has a red **nose**.",
-    "sentence_fr": "Le clown a un **nez** rouge."
+    "sentence_fr": "Le clown a un **nez** rouge.",
+    "sentence_hu": "A bohócnak piros **orra** van."
   },
   {
     "spanish": "la boca",
@@ -1800,12 +2024,14 @@ const WORDS_DATA_2 = [
     "german": "der Mund",
     "english": "mouth",
     "french": "bouche",
+    "hungarian": "száj",
     "symbol": "👄",
     "sentence_es": "Abre la **boca** para el médico.",
     "sentence_it": "Apri la **bocca** per il medico.",
     "sentence_de": "Öffne den **Mund** für den Arzt.",
     "sentence_en": "Open your **mouth** for the doctor.",
-    "sentence_fr": "Ouvre la **bouche** pour le médecin."
+    "sentence_fr": "Ouvre la **bouche** pour le médecin.",
+    "sentence_hu": "Nyisd ki a **szádat** az orvosnak."
   },
   {
     "spanish": "el sol",
@@ -1816,12 +2042,14 @@ const WORDS_DATA_2 = [
     "german": "die Sonne",
     "english": "sun",
     "french": "soleil",
+    "hungarian": "nap",
     "symbol": "☀️",
     "sentence_es": "El **sol** brilla esta mañana.",
     "sentence_it": "Il **sole** splende questa mattina.",
     "sentence_de": "Die **Sonne** scheint heute Morgen.",
     "sentence_en": "The **sun** is shining this morning.",
-    "sentence_fr": "Le **soleil** brille ce matin."
+    "sentence_fr": "Le **soleil** brille ce matin.",
+    "sentence_hu": "A **nap** ma reggel süt."
   },
   {
     "spanish": "la luna",
@@ -1832,12 +2060,14 @@ const WORDS_DATA_2 = [
     "german": "der Mond",
     "english": "moon",
     "french": "lune",
+    "hungarian": "hold",
     "symbol": "🌙",
     "sentence_es": "La **luna** está llena esta noche.",
     "sentence_it": "La **luna** è piena stanotte.",
     "sentence_de": "Der **Mond** ist heute Nacht voll.",
     "sentence_en": "The **moon** is full tonight.",
-    "sentence_fr": "La **lune** est pleine ce soir."
+    "sentence_fr": "La **lune** est pleine ce soir.",
+    "sentence_hu": "A **hold** ma este tele van."
   },
   {
     "spanish": "la estrella",
@@ -1848,12 +2078,14 @@ const WORDS_DATA_2 = [
     "german": "der Stern",
     "english": "star",
     "french": "étoile",
+    "hungarian": "csillag",
     "symbol": "⭐",
     "sentence_es": "En el cielo brilla una **estrella**.",
     "sentence_it": "Nel cielo brilla una **stella**.",
     "sentence_de": "Am Himmel leuchtet ein heller **Stern**.",
     "sentence_en": "A bright **star** shines in the sky.",
-    "sentence_fr": "Une **étoile** brille dans le ciel."
+    "sentence_fr": "Une **étoile** brille dans le ciel.",
+    "sentence_hu": "Egy fényes **csillag** ragyog az égen."
   },
   {
     "spanish": "el viento",
@@ -1864,12 +2096,14 @@ const WORDS_DATA_2 = [
     "german": "der Wind",
     "english": "wind",
     "french": "vent",
+    "hungarian": "szél",
     "symbol": "💨",
     "sentence_es": "El **viento** mueve las hojas.",
     "sentence_it": "Il **vento** muove le foglie.",
     "sentence_de": "Der **Wind** bewegt die Blätter.",
     "sentence_en": "The **wind** moves the leaves.",
-    "sentence_fr": "Le **vent** fait bouger les feuilles."
+    "sentence_fr": "Le **vent** fait bouger les feuilles.",
+    "sentence_hu": "A **szél** mozgatja a leveleket."
   },
   {
     "spanish": "el fuego",
@@ -1880,12 +2114,14 @@ const WORDS_DATA_2 = [
     "german": "das Feuer",
     "english": "fire",
     "french": "feu",
+    "hungarian": "tűz",
     "symbol": "🔥",
     "sentence_es": "Encendemos el **fuego** en la chimenea.",
     "sentence_it": "Accendiamo il **fuoco** nel camino.",
     "sentence_de": "Wir machen im Kamin **Feuer**.",
     "sentence_en": "We light the **fire** in the fireplace.",
-    "sentence_fr": "Nous allumons le **feu** dans la cheminée."
+    "sentence_fr": "Nous allumons le **feu** dans la cheminée.",
+    "sentence_hu": "**Tüzet** gyújtunk a kandallóban."
   },
   {
     "spanish": "el cielo",
@@ -1896,12 +2132,14 @@ const WORDS_DATA_2 = [
     "german": "der Himmel",
     "english": "sky",
     "french": "ciel",
+    "hungarian": "ég",
     "symbol": "🌤️",
     "sentence_es": "El **cielo** está despejado hoy.",
     "sentence_it": "Il **cielo** è sereno oggi.",
     "sentence_de": "Der **Himmel** ist heute klar.",
     "sentence_en": "The **sky** is clear today.",
-    "sentence_fr": "Le **ciel** est dégagé aujourd'hui."
+    "sentence_fr": "Le **ciel** est dégagé aujourd'hui.",
+    "sentence_hu": "Ma tiszta az **ég**."
   },
   {
     "spanish": "el teléfono",
@@ -1912,12 +2150,14 @@ const WORDS_DATA_2 = [
     "german": "das Telefon",
     "english": "telephone",
     "french": "téléphone",
+    "hungarian": "telefon",
     "symbol": "📱",
     "sentence_es": "Mi **teléfono** está sonando.",
     "sentence_it": "Il mio **telefono** sta squillando.",
     "sentence_de": "Mein **Telefon** klingelt.",
     "sentence_en": "My **telephone** is ringing.",
-    "sentence_fr": "Mon **téléphone** sonne."
+    "sentence_fr": "Mon **téléphone** sonne.",
+    "sentence_hu": "Cseng a **telefonom**."
   },
   {
     "spanish": "la computadora",
@@ -1928,12 +2168,14 @@ const WORDS_DATA_2 = [
     "german": "der Computer",
     "english": "computer",
     "french": "ordinateur",
+    "hungarian": "számítógép",
     "symbol": "💻",
     "sentence_es": "Trabajo con la **computadora** todo el día.",
     "sentence_it": "Lavoro con il **computer** tutto il giorno.",
     "sentence_de": "Ich arbeite den ganzen Tag am **Computer**.",
     "sentence_en": "I work on the **computer** all day.",
-    "sentence_fr": "Je travaille sur l'**ordinateur** toute la journée."
+    "sentence_fr": "Je travaille sur l'**ordinateur** toute la journée.",
+    "sentence_hu": "Egész nap a **számítógépen** dolgozom."
   },
   {
     "spanish": "el libro",
@@ -1944,12 +2186,14 @@ const WORDS_DATA_2 = [
     "german": "das Buch",
     "english": "book",
     "french": "livre",
+    "hungarian": "könyv",
     "symbol": "📖",
     "sentence_es": "Este **libro** es muy interesante.",
     "sentence_it": "Questo **libro** è molto interessante.",
     "sentence_de": "Dieses **Buch** ist sehr interessant.",
     "sentence_en": "This **book** is very interesting.",
-    "sentence_fr": "Ce **livre** est très intéressant."
+    "sentence_fr": "Ce **livre** est très intéressant.",
+    "sentence_hu": "Ez a **könyv** nagyon érdekes."
   },
   {
     "spanish": "el papel",
@@ -1960,12 +2204,14 @@ const WORDS_DATA_2 = [
     "german": "das Papier",
     "english": "paper",
     "french": "papier",
+    "hungarian": "papír",
     "symbol": "📄",
     "sentence_es": "Escribo la lista en un **papel**.",
     "sentence_it": "Scrivo la lista su un **foglio**.",
     "sentence_de": "Ich schreibe die Liste auf ein **Papier**.",
     "sentence_en": "I write the list on a **piece of paper**.",
-    "sentence_fr": "J'écris la liste sur un **papier**."
+    "sentence_fr": "J'écris la liste sur un **papier**.",
+    "sentence_hu": "A listát egy **papírra** írom."
   },
   {
     "spanish": "el dinero",
@@ -1976,12 +2222,14 @@ const WORDS_DATA_2 = [
     "german": "das Geld",
     "english": "money",
     "french": "argent",
+    "hungarian": "pénz",
     "symbol": "💰",
     "sentence_es": "No tengo suficiente **dinero**.",
     "sentence_it": "Non ho abbastanza **denaro**.",
     "sentence_de": "Ich habe nicht genug **Geld**.",
     "sentence_en": "I don't have enough **money**.",
-    "sentence_fr": "Je n'ai pas assez d'**argent**."
+    "sentence_fr": "Je n'ai pas assez d'**argent**.",
+    "sentence_hu": "Nincs elég **pénzem**."
   },
   {
     "spanish": "el tren",
@@ -1992,12 +2240,14 @@ const WORDS_DATA_2 = [
     "german": "der Zug",
     "english": "train",
     "french": "train",
+    "hungarian": "vonat",
     "symbol": "🚆",
     "sentence_es": "El **tren** sale a las diez.",
     "sentence_it": "Il **treno** parte alle dieci.",
     "sentence_de": "Der **Zug** fährt um zehn Uhr ab.",
     "sentence_en": "The **train** leaves at ten.",
-    "sentence_fr": "Le **train** part à dix heures."
+    "sentence_fr": "Le **train** part à dix heures.",
+    "sentence_hu": "A **vonat** tízkor indul."
   },
   {
     "spanish": "el avión",
@@ -2008,12 +2258,14 @@ const WORDS_DATA_2 = [
     "german": "das Flugzeug",
     "english": "airplane",
     "french": "avion",
+    "hungarian": "repülőgép",
     "symbol": "✈️",
     "sentence_es": "El **avión** aterriza a tiempo.",
     "sentence_it": "L'**aereo** atterra in orario.",
     "sentence_de": "Das **Flugzeug** landet pünktlich.",
     "sentence_en": "The **airplane** lands on time.",
-    "sentence_fr": "L'**avion** atterrit à l'heure."
+    "sentence_fr": "L'**avion** atterrit à l'heure.",
+    "sentence_hu": "A **repülőgép** időben landol."
   },
   {
     "spanish": "el autobús",
@@ -2024,12 +2276,14 @@ const WORDS_DATA_2 = [
     "german": "der Bus",
     "english": "bus",
     "french": "bus",
+    "hungarian": "busz",
     "symbol": "🚌",
     "sentence_es": "Tomo el **autobús** al trabajo.",
     "sentence_it": "Prendo l'**autobus** per andare al lavoro.",
     "sentence_de": "Ich nehme den **Bus** zur Arbeit.",
     "sentence_en": "I take the **bus** to work.",
-    "sentence_fr": "Je prends le **bus** pour aller au travail."
+    "sentence_fr": "Je prends le **bus** pour aller au travail.",
+    "sentence_hu": "**Busszal** megyek dolgozni."
   },
   {
     "spanish": "la bicicleta",
@@ -2040,12 +2294,14 @@ const WORDS_DATA_2 = [
     "german": "das Fahrrad",
     "english": "bicycle",
     "french": "vélo",
+    "hungarian": "bicikli",
     "symbol": "🚲",
     "sentence_es": "Voy en **bicicleta** a la escuela.",
     "sentence_it": "Vado in **bicicletta** a scuola.",
     "sentence_de": "Ich fahre mit dem **Fahrrad** zur Schule.",
     "sentence_en": "I ride my **bicycle** to school.",
-    "sentence_fr": "Je vais à l'école à **vélo**."
+    "sentence_fr": "Je vais à l'école à **vélo**.",
+    "sentence_hu": "**Biciklivel** megyek az iskolába."
   },
   {
     "spanish": "la puerta",
@@ -2056,12 +2312,14 @@ const WORDS_DATA_2 = [
     "german": "die Tür",
     "english": "door",
     "french": "porte",
+    "hungarian": "ajtó",
     "symbol": "🚪",
     "sentence_es": "Alguien toca la **puerta**.",
     "sentence_it": "Qualcuno bussa alla **porta**.",
     "sentence_de": "Jemand klopft an die **Tür**.",
     "sentence_en": "Someone is knocking at the **door**.",
-    "sentence_fr": "Quelqu'un frappe à la **porte**."
+    "sentence_fr": "Quelqu'un frappe à la **porte**.",
+    "sentence_hu": "Valaki kopog az **ajtón**."
   },
   {
     "spanish": "la leche",
@@ -2072,12 +2330,14 @@ const WORDS_DATA_2 = [
     "german": "die Milch",
     "english": "milk",
     "french": "lait",
+    "hungarian": "tej",
     "symbol": "🥛",
     "sentence_es": "Bebo **leche** por la mañana.",
     "sentence_it": "Bevo il **latte** al mattino.",
     "sentence_de": "Ich trinke morgens **Milch**.",
     "sentence_en": "I drink **milk** in the morning.",
-    "sentence_fr": "Je bois du **lait** le matin."
+    "sentence_fr": "Je bois du **lait** le matin.",
+    "sentence_hu": "Reggel **tejet** iszom."
   },
   {
     "spanish": "el pan",
@@ -2088,12 +2348,14 @@ const WORDS_DATA_2 = [
     "german": "das Brot",
     "english": "bread",
     "french": "pain",
+    "hungarian": "kenyér",
     "symbol": "🍞",
     "sentence_es": "Compro **pan** fresco cada día.",
     "sentence_it": "Compro **pane** fresco ogni giorno.",
     "sentence_de": "Ich kaufe jeden Tag frisches **Brot**.",
     "sentence_en": "I buy fresh **bread** every day.",
-    "sentence_fr": "J'achète du **pain** frais chaque jour."
+    "sentence_fr": "J'achète du **pain** frais chaque jour.",
+    "sentence_hu": "Minden nap friss **kenyeret** veszek."
   },
   {
     "spanish": "la carne",
@@ -2104,12 +2366,14 @@ const WORDS_DATA_2 = [
     "german": "das Fleisch",
     "english": "meat",
     "french": "viande",
+    "hungarian": "hús",
     "symbol": "🥩",
     "sentence_es": "No como **carne** los lunes.",
     "sentence_it": "Non mangio **carne** il lunedì.",
     "sentence_de": "Ich esse montags kein **Fleisch**.",
     "sentence_en": "I don't eat **meat** on Mondays.",
-    "sentence_fr": "Je ne mange pas de **viande** le lundi."
+    "sentence_fr": "Je ne mange pas de **viande** le lundi.",
+    "sentence_hu": "Hétfőn nem eszem **húst**."
   },
   {
     "spanish": "el pescado",
@@ -2120,12 +2384,14 @@ const WORDS_DATA_2 = [
     "german": "der Fisch",
     "english": "fish",
     "french": "poisson",
+    "hungarian": "hal",
     "symbol": "🐟",
     "sentence_es": "El **pescado** está muy fresco hoy.",
     "sentence_it": "Il **pesce** è molto fresco oggi.",
     "sentence_de": "Der **Fisch** ist heute sehr frisch.",
     "sentence_en": "The **fish** is very fresh today.",
-    "sentence_fr": "Le **poisson** est très frais aujourd'hui."
+    "sentence_fr": "Le **poisson** est très frais aujourd'hui.",
+    "sentence_hu": "A **hal** ma nagyon friss."
   },
   {
     "spanish": "el huevo",
@@ -2136,12 +2402,14 @@ const WORDS_DATA_2 = [
     "german": "das Ei",
     "english": "egg",
     "french": "œuf",
+    "hungarian": "tojás",
     "symbol": "🥚",
     "sentence_es": "Desayuno un **huevo** frito.",
     "sentence_it": "Faccio colazione con un **uovo** fritto.",
     "sentence_de": "Ich frühstücke ein gebratenes **Ei**.",
     "sentence_en": "I have a fried **egg** for breakfast.",
-    "sentence_fr": "Je prends un **œuf** au plat au petit-déjeuner."
+    "sentence_fr": "Je prends un **œuf** au plat au petit-déjeuner.",
+    "sentence_hu": "Reggelire egy sült **tojást** eszem."
   },
   {
     "spanish": "el arroz",
@@ -2152,12 +2420,14 @@ const WORDS_DATA_2 = [
     "german": "der Reis",
     "english": "rice",
     "french": "riz",
+    "hungarian": "rizs",
     "symbol": "🍚",
     "sentence_es": "Cocino **arroz** con verduras.",
     "sentence_it": "Cucino il **riso** con le verdure.",
     "sentence_de": "Ich koche **Reis** mit Gemüse.",
     "sentence_en": "I cook **rice** with vegetables.",
-    "sentence_fr": "Je cuisine du **riz** avec des légumes."
+    "sentence_fr": "Je cuisine du **riz** avec des légumes.",
+    "sentence_hu": "**Rizst** főzök zöldségekkel."
   },
   {
     "spanish": "la sal",
@@ -2168,12 +2438,14 @@ const WORDS_DATA_2 = [
     "german": "das Salz",
     "english": "salt",
     "french": "sel",
+    "hungarian": "só",
     "symbol": "🧂",
     "sentence_es": "Añade un poco de **sal** a la sopa.",
     "sentence_it": "Aggiungi un po' di **sale** alla zuppa.",
     "sentence_de": "Gib etwas **Salz** in die Suppe.",
     "sentence_en": "Add a little **salt** to the soup.",
-    "sentence_fr": "Ajoute un peu de **sel** à la soupe."
+    "sentence_fr": "Ajoute un peu de **sel** à la soupe.",
+    "sentence_hu": "Adj egy kis **sót** a leveshez."
   },
   {
     "spanish": "el azúcar",
@@ -2184,12 +2456,14 @@ const WORDS_DATA_2 = [
     "german": "der Zucker",
     "english": "sugar",
     "french": "sucre",
+    "hungarian": "cukor",
     "symbol": "🍬",
     "sentence_es": "No pongo **azúcar** en el café.",
     "sentence_it": "Non metto **zucchero** nel caffè.",
     "sentence_de": "Ich gebe keinen **Zucker** in den Kaffee.",
     "sentence_en": "I don't put **sugar** in my coffee.",
-    "sentence_fr": "Je ne mets pas de **sucre** dans mon café."
+    "sentence_fr": "Je ne mets pas de **sucre** dans mon café.",
+    "sentence_hu": "Nem teszek **cukrot** a kávéba."
   },
   {
     "spanish": "el agua",
@@ -2200,12 +2474,14 @@ const WORDS_DATA_2 = [
     "german": "das Wasser",
     "english": "water",
     "french": "eau",
+    "hungarian": "víz",
     "symbol": "💧",
     "sentence_es": "Necesito un vaso de **agua**.",
     "sentence_it": "Ho bisogno di un bicchiere d'**acqua**.",
     "sentence_de": "Ich brauche ein Glas **Wasser**.",
     "sentence_en": "I need a glass of **water**.",
-    "sentence_fr": "J'ai besoin d'un verre d'**eau**."
+    "sentence_fr": "J'ai besoin d'un verre d'**eau**.",
+    "sentence_hu": "Szükségem van egy pohár **vízre**."
   },
   {
     "spanish": "la vida",
@@ -2216,12 +2492,14 @@ const WORDS_DATA_2 = [
     "german": "das Leben",
     "english": "life",
     "french": "vie",
+    "hungarian": "élet",
     "symbol": "🌱",
     "sentence_es": "La **vida** en el campo es tranquila.",
     "sentence_it": "La **vita** in campagna è tranquilla.",
     "sentence_de": "Das **Leben** auf dem Land ist ruhig.",
     "sentence_en": "**Life** in the countryside is peaceful.",
-    "sentence_fr": "La **vie** à la campagne est tranquille."
+    "sentence_fr": "La **vie** à la campagne est tranquille.",
+    "sentence_hu": "Az **élet** vidéken nyugodt."
   },
   {
     "spanish": "el amor",
@@ -2232,12 +2510,14 @@ const WORDS_DATA_2 = [
     "german": "die Liebe",
     "english": "love",
     "french": "amour",
+    "hungarian": "szerelem / szeretet",
     "symbol": "❤️",
     "sentence_es": "Siente un gran **amor** por su familia.",
     "sentence_it": "Prova un grande **amore** per la sua famiglia.",
     "sentence_de": "Er empfindet große **Liebe** für seine Familie.",
     "sentence_en": "He feels great **love** for his family.",
-    "sentence_fr": "Il ressent un grand **amour** pour sa famille."
+    "sentence_fr": "Il ressent un grand **amour** pour sa famille.",
+    "sentence_hu": "Nagy **szeretetet** érez a családja iránt."
   },
   {
     "spanish": "el tiempo",
@@ -2248,12 +2528,14 @@ const WORDS_DATA_2 = [
     "german": "die Zeit / das Wetter",
     "english": "time / weather",
     "french": "temps",
+    "hungarian": "idő",
     "symbol": "⏳",
     "sentence_es": "No tengo **tiempo** para descansar.",
     "sentence_it": "Non ho **tempo** per riposare.",
     "sentence_de": "Ich habe keine **Zeit** zum Ausruhen.",
     "sentence_en": "I don't have **time** to rest.",
-    "sentence_fr": "Je n'ai pas le **temps** de me reposer."
+    "sentence_fr": "Je n'ai pas le **temps** de me reposer.",
+    "sentence_hu": "Nincs **időm** pihenni."
   },
   {
     "spanish": "el mundo",
@@ -2264,12 +2546,14 @@ const WORDS_DATA_2 = [
     "german": "die Welt",
     "english": "world",
     "french": "monde",
+    "hungarian": "világ",
     "symbol": "🌏",
     "sentence_es": "Quiere conocer el **mundo** entero.",
     "sentence_it": "Vuole conoscere tutto il **mondo**.",
     "sentence_de": "Sie möchte die ganze **Welt** kennenlernen.",
     "sentence_en": "She wants to see the whole **world**.",
-    "sentence_fr": "Elle veut découvrir le **monde** entier."
+    "sentence_fr": "Elle veut découvrir le **monde** entier.",
+    "sentence_hu": "Meg akarja ismerni az egész **világot**."
   },
   {
     "spanish": "la música",
@@ -2280,12 +2564,14 @@ const WORDS_DATA_2 = [
     "german": "die Musik",
     "english": "music",
     "french": "musique",
+    "hungarian": "zene",
     "symbol": "🎵",
     "sentence_es": "Escuchamos **música** en el coche.",
     "sentence_it": "Ascoltiamo la **musica** in macchina.",
     "sentence_de": "Wir hören im Auto **Musik**.",
     "sentence_en": "We listen to **music** in the car.",
-    "sentence_fr": "Nous écoutons de la **musique** en voiture."
+    "sentence_fr": "Nous écoutons de la **musique** en voiture.",
+    "sentence_hu": "**Zenét** hallgatunk a kocsiban."
   },
   {
     "spanish": "la salud",
@@ -2296,12 +2582,14 @@ const WORDS_DATA_2 = [
     "german": "die Gesundheit",
     "english": "health",
     "french": "santé",
+    "hungarian": "egészség",
     "symbol": "💊",
     "sentence_es": "Hacer deporte es bueno para la **salud**.",
     "sentence_it": "Fare sport fa bene alla **salute**.",
     "sentence_de": "Sport treiben ist gut für die **Gesundheit**.",
     "sentence_en": "Playing sports is good for your **health**.",
-    "sentence_fr": "Faire du sport est bon pour la **santé**."
+    "sentence_fr": "Faire du sport est bon pour la **santé**.",
+    "sentence_hu": "A sportolás jót tesz az **egészségnek**."
   },
   {
     "spanish": "grande",
@@ -2312,12 +2600,14 @@ const WORDS_DATA_2 = [
     "german": "groß",
     "english": "big / large",
     "french": "grand",
+    "hungarian": "nagy",
     "symbol": "🐘",
     "sentence_es": "Viven en una casa **grande**.",
     "sentence_it": "Vivono in una casa **grande**.",
     "sentence_de": "Sie leben in einem **großen** Haus.",
     "sentence_en": "They live in a **big** house.",
-    "sentence_fr": "Ils vivent dans une **grande** maison."
+    "sentence_fr": "Ils vivent dans une **grande** maison.",
+    "sentence_hu": "**Nagy** házban élnek."
   },
   {
     "spanish": "alto",
@@ -2328,12 +2618,14 @@ const WORDS_DATA_2 = [
     "german": "groß / hoch",
     "english": "tall",
     "french": "grand / haut",
+    "hungarian": "magas",
     "symbol": "🦒",
     "sentence_es": "Mi hermano es muy **alto**.",
     "sentence_it": "Mio fratello è molto **alto**.",
     "sentence_de": "Mein Bruder ist sehr **groß**.",
     "sentence_en": "My brother is very **tall**.",
-    "sentence_fr": "Mon frère est très **grand**."
+    "sentence_fr": "Mon frère est très **grand**.",
+    "sentence_hu": "A bátyám nagyon **magas**."
   },
   {
     "spanish": "bajo",
@@ -2344,12 +2636,14 @@ const WORDS_DATA_2 = [
     "german": "klein / niedrig",
     "english": "short / low",
     "french": "petit / bas",
+    "hungarian": "alacsony",
     "symbol": "🐜",
     "sentence_es": "El muro es bastante **bajo**.",
     "sentence_it": "Il muro è piuttosto **basso**.",
     "sentence_de": "Die Mauer ist ziemlich **niedrig**.",
     "sentence_en": "The wall is quite **low**.",
-    "sentence_fr": "Le mur est assez **bas**."
+    "sentence_fr": "Le mur est assez **bas**.",
+    "sentence_hu": "A fal elég **alacsony**."
   },
   {
     "spanish": "joven",
@@ -2360,12 +2654,14 @@ const WORDS_DATA_2 = [
     "german": "jung",
     "english": "young",
     "french": "jeune",
+    "hungarian": "fiatal",
     "symbol": "🧒",
     "sentence_es": "El actor es muy **joven**.",
     "sentence_it": "L'attore è molto **giovane**.",
     "sentence_de": "Der Schauspieler ist sehr **jung**.",
     "sentence_en": "The actor is very **young**.",
-    "sentence_fr": "L'acteur est très **jeune**."
+    "sentence_fr": "L'acteur est très **jeune**.",
+    "sentence_hu": "A színész nagyon **fiatal**."
   },
   {
     "spanish": "nuevo",
@@ -2376,12 +2672,14 @@ const WORDS_DATA_2 = [
     "german": "neu",
     "english": "new",
     "french": "nouveau",
+    "hungarian": "új",
     "symbol": "✨",
     "sentence_es": "Compré un teléfono **nuevo**.",
     "sentence_it": "Ho comprato un telefono **nuovo**.",
     "sentence_de": "Ich habe ein **neues** Telefon gekauft.",
     "sentence_en": "I bought a **new** phone.",
-    "sentence_fr": "J'ai acheté un **nouveau** téléphone."
+    "sentence_fr": "J'ai acheté un **nouveau** téléphone.",
+    "sentence_hu": "Vettem egy **új** telefont."
   },
   {
     "spanish": "bueno",
@@ -2392,12 +2690,14 @@ const WORDS_DATA_2 = [
     "german": "gut",
     "english": "good",
     "french": "bon",
+    "hungarian": "jó",
     "symbol": "😊",
     "sentence_es": "Este restaurante es muy **bueno**.",
     "sentence_it": "Questo ristorante è molto **buono**.",
     "sentence_de": "Dieses Restaurant ist sehr **gut**.",
     "sentence_en": "This restaurant is very **good**.",
-    "sentence_fr": "Ce restaurant est très **bon**."
+    "sentence_fr": "Ce restaurant est très **bon**.",
+    "sentence_hu": "Ez az étterem nagyon **jó**."
   },
   {
     "spanish": "malo",
@@ -2408,12 +2708,14 @@ const WORDS_DATA_2 = [
     "german": "schlecht",
     "english": "bad",
     "french": "mauvais",
+    "hungarian": "rossz",
     "symbol": "😠",
     "sentence_es": "El tiempo está **malo** hoy.",
     "sentence_it": "Il tempo è **cattivo** oggi.",
     "sentence_de": "Das Wetter ist heute **schlecht**.",
     "sentence_en": "The weather is **bad** today.",
-    "sentence_fr": "Le temps est **mauvais** aujourd'hui."
+    "sentence_fr": "Le temps est **mauvais** aujourd'hui.",
+    "sentence_hu": "Ma **rossz** idő van."
   },
   {
     "spanish": "fácil",
@@ -2424,12 +2726,14 @@ const WORDS_DATA_2 = [
     "german": "einfach / leicht",
     "english": "easy",
     "french": "facile",
+    "hungarian": "könnyű",
     "symbol": "✅",
     "sentence_es": "El examen fue muy **fácil**.",
     "sentence_it": "L'esame è stato molto **facile**.",
     "sentence_de": "Die Prüfung war sehr **einfach**.",
     "sentence_en": "The exam was very **easy**.",
-    "sentence_fr": "L'examen était très **facile**."
+    "sentence_fr": "L'examen était très **facile**.",
+    "sentence_hu": "A vizsga nagyon **könnyű** volt."
   },
   {
     "spanish": "difícil",
@@ -2440,12 +2744,14 @@ const WORDS_DATA_2 = [
     "german": "schwierig",
     "english": "difficult",
     "french": "difficile",
+    "hungarian": "nehéz",
     "symbol": "🧩",
     "sentence_es": "Este ejercicio es **difícil**.",
     "sentence_it": "Questo esercizio è **difficile**.",
     "sentence_de": "Diese Übung ist **schwierig**.",
     "sentence_en": "This exercise is **difficult**.",
-    "sentence_fr": "Cet exercice est **difficile**."
+    "sentence_fr": "Cet exercice est **difficile**.",
+    "sentence_hu": "Ez a gyakorlat **nehéz**."
   },
   {
     "spanish": "importante",
@@ -2456,12 +2762,14 @@ const WORDS_DATA_2 = [
     "german": "wichtig",
     "english": "important",
     "french": "important",
+    "hungarian": "fontos",
     "symbol": "⭐",
     "sentence_es": "Es **importante** dormir bien.",
     "sentence_it": "È **importante** dormire bene.",
     "sentence_de": "Es ist **wichtig**, gut zu schlafen.",
     "sentence_en": "It's **important** to sleep well.",
-    "sentence_fr": "Il est **important** de bien dormir."
+    "sentence_fr": "Il est **important** de bien dormir.",
+    "sentence_hu": "**Fontos** jól aludni."
   },
   {
     "spanish": "interesante",
@@ -2472,12 +2780,14 @@ const WORDS_DATA_2 = [
     "german": "interessant",
     "english": "interesting",
     "french": "intéressant",
+    "hungarian": "érdekes",
     "symbol": "🤔",
     "sentence_es": "La película fue muy **interesante**.",
     "sentence_it": "Il film è stato molto **interessante**.",
     "sentence_de": "Der Film war sehr **interessant**.",
     "sentence_en": "The movie was very **interesting**.",
-    "sentence_fr": "Le film était très **intéressant**."
+    "sentence_fr": "Le film était très **intéressant**.",
+    "sentence_hu": "A film nagyon **érdekes** volt."
   },
   {
     "spanish": "aburrido",
@@ -2488,12 +2798,14 @@ const WORDS_DATA_2 = [
     "german": "langweilig",
     "english": "boring",
     "french": "ennuyeux",
+    "hungarian": "unalmas",
     "symbol": "🥱",
     "sentence_es": "El discurso fue un poco **aburrido**.",
     "sentence_it": "Il discorso è stato un po' **noioso**.",
     "sentence_de": "Die Rede war etwas **langweilig**.",
     "sentence_en": "The speech was a bit **boring**.",
-    "sentence_fr": "Le discours était un peu **ennuyeux**."
+    "sentence_fr": "Le discours était un peu **ennuyeux**.",
+    "sentence_hu": "A beszéd kicsit **unalmas** volt."
   },
   {
     "spanish": "fuerte",
@@ -2504,12 +2816,14 @@ const WORDS_DATA_2 = [
     "german": "stark",
     "english": "strong",
     "french": "fort",
+    "hungarian": "erős",
     "symbol": "💪",
     "sentence_es": "El café está muy **fuerte**.",
     "sentence_it": "Il caffè è molto **forte**.",
     "sentence_de": "Der Kaffee ist sehr **stark**.",
     "sentence_en": "The coffee is very **strong**.",
-    "sentence_fr": "Le café est très **fort**."
+    "sentence_fr": "Le café est très **fort**.",
+    "sentence_hu": "A kávé nagyon **erős**."
   },
   {
     "spanish": "débil",
@@ -2520,12 +2834,14 @@ const WORDS_DATA_2 = [
     "german": "schwach",
     "english": "weak",
     "french": "faible",
+    "hungarian": "gyenge",
     "symbol": "🪶",
     "sentence_es": "Se siente **débil** después de la gripe.",
     "sentence_it": "Si sente **debole** dopo l'influenza.",
     "sentence_de": "Er fühlt sich nach der Grippe **schwach**.",
     "sentence_en": "He feels **weak** after the flu.",
-    "sentence_fr": "Il se sent **faible** après la grippe."
+    "sentence_fr": "Il se sent **faible** après la grippe.",
+    "sentence_hu": "Az influenza után **gyengének** érzi magát."
   },
   {
     "spanish": "rápido",
@@ -2536,12 +2852,14 @@ const WORDS_DATA_2 = [
     "german": "schnell",
     "english": "fast",
     "french": "rapide",
+    "hungarian": "gyors",
     "symbol": "⚡",
     "sentence_es": "Este coche es muy **rápido**.",
     "sentence_it": "Questa macchina è molto **veloce**.",
     "sentence_de": "Dieses Auto ist sehr **schnell**.",
     "sentence_en": "This car is very **fast**.",
-    "sentence_fr": "Cette voiture est très **rapide**."
+    "sentence_fr": "Cette voiture est très **rapide**.",
+    "sentence_hu": "Ez az autó nagyon **gyors**."
   },
   {
     "spanish": "lento",
@@ -2552,12 +2870,14 @@ const WORDS_DATA_2 = [
     "german": "langsam",
     "english": "slow",
     "french": "lent",
+    "hungarian": "lassú",
     "symbol": "🐌",
     "sentence_es": "El tráfico está muy **lento**.",
     "sentence_it": "Il traffico è molto **lento**.",
     "sentence_de": "Der Verkehr ist sehr **langsam**.",
     "sentence_en": "The traffic is very **slow**.",
-    "sentence_fr": "La circulation est très **lente**."
+    "sentence_fr": "La circulation est très **lente**.",
+    "sentence_hu": "A forgalom nagyon **lassú**."
   },
   {
     "spanish": "inteligente",
@@ -2568,12 +2888,14 @@ const WORDS_DATA_2 = [
     "german": "intelligent / klug",
     "english": "intelligent / smart",
     "french": "intelligent",
+    "hungarian": "okos",
     "symbol": "🧠",
     "sentence_es": "Su hija es muy **inteligente**.",
     "sentence_it": "Sua figlia è molto **intelligente**.",
     "sentence_de": "Ihre Tochter ist sehr **intelligent**.",
     "sentence_en": "Her daughter is very **intelligent**.",
-    "sentence_fr": "Sa fille est très **intelligente**."
+    "sentence_fr": "Sa fille est très **intelligente**.",
+    "sentence_hu": "A lánya nagyon **okos**."
   },
   {
     "spanish": "amable",
@@ -2584,12 +2906,14 @@ const WORDS_DATA_2 = [
     "german": "freundlich",
     "english": "kind / friendly",
     "french": "aimable / gentil",
+    "hungarian": "kedves",
     "symbol": "🤗",
     "sentence_es": "El vecino es muy **amable**.",
     "sentence_it": "Il vicino è molto **gentile**.",
     "sentence_de": "Der Nachbar ist sehr **freundlich**.",
     "sentence_en": "The neighbor is very **kind**.",
-    "sentence_fr": "Le voisin est très **aimable**."
+    "sentence_fr": "Le voisin est très **aimable**.",
+    "sentence_hu": "A szomszéd nagyon **kedves**."
   },
   {
     "spanish": "feliz",
@@ -2600,12 +2924,14 @@ const WORDS_DATA_2 = [
     "german": "glücklich",
     "english": "happy",
     "french": "heureux",
+    "hungarian": "boldog",
     "symbol": "😄",
     "sentence_es": "Estoy muy **feliz** hoy.",
     "sentence_it": "Sono molto **felice** oggi.",
     "sentence_de": "Ich bin heute sehr **glücklich**.",
     "sentence_en": "I am very **happy** today.",
-    "sentence_fr": "Je suis très **heureux** aujourd'hui."
+    "sentence_fr": "Je suis très **heureux** aujourd'hui.",
+    "sentence_hu": "Ma nagyon **boldog** vagyok."
   },
   {
     "spanish": "triste",
@@ -2616,12 +2942,14 @@ const WORDS_DATA_2 = [
     "german": "traurig",
     "english": "sad",
     "french": "triste",
+    "hungarian": "szomorú",
     "symbol": "😢",
     "sentence_es": "Se siente **triste** por la noticia.",
     "sentence_it": "Si sente **triste** per la notizia.",
     "sentence_de": "Er ist wegen der Nachricht **traurig**.",
     "sentence_en": "He feels **sad** about the news.",
-    "sentence_fr": "Il se sent **triste** à cause de la nouvelle."
+    "sentence_fr": "Il se sent **triste** à cause de la nouvelle.",
+    "sentence_hu": "**Szomorúnak** érzi magát a hír miatt."
   },
   {
     "spanish": "cansado",
@@ -2632,12 +2960,14 @@ const WORDS_DATA_2 = [
     "german": "müde",
     "english": "tired",
     "french": "fatigué",
+    "hungarian": "fáradt",
     "symbol": "😴",
     "sentence_es": "Estoy **cansado** después del viaje.",
     "sentence_it": "Sono **stanco** dopo il viaggio.",
     "sentence_de": "Ich bin nach der Reise **müde**.",
     "sentence_en": "I am **tired** after the trip.",
-    "sentence_fr": "Je suis **fatigué** après le voyage."
+    "sentence_fr": "Je suis **fatigué** après le voyage.",
+    "sentence_hu": "**Fáradt** vagyok az út után."
   },
   {
     "spanish": "ocupado",
@@ -2648,12 +2978,14 @@ const WORDS_DATA_2 = [
     "german": "beschäftigt",
     "english": "busy",
     "french": "occupé",
+    "hungarian": "elfoglalt",
     "symbol": "📋",
     "sentence_es": "Hoy estoy muy **ocupado**.",
     "sentence_it": "Oggi sono molto **occupato**.",
     "sentence_de": "Heute bin ich sehr **beschäftigt**.",
     "sentence_en": "I am very **busy** today.",
-    "sentence_fr": "Je suis très **occupé** aujourd'hui."
+    "sentence_fr": "Je suis très **occupé** aujourd'hui.",
+    "sentence_hu": "Ma nagyon **elfoglalt** vagyok."
   },
   {
     "spanish": "libre",
@@ -2664,12 +2996,14 @@ const WORDS_DATA_2 = [
     "german": "frei",
     "english": "free",
     "french": "libre",
+    "hungarian": "szabad",
     "symbol": "🕊️",
     "sentence_es": "Este asiento está **libre**.",
     "sentence_it": "Questo posto è **libero**.",
     "sentence_de": "Dieser Platz ist **frei**.",
     "sentence_en": "This seat is **free**.",
-    "sentence_fr": "Cette place est **libre**."
+    "sentence_fr": "Cette place est **libre**.",
+    "sentence_hu": "Ez a hely **szabad**."
   },
   {
     "spanish": "seguro",
@@ -2680,12 +3014,14 @@ const WORDS_DATA_2 = [
     "german": "sicher",
     "english": "safe / sure",
     "french": "sûr",
+    "hungarian": "biztonságos",
     "symbol": "🔒",
     "sentence_es": "Este barrio es muy **seguro**.",
     "sentence_it": "Questo quartiere è molto **sicuro**.",
     "sentence_de": "Diese Nachbarschaft ist sehr **sicher**.",
     "sentence_en": "This neighborhood is very **safe**.",
-    "sentence_fr": "Ce quartier est très **sûr**."
+    "sentence_fr": "Ce quartier est très **sûr**.",
+    "sentence_hu": "Ez a környék nagyon **biztonságos**."
   },
   {
     "spanish": "peligroso",
@@ -2696,12 +3032,14 @@ const WORDS_DATA_2 = [
     "german": "gefährlich",
     "english": "dangerous",
     "french": "dangereux",
+    "hungarian": "veszélyes",
     "symbol": "⚠️",
     "sentence_es": "Ese cruce es muy **peligroso**.",
     "sentence_it": "Quell'incrocio è molto **pericoloso**.",
     "sentence_de": "Diese Kreuzung ist sehr **gefährlich**.",
     "sentence_en": "That intersection is very **dangerous**.",
-    "sentence_fr": "Ce carrefour est très **dangereux**."
+    "sentence_fr": "Ce carrefour est très **dangereux**.",
+    "sentence_hu": "Az a kereszteződés nagyon **veszélyes**."
   },
   {
     "spanish": "necesario",
@@ -2712,12 +3050,14 @@ const WORDS_DATA_2 = [
     "german": "notwendig",
     "english": "necessary",
     "french": "nécessaire",
+    "hungarian": "szükséges",
     "symbol": "❗",
     "sentence_es": "No es **necesario** llegar temprano.",
     "sentence_it": "Non è **necessario** arrivare presto.",
     "sentence_de": "Es ist nicht **notwendig**, früh anzukommen.",
     "sentence_en": "It's not **necessary** to arrive early.",
-    "sentence_fr": "Il n'est pas **nécessaire** d'arriver tôt."
+    "sentence_fr": "Il n'est pas **nécessaire** d'arriver tôt.",
+    "sentence_hu": "Nem **szükséges** korán érkezni."
   },
   {
     "spanish": "claro",
@@ -2728,12 +3068,14 @@ const WORDS_DATA_2 = [
     "german": "klar / hell",
     "english": "clear / light (color)",
     "french": "clair",
+    "hungarian": "tiszta / világos",
     "symbol": "💡",
     "sentence_es": "El agua del lago es muy **clara**.",
     "sentence_it": "L'acqua del lago è molto **chiara**.",
     "sentence_de": "Das Wasser des Sees ist sehr **klar**.",
     "sentence_en": "The lake water is very **clear**.",
-    "sentence_fr": "L'eau du lac est très **claire**."
+    "sentence_fr": "L'eau du lac est très **claire**.",
+    "sentence_hu": "A tó vize nagyon **tiszta**."
   },
   {
     "spanish": "oscuro",
@@ -2744,12 +3086,14 @@ const WORDS_DATA_2 = [
     "german": "dunkel",
     "english": "dark",
     "french": "sombre / foncé",
+    "hungarian": "sötét",
     "symbol": "🌑",
     "sentence_es": "La habitación está muy **oscura**.",
     "sentence_it": "La stanza è molto **scura**.",
     "sentence_de": "Das Zimmer ist sehr **dunkel**.",
     "sentence_en": "The room is very **dark**.",
-    "sentence_fr": "La pièce est très **sombre**."
+    "sentence_fr": "La pièce est très **sombre**.",
+    "sentence_hu": "A szoba nagyon **sötét**."
   },
   {
     "spanish": "largo",
@@ -2760,12 +3104,14 @@ const WORDS_DATA_2 = [
     "german": "lang",
     "english": "long",
     "french": "long",
+    "hungarian": "hosszú",
     "symbol": "📏",
     "sentence_es": "El viaje fue muy **largo**.",
     "sentence_it": "Il viaggio è stato molto **lungo**.",
     "sentence_de": "Die Reise war sehr **lang**.",
     "sentence_en": "The trip was very **long**.",
-    "sentence_fr": "Le voyage a été très **long**."
+    "sentence_fr": "Le voyage a été très **long**.",
+    "sentence_hu": "Az utazás nagyon **hosszú** volt."
   },
   {
     "spanish": "corto",
@@ -2776,12 +3122,14 @@ const WORDS_DATA_2 = [
     "german": "kurz",
     "english": "short",
     "french": "court",
+    "hungarian": "rövid",
     "symbol": "✂️",
     "sentence_es": "Llevo el pelo **corto**.",
     "sentence_it": "Ho i capelli **corti**.",
     "sentence_de": "Ich habe **kurze** Haare.",
     "sentence_en": "I have **short** hair.",
-    "sentence_fr": "J'ai les cheveux **courts**."
+    "sentence_fr": "J'ai les cheveux **courts**.",
+    "sentence_hu": "**Rövid** a hajam."
   },
   {
     "spanish": "pobre",
@@ -2792,12 +3140,14 @@ const WORDS_DATA_2 = [
     "german": "arm",
     "english": "poor",
     "french": "pauvre",
+    "hungarian": "szegény",
     "symbol": "🙁",
     "sentence_es": "La familia era muy **pobre**.",
     "sentence_it": "La famiglia era molto **povera**.",
     "sentence_de": "Die Familie war sehr **arm**.",
     "sentence_en": "The family was very **poor**.",
-    "sentence_fr": "La famille était très **pauvre**."
+    "sentence_fr": "La famille était très **pauvre**.",
+    "sentence_hu": "A család nagyon **szegény** volt."
   },
   {
     "spanish": "rico",
@@ -2808,12 +3158,14 @@ const WORDS_DATA_2 = [
     "german": "reich",
     "english": "rich",
     "french": "riche",
+    "hungarian": "gazdag",
     "symbol": "💰",
     "sentence_es": "El empresario es muy **rico**.",
     "sentence_it": "L'imprenditore è molto **ricco**.",
     "sentence_de": "Der Unternehmer ist sehr **reich**.",
     "sentence_en": "The businessman is very **rich**.",
-    "sentence_fr": "L'entrepreneur est très **riche**."
+    "sentence_fr": "L'entrepreneur est très **riche**.",
+    "sentence_hu": "Az üzletember nagyon **gazdag**."
   },
   {
     "spanish": "caro",
@@ -2824,12 +3176,14 @@ const WORDS_DATA_2 = [
     "german": "teuer",
     "english": "expensive",
     "french": "cher",
+    "hungarian": "drága",
     "symbol": "💸",
     "sentence_es": "Ese reloj es muy **caro**.",
     "sentence_it": "Quell'orologio è molto **caro**.",
     "sentence_de": "Diese Uhr ist sehr **teuer**.",
     "sentence_en": "That watch is very **expensive**.",
-    "sentence_fr": "Cette montre est très **chère**."
+    "sentence_fr": "Cette montre est très **chère**.",
+    "sentence_hu": "Az az óra nagyon **drága**."
   },
   {
     "spanish": "seco",
@@ -2840,12 +3194,14 @@ const WORDS_DATA_2 = [
     "german": "trocken",
     "english": "dry",
     "french": "sec",
+    "hungarian": "száraz",
     "symbol": "🌵",
     "sentence_es": "El clima aquí es muy **seco**.",
     "sentence_it": "Il clima qui è molto **secco**.",
     "sentence_de": "Das Klima hier ist sehr **trocken**.",
     "sentence_en": "The climate here is very **dry**.",
-    "sentence_fr": "Le climat ici est très **sec**."
+    "sentence_fr": "Le climat ici est très **sec**.",
+    "sentence_hu": "Itt nagyon **száraz** az éghajlat."
   },
   {
     "spanish": "mojado",
@@ -2856,12 +3212,14 @@ const WORDS_DATA_2 = [
     "german": "nass",
     "english": "wet",
     "french": "mouillé",
+    "hungarian": "vizes / nedves",
     "symbol": "💦",
     "sentence_es": "El suelo está **mojado** después de la lluvia.",
     "sentence_it": "Il pavimento è **bagnato** dopo la pioggia.",
     "sentence_de": "Der Boden ist nach dem Regen **nass**.",
     "sentence_en": "The floor is **wet** after the rain.",
-    "sentence_fr": "Le sol est **mouillé** après la pluie."
+    "sentence_fr": "Le sol est **mouillé** après la pluie.",
+    "sentence_hu": "A padló **vizes** az eső után."
   },
   {
     "spanish": "ligero",
@@ -2872,12 +3230,14 @@ const WORDS_DATA_2 = [
     "german": "leicht (Gewicht)",
     "english": "light (weight)",
     "french": "léger",
+    "hungarian": "könnyű",
     "symbol": "🪶",
     "sentence_es": "Esta maleta es muy **ligera**.",
     "sentence_it": "Questa valigia è molto **leggera**.",
     "sentence_de": "Dieser Koffer ist sehr **leicht**.",
     "sentence_en": "This suitcase is very **light**.",
-    "sentence_fr": "Cette valise est très **légère**."
+    "sentence_fr": "Cette valise est très **légère**.",
+    "sentence_hu": "Ez a bőrönd nagyon **könnyű**."
   },
   {
     "spanish": "hoy",
@@ -2888,12 +3248,14 @@ const WORDS_DATA_2 = [
     "german": "heute",
     "english": "today",
     "french": "aujourd'hui",
+    "hungarian": "ma",
     "symbol": "📅",
     "sentence_es": "**Hoy** no tengo clases.",
     "sentence_it": "**Oggi** non ho lezioni.",
     "sentence_de": "**Heute** habe ich keinen Unterricht.",
     "sentence_en": "I don't have class **today**.",
-    "sentence_fr": "Je n'ai pas cours **aujourd'hui**."
+    "sentence_fr": "Je n'ai pas cours **aujourd'hui**.",
+    "sentence_hu": "**Ma** nincs órám."
   },
   {
     "spanish": "mañana",
@@ -2904,12 +3266,14 @@ const WORDS_DATA_2 = [
     "german": "morgen / der Morgen",
     "english": "tomorrow / morning",
     "french": "demain / matin",
+    "hungarian": "holnap",
     "symbol": "🌅",
     "sentence_es": "Nos vemos **mañana** por la mañana.",
     "sentence_it": "Ci vediamo **domani** mattina.",
     "sentence_de": "Wir sehen uns **morgen** früh.",
     "sentence_en": "See you **tomorrow** morning.",
-    "sentence_fr": "On se voit **demain** matin."
+    "sentence_fr": "On se voit **demain** matin.",
+    "sentence_hu": "**Holnap** reggel találkozunk."
   },
   {
     "spanish": "ayer",
@@ -2920,12 +3284,14 @@ const WORDS_DATA_2 = [
     "german": "gestern",
     "english": "yesterday",
     "french": "hier",
+    "hungarian": "tegnap",
     "symbol": "⏮️",
     "sentence_es": "**Ayer** llovió todo el día.",
     "sentence_it": "**Ieri** ha piovuto tutto il giorno.",
     "sentence_de": "**Gestern** hat es den ganzen Tag geregnet.",
     "sentence_en": "It rained all day **yesterday**.",
-    "sentence_fr": "Il a plu toute la journée **hier**."
+    "sentence_fr": "Il a plu toute la journée **hier**.",
+    "sentence_hu": "**Tegnap** egész nap esett."
   },
   {
     "spanish": "siempre",
@@ -2936,12 +3302,14 @@ const WORDS_DATA_2 = [
     "german": "immer",
     "english": "always",
     "french": "toujours",
+    "hungarian": "mindig",
     "symbol": "♾️",
     "sentence_es": "**Siempre** llego a tiempo.",
     "sentence_it": "Arrivo **sempre** in orario.",
     "sentence_de": "Ich komme **immer** pünktlich an.",
     "sentence_en": "I **always** arrive on time.",
-    "sentence_fr": "J'arrive **toujours** à l'heure."
+    "sentence_fr": "J'arrive **toujours** à l'heure.",
+    "sentence_hu": "**Mindig** időben érkezem."
   },
   {
     "spanish": "también",
@@ -2952,12 +3320,14 @@ const WORDS_DATA_2 = [
     "german": "auch",
     "english": "also / too",
     "french": "aussi",
+    "hungarian": "is",
     "symbol": "",
     "sentence_es": "Yo **también** quiero ir.",
     "sentence_it": "**Anche** io voglio andare.",
     "sentence_de": "Ich möchte **auch** gehen.",
     "sentence_en": "I **also** want to go.",
-    "sentence_fr": "Moi **aussi**, je veux y aller."
+    "sentence_fr": "Moi **aussi**, je veux y aller.",
+    "sentence_hu": "Én **is** szeretnék menni."
   },
   {
     "spanish": "tampoco",
@@ -2968,12 +3338,14 @@ const WORDS_DATA_2 = [
     "german": "auch nicht",
     "english": "neither / not either",
     "french": "non plus",
+    "hungarian": "sem",
     "symbol": "",
     "sentence_es": "No quiero ir, y ella **tampoco**.",
     "sentence_it": "Non voglio andare, e **nemmeno** lei.",
     "sentence_de": "Ich will nicht gehen, und sie **auch nicht**.",
     "sentence_en": "I don't want to go, and she doesn't **either**.",
-    "sentence_fr": "Je ne veux pas y aller, et elle **non plus**."
+    "sentence_fr": "Je ne veux pas y aller, et elle **non plus**.",
+    "sentence_hu": "Nem akarok menni, és ő **sem**."
   },
   {
     "spanish": "así",
@@ -2984,12 +3356,14 @@ const WORDS_DATA_2 = [
     "german": "so",
     "english": "like this / so",
     "french": "ainsi / comme ça",
+    "hungarian": "így",
     "symbol": "",
     "sentence_es": "Hazlo **así**, es más fácil.",
     "sentence_it": "Fallo **così**, è più facile.",
     "sentence_de": "Mach es **so**, es ist einfacher.",
     "sentence_en": "Do it **like this**, it's easier.",
-    "sentence_fr": "Fais-le **comme ça**, c'est plus facile."
+    "sentence_fr": "Fais-le **comme ça**, c'est plus facile.",
+    "sentence_hu": "Csináld **így**, könnyebb."
   },
   {
     "spanish": "bien",
@@ -3000,12 +3374,14 @@ const WORDS_DATA_2 = [
     "german": "gut",
     "english": "well",
     "french": "bien",
+    "hungarian": "jól",
     "symbol": "👍",
     "sentence_es": "Ella canta muy **bien**.",
     "sentence_it": "Lei canta molto **bene**.",
     "sentence_de": "Sie singt sehr **gut**.",
     "sentence_en": "She sings very **well**.",
-    "sentence_fr": "Elle chante très **bien**."
+    "sentence_fr": "Elle chante très **bien**.",
+    "sentence_hu": "Nagyon **jól** énekel."
   },
   {
     "spanish": "mal",
@@ -3016,12 +3392,14 @@ const WORDS_DATA_2 = [
     "german": "schlecht",
     "english": "badly",
     "french": "mal",
+    "hungarian": "rosszul",
     "symbol": "👎",
     "sentence_es": "Duermo **mal** cuando hace calor.",
     "sentence_it": "Dormo **male** quando fa caldo.",
     "sentence_de": "Ich schlafe **schlecht**, wenn es heiß ist.",
     "sentence_en": "I sleep **badly** when it's hot.",
-    "sentence_fr": "Je dors **mal** quand il fait chaud."
+    "sentence_fr": "Je dors **mal** quand il fait chaud.",
+    "sentence_hu": "**Rosszul** alszom, ha meleg van."
   },
   {
     "spanish": "poco",
@@ -3032,12 +3410,14 @@ const WORDS_DATA_2 = [
     "german": "wenig",
     "english": "little / not much",
     "french": "peu",
+    "hungarian": "kevés / keveset",
     "symbol": "",
     "sentence_es": "Duerme muy **poco**.",
     "sentence_it": "Dorme molto **poco**.",
     "sentence_de": "Er schläft sehr **wenig**.",
     "sentence_en": "He sleeps very **little**.",
-    "sentence_fr": "Il dort très **peu**."
+    "sentence_fr": "Il dort très **peu**.",
+    "sentence_hu": "Nagyon **keveset** alszik."
   },
   {
     "spanish": "solo",
@@ -3048,12 +3428,14 @@ const WORDS_DATA_2 = [
     "german": "nur / allein",
     "english": "only / alone",
     "french": "seulement / seul",
+    "hungarian": "csak / egyedül",
     "symbol": "1️⃣",
     "sentence_es": "**Solo** tengo diez minutos.",
     "sentence_it": "Ho **solo** dieci minuti.",
     "sentence_de": "Ich habe **nur** zehn Minuten.",
     "sentence_en": "I **only** have ten minutes.",
-    "sentence_fr": "Je n'ai **que** dix minutes."
+    "sentence_fr": "Je n'ai **que** dix minutes.",
+    "sentence_hu": "**Csak** tíz percem van."
   },
   {
     "spanish": "entonces",
@@ -3064,12 +3446,14 @@ const WORDS_DATA_2 = [
     "german": "dann / also",
     "english": "then / so",
     "french": "alors / donc",
+    "hungarian": "tehát / akkor",
     "symbol": "",
     "sentence_es": "No tengo dinero, **entonces** no puedo ir.",
     "sentence_it": "Non ho soldi, **quindi** non posso andare.",
     "sentence_de": "Ich habe kein Geld, **also** kann ich nicht gehen.",
     "sentence_en": "I have no money, **so** I can't go.",
-    "sentence_fr": "Je n'ai pas d'argent, **donc** je ne peux pas y aller."
+    "sentence_fr": "Je n'ai pas d'argent, **donc** je ne peux pas y aller.",
+    "sentence_hu": "Nincs pénzem, **tehát** nem tudok menni."
   },
   {
     "spanish": "aquí",
@@ -3080,12 +3464,14 @@ const WORDS_DATA_2 = [
     "german": "hier",
     "english": "here",
     "french": "ici",
+    "hungarian": "itt",
     "symbol": "📍",
     "sentence_es": "Vivo **aquí** desde hace dos años.",
     "sentence_it": "Vivo **qui** da due anni.",
     "sentence_de": "Ich lebe seit zwei Jahren **hier**.",
     "sentence_en": "I've lived **here** for two years.",
-    "sentence_fr": "J'habite **ici** depuis deux ans."
+    "sentence_fr": "J'habite **ici** depuis deux ans.",
+    "sentence_hu": "Két éve **itt** élek."
   },
   {
     "spanish": "allí",
@@ -3096,12 +3482,14 @@ const WORDS_DATA_2 = [
     "german": "dort",
     "english": "there",
     "french": "là / là-bas",
+    "hungarian": "ott",
     "symbol": "📌",
     "sentence_es": "El museo está **allí**, al final de la calle.",
     "sentence_it": "Il museo è **lì**, in fondo alla strada.",
     "sentence_de": "Das Museum ist **dort**, am Ende der Straße.",
     "sentence_en": "The museum is **there**, at the end of the street.",
-    "sentence_fr": "Le musée est **là-bas**, au bout de la rue."
+    "sentence_fr": "Le musée est **là-bas**, au bout de la rue.",
+    "sentence_hu": "A múzeum **ott** van, az utca végén."
   },
   {
     "spanish": "yo",
@@ -3112,12 +3500,14 @@ const WORDS_DATA_2 = [
     "german": "ich",
     "english": "I",
     "french": "je / moi",
+    "hungarian": "én",
     "symbol": "",
     "sentence_es": "**Yo** vivo en esta ciudad.",
     "sentence_it": "**Io** vivo in questa città.",
     "sentence_de": "**Ich** lebe in dieser Stadt.",
     "sentence_en": "**I** live in this city.",
-    "sentence_fr": "**Je** vis dans cette ville."
+    "sentence_fr": "**Je** vis dans cette ville.",
+    "sentence_hu": "**Én** ebben a városban élek."
   },
   {
     "spanish": "tú",
@@ -3128,12 +3518,14 @@ const WORDS_DATA_2 = [
     "german": "du",
     "english": "you (informal)",
     "french": "tu / toi",
+    "hungarian": "te",
     "symbol": "",
     "sentence_es": "¿**Tú** trabajas mañana?",
     "sentence_it": "**Tu** lavori domani?",
     "sentence_de": "Arbeitest **du** morgen?",
     "sentence_en": "Are **you** working tomorrow?",
-    "sentence_fr": "Est-ce que **tu** travailles demain ?"
+    "sentence_fr": "Est-ce que **tu** travailles demain ?",
+    "sentence_hu": "**Te** dolgozol holnap?"
   },
   {
     "spanish": "este",
@@ -3144,12 +3536,14 @@ const WORDS_DATA_2 = [
     "german": "dieser",
     "english": "this",
     "french": "ce / celui-ci",
+    "hungarian": "ez",
     "symbol": "👉",
     "sentence_es": "**Este** libro es mío.",
     "sentence_it": "**Questo** libro è mio.",
     "sentence_de": "**Dieses** Buch gehört mir.",
     "sentence_en": "**This** book is mine.",
-    "sentence_fr": "**Ce** livre est à moi."
+    "sentence_fr": "**Ce** livre est à moi.",
+    "sentence_hu": "**Ez** a könyv az enyém."
   },
   {
     "spanish": "ese",
@@ -3160,12 +3554,14 @@ const WORDS_DATA_2 = [
     "german": "jener / der da",
     "english": "that",
     "french": "ce ... -là / celui-là",
+    "hungarian": "az",
     "symbol": "👈",
     "sentence_es": "**Ese** coche es de mi vecino.",
     "sentence_it": "**Quella** macchina è del mio vicino.",
     "sentence_de": "**Das** Auto da gehört meinem Nachbarn.",
     "sentence_en": "**That** car belongs to my neighbor.",
-    "sentence_fr": "**Cette** voiture-là est à mon voisin."
+    "sentence_fr": "**Cette** voiture-là est à mon voisin.",
+    "sentence_hu": "**Az** az autó a szomszédomé."
   },
   {
     "spanish": "porque",
@@ -3176,12 +3572,14 @@ const WORDS_DATA_2 = [
     "german": "weil",
     "english": "because",
     "french": "parce que",
+    "hungarian": "mert",
     "symbol": "",
     "sentence_es": "No salgo **porque** llueve.",
     "sentence_it": "Non esco **perché** piove.",
     "sentence_de": "Ich gehe nicht raus, **weil** es regnet.",
     "sentence_en": "I'm not going out **because** it's raining.",
-    "sentence_fr": "Je ne sors pas **parce qu'**il pleut."
+    "sentence_fr": "Je ne sors pas **parce qu'**il pleut.",
+    "sentence_hu": "Nem megyek ki, **mert** esik."
   },
   {
     "spanish": "aunque",
@@ -3192,11 +3590,13 @@ const WORDS_DATA_2 = [
     "german": "obwohl",
     "english": "although",
     "french": "bien que / même si",
+    "hungarian": "bár / habár",
     "symbol": "",
     "sentence_es": "Salgo **aunque** llueve.",
     "sentence_it": "Esco **anche se** piove.",
     "sentence_de": "Ich gehe raus, **obwohl** es regnet.",
     "sentence_en": "I go out **although** it's raining.",
-    "sentence_fr": "Je sors **même s'il** pleut."
+    "sentence_fr": "Je sors **même s'il** pleut.",
+    "sentence_hu": "Kimegyek, **bár** esik."
   }
 ];
