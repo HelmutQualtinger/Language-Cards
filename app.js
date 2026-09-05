@@ -5,35 +5,38 @@ const LANG_META = {
   it: { code: 'it', field: 'italian', sentenceField: 'sentence_it' },
   de: { code: 'de', field: 'german', sentenceField: 'sentence_de' },
   en: { code: 'en', field: 'english', sentenceField: 'sentence_en' },
-  fr: { code: 'fr', field: 'french', sentenceField: 'sentence_fr' }
+  fr: { code: 'fr', field: 'french', sentenceField: 'sentence_fr' },
+  hu: { code: 'hu', field: 'hungarian', sentenceField: 'sentence_hu' }
 };
 
-// Target language is restricted to these (the UI is only translated into these four);
+// Target language is restricted to these (the UI is only translated into these five);
 // Spanish can only ever be the source, never the target/UI language.
-const TARGET_LANG_OPTIONS = ['it', 'de', 'en', 'fr'];
+const TARGET_LANG_OPTIONS = ['it', 'de', 'en', 'fr', 'hu'];
 
 // The "word details" reveal panel shows every language except whichever is currently
 // the source (that one is already visible as the question itself). Order matches the
 // card's own field order in WORDS_DATA.
-const DETAIL_LANGS = ['es', 'it', 'de', 'en', 'fr'];
-const DETAIL_LANG_SUFFIX = { es: 'spanish', it: 'italian', de: 'german', en: 'english', fr: 'french' };
+const DETAIL_LANGS = ['es', 'it', 'de', 'en', 'fr', 'hu'];
+const DETAIL_LANG_SUFFIX = { es: 'spanish', it: 'italian', de: 'german', en: 'english', fr: 'french', hu: 'hungarian' };
 
 // Display name of each language, as shown in each possible UI language.
 const LANG_DISPLAY_NAME = {
-  it: { es: 'spagnolo', it: 'italiano', de: 'tedesco', en: 'inglese', fr: 'francese' },
-  de: { es: 'Spanisch', it: 'Italienisch', de: 'Deutsch', en: 'Englisch', fr: 'Französisch' },
-  en: { es: 'Spanish', it: 'Italian', de: 'German', en: 'English', fr: 'French' },
-  fr: { es: 'espagnol', it: 'italien', de: 'allemand', en: 'anglais', fr: 'français' }
+  it: { es: 'spagnolo', it: 'italiano', de: 'tedesco', en: 'inglese', fr: 'francese', hu: 'ungherese' },
+  de: { es: 'Spanisch', it: 'Italienisch', de: 'Deutsch', en: 'Englisch', fr: 'Französisch', hu: 'Ungarisch' },
+  en: { es: 'Spanish', it: 'Italian', de: 'German', en: 'English', fr: 'French', hu: 'Hungarian' },
+  fr: { es: 'espagnol', it: 'italien', de: 'allemand', en: 'anglais', fr: 'français', hu: 'hongrois' },
+  hu: { es: 'spanyol', it: 'olasz', de: 'német', en: 'angol', fr: 'francia', hu: 'magyar' }
 };
 
-const LANG_FLAG = { es: '🇪🇸', it: '🇮🇹', de: '🇩🇪', en: '🇬🇧', fr: '🇫🇷' };
+const LANG_FLAG = { es: '🇪🇸', it: '🇮🇹', de: '🇩🇪', en: '🇬🇧', fr: '🇫🇷', hu: '🇭🇺' };
 
 // Adjective form of "[language] translation" used in the hint sentence, per UI language.
 const ADJ_FORM = {
-  it: { es: 'spagnola', it: 'italiana', de: 'tedesca', en: 'inglese', fr: 'francese' },
-  de: { es: 'spanische', it: 'italienische', de: 'deutsche', en: 'englische', fr: 'französische' },
-  en: { es: 'Spanish', it: 'Italian', de: 'German', en: 'English', fr: 'French' },
-  fr: { es: 'espagnole', it: 'italienne', de: 'allemande', en: 'anglaise', fr: 'française' }
+  it: { es: 'spagnola', it: 'italiana', de: 'tedesca', en: 'inglese', fr: 'francese', hu: 'ungherese' },
+  de: { es: 'spanische', it: 'italienische', de: 'deutsche', en: 'englische', fr: 'französische', hu: 'ungarische' },
+  en: { es: 'Spanish', it: 'Italian', de: 'German', en: 'English', fr: 'French', hu: 'Hungarian' },
+  fr: { es: 'espagnole', it: 'italienne', de: 'allemande', en: 'anglaise', fr: 'française', hu: 'hongroise' },
+  hu: { es: 'spanyol', it: 'olasz', de: 'német', en: 'angol', fr: 'francia', hu: 'magyar' }
 };
 
 // Word-type labels per UI language.
@@ -57,6 +60,11 @@ const WORD_TYPE_LABELS = {
     noun: 'Nom', verb: 'Verbe', adjective: 'Adjectif', adverb: 'Adverbe',
     pronoun: 'Pronom', determiner: 'Déterminant', conjunction: 'Conjonction',
     'adverbial phrase': 'Locution adverbiale'
+  },
+  hu: {
+    noun: 'Főnév', verb: 'Ige', adjective: 'Melléknév', adverb: 'Határozószó',
+    pronoun: 'Névmás', determiner: 'Névelő', conjunction: 'Kötőszó',
+    'adverbial phrase': 'Határozói szókapcsolat'
   }
 };
 
@@ -65,7 +73,17 @@ const GENDER_WORDS = {
   it: { masculine: 'maschile', feminine: 'femminile', plural: 'plurale' },
   de: { masculine: 'männlich', feminine: 'weiblich', plural: 'Plural' },
   en: { masculine: 'masculine', feminine: 'feminine', plural: 'plural' },
-  fr: { masculine: 'masculin', feminine: 'féminin', plural: 'pluriel' }
+  fr: { masculine: 'masculin', feminine: 'féminin', plural: 'pluriel' },
+  hu: { masculine: 'hímnemű', feminine: 'nőnemű', plural: 'többes szám' }
+};
+
+// Hungarian "in [language]" is a suffix on the language name, not a separate word,
+// and which vowel-harmony suffix (-ul/-ül, with "francia" irregularly taking "-ául")
+// applies can't be derived by simple concatenation — so look it up explicitly rather
+// than templating it from the plain language name used everywhere else.
+const HU_LOCATIVE_LANG = {
+  spanyol: 'spanyolul', olasz: 'olaszul', német: 'németül',
+  angol: 'angolul', francia: 'franciául', magyar: 'magyarul'
 };
 
 // All other static UI text, per UI language.
@@ -205,6 +223,40 @@ const I18N = {
     difficultyFilterAll: (n) => `Toutes (${n} mots)`,
     difficultyFilterEasy: (n) => `Faciles (${n})`,
     difficultyFilterHard: (n) => `Difficiles (${n})`
+  },
+  hu: {
+    pageTitle: 'Szókártyák',
+    appTitle: 'Szókártyák',
+    subtitleSuffix: 'Szókincsgyakorlás',
+    statCorrect: 'Helyes:', statIncorrect: 'Helytelen:', statAccuracy: 'Arány:', statStreak: 'Sorozat:',
+    titleCorrect: 'Helyes válaszok', titleIncorrect: 'Helytelen válaszok',
+    titleAccuracy: 'Sikerességi arány', titleStreak: 'Jelenlegi sorozat',
+    langSourceLabel: 'Forrásnyelv:', langTargetLabel: 'Célnyelv:', typeFilterLabel: 'Szófaj szűrő:',
+    difficultyFilterLabel: 'Nehézség:',
+    speechRateLabel: 'Beszédsebesség:', speechRateTitle: 'A hangszintézis sebességének beállítása',
+    btnSoundText: '🔊 Meghallgatás', btnSoundTitle: (adjForm) => `${adjForm} kiejtés meghallgatása`,
+    btnResetStatsText: 'Statisztika visszaállítása', btnResetStatsTitle: 'Statisztika visszaállítása',
+    cardBadgeDefault: 'Szófaj', genderBadgeDefault: 'Nem',
+    cardProgress: (n) => `${n}. kártya`,
+    wordHint: (adjForm) => `Találd meg a helyes ${adjForm} fordítást, amely ugyanolyan szófajú:`,
+    sentenceTargetLabel: (langName) => `Mondat ${HU_LOCATIVE_LANG[langName] || langName + 'ul'}`,
+    btnPlayTargetTitle: (langName) => `${HU_LOCATIVE_LANG[langName] || langName + 'ul'} mondat meghallgatása`,
+    btnNextText: 'Következő kártya ➔', keyHintText: '(Szóköz vagy Enter)',
+    historyTitle: 'Legutóbbi szavak',
+    historyCount: (n) => `${n} bejegyzés`,
+    emptyHistory: 'Még nem játszottál egyetlen szóval sem. Válassz egy lehetőséget fent!',
+    correctBadge: 'Helyes', incorrectBadge: 'Helytelen',
+    feedbackCorrect: (sym, sp, tgt) => `Kiváló! ${sym}"${sp}" jelentése: "${tgt}".`,
+    feedbackIncorrect: (sym, sp, tgt) => `Nem egészen. ${sym}"${sp}" jelentése: "${tgt}".`,
+    resetConfirm: 'Valóban vissza szeretnéd állítani a számlálókat és az előzményeket?',
+    typeFilterAll: (n) => `Minden szófaj (${n} szó)`,
+    typeFilterNoun: (n) => `Főnevek (${n})`,
+    typeFilterVerb: (n) => `Igék (${n})`,
+    typeFilterAdjective: (n) => `Melléknevek (${n})`,
+    typeFilterAdverb: (n) => `Határozószók (${n})`,
+    difficultyFilterAll: (n) => `Összes (${n} szó)`,
+    difficultyFilterEasy: (n) => `Könnyű (${n})`,
+    difficultyFilterHard: (n) => `Nehéz (${n})`
   }
 };
 
@@ -697,10 +749,11 @@ const PREFERRED_VOICE_NAMES = {
   it: ['alice'],
   de: ['anna'],
   en: ['samantha'],
-  fr: ['thomas', 'amelie']
+  fr: ['thomas', 'amelie'],
+  hu: ['tunde']
 };
 
-const FALLBACK_LANG_TAG = { es: 'es-ES', it: 'it-IT', de: 'de-DE', en: 'en-US', fr: 'fr-FR' };
+const FALLBACK_LANG_TAG = { es: 'es-ES', it: 'it-IT', de: 'de-DE', en: 'en-US', fr: 'fr-FR', hu: 'hu-HU' };
 
 function normalizeName(str) {
   return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
