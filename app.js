@@ -6,37 +6,52 @@ const LANG_META = {
   de: { code: 'de', field: 'german', sentenceField: 'sentence_de' },
   en: { code: 'en', field: 'english', sentenceField: 'sentence_en' },
   fr: { code: 'fr', field: 'french', sentenceField: 'sentence_fr' },
-  hu: { code: 'hu', field: 'hungarian', sentenceField: 'sentence_hu' }
+  hu: { code: 'hu', field: 'hungarian', sentenceField: 'sentence_hu' },
+  ga: { code: 'ga', field: 'irish', sentenceField: 'sentence_ga' }
 };
 
-// Target language is restricted to these (the UI is only translated into these five);
+// Target language is restricted to these (the UI is only translated into these six);
 // Spanish can only ever be the source, never the target/UI language.
-const TARGET_LANG_OPTIONS = ['it', 'de', 'en', 'fr', 'hu'];
+const TARGET_LANG_OPTIONS = ['it', 'de', 'en', 'fr', 'hu', 'ga'];
 
 // The "word details" reveal panel shows every language except whichever is currently
 // the source (that one is already visible as the question itself). Order matches the
 // card's own field order in WORDS_DATA.
-const DETAIL_LANGS = ['es', 'it', 'de', 'en', 'fr', 'hu'];
-const DETAIL_LANG_SUFFIX = { es: 'spanish', it: 'italian', de: 'german', en: 'english', fr: 'french', hu: 'hungarian' };
+const DETAIL_LANGS = ['es', 'it', 'de', 'en', 'fr', 'hu', 'ga'];
+const DETAIL_LANG_SUFFIX = { es: 'spanish', it: 'italian', de: 'german', en: 'english', fr: 'french', hu: 'hungarian', ga: 'irish' };
 
 // Display name of each language, as shown in each possible UI language.
 const LANG_DISPLAY_NAME = {
-  it: { es: 'spagnolo', it: 'italiano', de: 'tedesco', en: 'inglese', fr: 'francese', hu: 'ungherese' },
-  de: { es: 'Spanisch', it: 'Italienisch', de: 'Deutsch', en: 'Englisch', fr: 'Französisch', hu: 'Ungarisch' },
-  en: { es: 'Spanish', it: 'Italian', de: 'German', en: 'English', fr: 'French', hu: 'Hungarian' },
-  fr: { es: 'espagnol', it: 'italien', de: 'allemand', en: 'anglais', fr: 'français', hu: 'hongrois' },
-  hu: { es: 'spanyol', it: 'olasz', de: 'német', en: 'angol', fr: 'francia', hu: 'magyar' }
+  it: { es: 'spagnolo', it: 'italiano', de: 'tedesco', en: 'inglese', fr: 'francese', hu: 'ungherese', ga: 'irlandese' },
+  de: { es: 'Spanisch', it: 'Italienisch', de: 'Deutsch', en: 'Englisch', fr: 'Französisch', hu: 'Ungarisch', ga: 'Irisch' },
+  en: { es: 'Spanish', it: 'Italian', de: 'German', en: 'English', fr: 'French', hu: 'Hungarian', ga: 'Irish' },
+  fr: { es: 'espagnol', it: 'italien', de: 'allemand', en: 'anglais', fr: 'français', hu: 'hongrois', ga: 'irlandais' },
+  hu: { es: 'spanyol', it: 'olasz', de: 'német', en: 'angol', fr: 'francia', hu: 'magyar', ga: 'ír' },
+  ga: { es: 'Spáinnis', it: 'Iodáilis', de: 'Gearmáinis', en: 'Béarla', fr: 'Fraincis', hu: 'Ungáiris', ga: 'Gaeilge' }
 };
 
-const LANG_FLAG = { es: '🇪🇸', it: '🇮🇹', de: '🇩🇪', en: '🇬🇧', fr: '🇫🇷', hu: '🇭🇺' };
+const LANG_FLAG = { es: '🇪🇸', it: '🇮🇹', de: '🇩🇪', en: '🇬🇧', fr: '🇫🇷', hu: '🇭🇺', ga: '🇮🇪' };
 
 // Adjective form of "[language] translation" used in the hint sentence, per UI language.
+// For Irish, this instead holds the genitive-case form of the language name (Irish
+// expresses "the Spanish translation" as "an t-aistriúchán Spáinnise" — a genitive noun
+// modifier, not a true adjective), which slots into I18N.ga's templates the same way a
+// plain adjective slots into the other languages'.
 const ADJ_FORM = {
-  it: { es: 'spagnola', it: 'italiana', de: 'tedesca', en: 'inglese', fr: 'francese', hu: 'ungherese' },
-  de: { es: 'spanische', it: 'italienische', de: 'deutsche', en: 'englische', fr: 'französische', hu: 'ungarische' },
-  en: { es: 'Spanish', it: 'Italian', de: 'German', en: 'English', fr: 'French', hu: 'Hungarian' },
-  fr: { es: 'espagnole', it: 'italienne', de: 'allemande', en: 'anglaise', fr: 'française', hu: 'hongroise' },
-  hu: { es: 'spanyol', it: 'olasz', de: 'német', en: 'angol', fr: 'francia', hu: 'magyar' }
+  it: { es: 'spagnola', it: 'italiana', de: 'tedesca', en: 'inglese', fr: 'francese', hu: 'ungherese', ga: 'irlandese' },
+  de: { es: 'spanische', it: 'italienische', de: 'deutsche', en: 'englische', fr: 'französische', hu: 'ungarische', ga: 'irische' },
+  en: { es: 'Spanish', it: 'Italian', de: 'German', en: 'English', fr: 'French', hu: 'Hungarian', ga: 'Irish' },
+  fr: { es: 'espagnole', it: 'italienne', de: 'allemande', en: 'anglaise', fr: 'française', hu: 'hongroise', ga: 'irlandaise' },
+  hu: { es: 'spanyol', it: 'olasz', de: 'német', en: 'angol', fr: 'francia', hu: 'magyar', ga: 'ír' },
+  ga: { es: 'Spáinnise', it: 'Iodáilise', de: 'Gearmáinise', en: 'Béarla', fr: 'Fraincise', hu: 'Ungáirise', ga: 'Gaeilge' }
+};
+
+// Irish "in [language]" mutates the following word's initial consonant (eclipsis) or takes
+// the "in" variant before a vowel — not derivable by simple concatenation — so look it up
+// explicitly, the same way HU_LOCATIVE_LANG handles Hungarian's vowel-harmony suffix.
+const GA_LOCATIVE_LANG = {
+  'Spáinnis': 'i Spáinnis', 'Iodáilis': 'in Iodáilis', 'Gearmáinis': 'i nGearmáinis',
+  'Béarla': 'i mBéarla', 'Fraincis': 'i bhFraincis', 'Ungáiris': 'in Ungáiris', 'Gaeilge': 'i nGaeilge'
 };
 
 // Word-type labels per UI language.
@@ -65,6 +80,11 @@ const WORD_TYPE_LABELS = {
     noun: 'Főnév', verb: 'Ige', adjective: 'Melléknév', adverb: 'Határozószó',
     pronoun: 'Névmás', determiner: 'Névelő', conjunction: 'Kötőszó',
     'adverbial phrase': 'Határozói szókapcsolat'
+  },
+  ga: {
+    noun: 'Ainmfhocal', verb: 'Briathar', adjective: 'Aidiacht', adverb: 'Dobhriathar',
+    pronoun: 'Forainm', determiner: 'Deitéarmanaí', conjunction: 'Cónasc',
+    'adverbial phrase': 'Frása dobhriathartha'
   }
 };
 
@@ -74,7 +94,8 @@ const GENDER_WORDS = {
   de: { masculine: 'männlich', feminine: 'weiblich', plural: 'Plural' },
   en: { masculine: 'masculine', feminine: 'feminine', plural: 'plural' },
   fr: { masculine: 'masculin', feminine: 'féminin', plural: 'pluriel' },
-  hu: { masculine: 'hímnemű', feminine: 'nőnemű', plural: 'többes szám' }
+  hu: { masculine: 'hímnemű', feminine: 'nőnemű', plural: 'többes szám' },
+  ga: { masculine: 'firinscneach', feminine: 'baininscneach', plural: 'iolra' }
 };
 
 // Hungarian "in [language]" is a suffix on the language name, not a separate word,
@@ -257,6 +278,40 @@ const I18N = {
     difficultyFilterAll: (n) => `Összes (${n} szó)`,
     difficultyFilterEasy: (n) => `Könnyű (${n})`,
     difficultyFilterHard: (n) => `Nehéz (${n})`
+  },
+  ga: {
+    pageTitle: 'Cártaí Focal',
+    appTitle: 'Cártaí Focal',
+    subtitleSuffix: 'Cleachtadh Foclóra',
+    statCorrect: 'Ceart:', statIncorrect: 'Mícheart:', statAccuracy: 'Cruinneas:', statStreak: 'Sraith:',
+    titleCorrect: 'Freagraí cearta', titleIncorrect: 'Freagraí mícheart',
+    titleAccuracy: 'Ráta ratha', titleStreak: 'Sraith reatha',
+    langSourceLabel: 'Teanga fhoinseach:', langTargetLabel: 'Sprioctheanga:', typeFilterLabel: 'Scagaire cineál focal:',
+    difficultyFilterLabel: 'Deacracht:',
+    speechRateLabel: 'Luas cainte:', speechRateTitle: 'Coigeartaigh luas na sintéise urlabhra',
+    btnSoundText: '🔊 Éist', btnSoundTitle: (adjForm) => `Éist le fuaimniú ${adjForm}`,
+    btnResetStatsText: 'Athshocraigh staitisticí', btnResetStatsTitle: 'Athshocraigh staitisticí',
+    cardBadgeDefault: 'Cineál', genderBadgeDefault: 'Inscne',
+    cardProgress: (n) => `Cárta #${n}`,
+    wordHint: (adjForm) => `Aimsigh an t-aistriúchán ceart ${adjForm} den chineál focal céanna:`,
+    sentenceTargetLabel: (langName) => `Abairt ${GA_LOCATIVE_LANG[langName] || langName}`,
+    btnPlayTargetTitle: (langName) => `Éist leis an abairt ${GA_LOCATIVE_LANG[langName] || langName}`,
+    btnNextText: 'An chéad chárta eile ➔', keyHintText: '(Spásbharra nó Enter)',
+    historyTitle: 'Focail dhéanacha',
+    historyCount: (n) => `${n} iontráil`,
+    emptyHistory: 'Níor imríodh aon fhocal fós. Roghnaigh rogha thuas!',
+    correctBadge: 'Ceart', incorrectBadge: 'Mícheart',
+    feedbackCorrect: (sym, sp, tgt) => `Ar fheabhas! ${sym}"${sp}" a chiallaíonn "${tgt}".`,
+    feedbackIncorrect: (sym, sp, tgt) => `Ní hea go díreach. ${sym}"${sp}" a chiallaíonn "${tgt}".`,
+    resetConfirm: 'An bhfuil tú cinnte gur mhaith leat na cuntair agus an stair a athshocrú?',
+    typeFilterAll: (n) => `Gach cineál (${n} focal)`,
+    typeFilterNoun: (n) => `Ainmfhocail (${n})`,
+    typeFilterVerb: (n) => `Briathra (${n})`,
+    typeFilterAdjective: (n) => `Aidiachtaí (${n})`,
+    typeFilterAdverb: (n) => `Dobhriathra (${n})`,
+    difficultyFilterAll: (n) => `Gach ceann (${n} focal)`,
+    difficultyFilterEasy: (n) => `Éasca (${n})`,
+    difficultyFilterHard: (n) => `Deacair (${n})`
   }
 };
 
@@ -753,7 +808,21 @@ const PREFERRED_VOICE_NAMES = {
   hu: ['tunde']
 };
 
-const FALLBACK_LANG_TAG = { es: 'es-ES', it: 'it-IT', de: 'de-DE', en: 'en-US', fr: 'fr-FR', hu: 'hu-HU' };
+const FALLBACK_LANG_TAG = { es: 'es-ES', it: 'it-IT', de: 'de-DE', en: 'en-US', fr: 'fr-FR', hu: 'hu-HU', ga: 'ga-IE' };
+
+// macOS (and Chrome on top of it) lists every voice the OS *could* use — including ones
+// whose actual voice-data package was never downloaded — in speechSynthesis.getVoices().
+// Speaking with an undownloaded voice doesn't error or fall through to onerror; it silently
+// substitutes the system's default voice instead, so a listener hears the wrong language
+// entirely (reported: Hungarian text spoken in what sounds like German — the Mac's default
+// system voice — because "Tünde" was listed but not actually installed). There is no Web
+// Speech API to check whether a listed voice's data is actually present, so for languages
+// whose voice is known to ship this way, skip the local-voice path entirely and always use
+// the network TTS fallback, which is guaranteed to speak the requested language correctly.
+// Irish is included pre-emptively: macOS ships no native Irish-Gaelic (ga-IE) system voice
+// at all (only Irish-accented *English* voices like Moira/Fiona, which are en-IE, not
+// ga-IE), so there is no reliable local voice to trust here in the first place.
+const NETWORK_ONLY_LANGS = new Set(['hu', 'ga']);
 
 function normalizeName(str) {
   return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
@@ -862,7 +931,7 @@ function playNetworkTTS(text, langPrefix) {
 // network fallback.
 function speakOne(text, langPrefix) {
   return new Promise((resolve) => {
-    const voice = pickVoiceForLang(langPrefix);
+    const voice = NETWORK_ONLY_LANGS.has(langPrefix) ? null : pickVoiceForLang(langPrefix);
     if (voice) {
       const utterance = buildUtterance(text, langPrefix, voice);
       utterance.onend = () => resolve();
