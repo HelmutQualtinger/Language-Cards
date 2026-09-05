@@ -819,10 +819,18 @@ const FALLBACK_LANG_TAG = { es: 'es-ES', it: 'it-IT', de: 'de-DE', en: 'en-US', 
 // Speech API to check whether a listed voice's data is actually present, so for languages
 // whose voice is known to ship this way, skip the local-voice path entirely and always use
 // the network TTS fallback, which is guaranteed to speak the requested language correctly.
-// Irish is included pre-emptively: macOS ships no native Irish-Gaelic (ga-IE) system voice
-// at all (only Irish-accented *English* voices like Moira/Fiona, which are en-IE, not
-// ga-IE), so there is no reliable local voice to trust here in the first place.
-const NETWORK_ONLY_LANGS = new Set(['hu', 'ga']);
+//
+// Irish is deliberately NOT in this set, even though macOS ships no native Irish-Gaelic
+// (ga-IE) voice either: unlike Hungarian, Google Translate's TTS endpoint returns HTTP 400
+// for tl=ga on both translate.google.com and translate.googleapis.com — it has no Irish
+// voice at all, confirmed by direct request, not just an untested assumption. Forcing
+// network-only for a language the network endpoint can't speak would silently produce total
+// silence for every user, including the rare one with a genuine local Irish voice (e.g.
+// Windows ships a "Colm" ga-IE voice in some versions) — so Irish falls through to the
+// normal local-voice-first / network-fallback-second path, and simply has no audio when
+// neither is available. This is a known limitation of the free TTS backends this app uses,
+// not a bug to chase in app code.
+const NETWORK_ONLY_LANGS = new Set(['hu']);
 
 function normalizeName(str) {
   return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
@@ -912,7 +920,10 @@ function stopAllSpeech() {
 
 function playNetworkTTS(text, langPrefix) {
   return new Promise((resolve) => {
-    const url = `https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=${langPrefix}&q=${encodeURIComponent(text)}`;
+    // translate.googleapis.com serves the same audio as translate.google.com/translate_tts
+    // but isn't caught by the ad/tracker filter lists that block the .com widget endpoint
+    // (EasyList and similar commonly blocklist translate.google.com/translate_tts itself).
+    const url = `https://translate.googleapis.com/translate_tts?ie=UTF-8&client=gtx&tl=${langPrefix}&q=${encodeURIComponent(text)}`;
     const audio = new Audio(url);
     audio.playbackRate = (langPrefix === state.sourceLang ? SOURCE_RATE_MULTIPLIER : 1) * state.speechRate;
     currentNetworkAudio = audio;
@@ -921,8 +932,14 @@ function playNetworkTTS(text, langPrefix) {
       resolve();
     };
     audio.addEventListener('ended', finish);
-    audio.addEventListener('error', finish);
-    audio.play().catch(finish);
+    audio.addEventListener('error', () => {
+      console.warn('Network TTS failed to load:', url, audio.error);
+      finish();
+    });
+    audio.play().catch((e) => {
+      console.warn('Network TTS play() rejected:', url, e);
+      finish();
+    });
   });
 }
 
@@ -935,7 +952,10 @@ function speakOne(text, langPrefix) {
     if (voice) {
       const utterance = buildUtterance(text, langPrefix, voice);
       utterance.onend = () => resolve();
-      utterance.onerror = () => resolve();
+      utterance.onerror = (e) => {
+        console.warn('Local speech synthesis failed:', langPrefix, voice.name, e.error);
+        resolve();
+      };
       window.speechSynthesis.speak(utterance);
     } else {
       playNetworkTTS(text, langPrefix).then(resolve);
