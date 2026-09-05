@@ -1,25 +1,39 @@
 // Supported languages: which vocabulary field/sentence to quiz on. The GUI language
 // always matches the selected target language (state.targetLang doubles as UI language).
 const LANG_META = {
+  es: { code: 'es', field: 'spanish', sentenceField: 'sentence_es' },
   it: { code: 'it', field: 'italian', sentenceField: 'sentence_it' },
   de: { code: 'de', field: 'german', sentenceField: 'sentence_de' },
-  en: { code: 'en', field: 'english', sentenceField: 'sentence_en' }
+  en: { code: 'en', field: 'english', sentenceField: 'sentence_en' },
+  fr: { code: 'fr', field: 'french', sentenceField: 'sentence_fr' }
 };
+
+// Target language is restricted to these (the UI is only translated into these four);
+// Spanish can only ever be the source, never the target/UI language.
+const TARGET_LANG_OPTIONS = ['it', 'de', 'en', 'fr'];
+
+// The "word details" reveal panel shows every language except whichever is currently
+// the source (that one is already visible as the question itself). Order matches the
+// card's own field order in WORDS_DATA.
+const DETAIL_LANGS = ['es', 'it', 'de', 'en', 'fr'];
+const DETAIL_LANG_SUFFIX = { es: 'spanish', it: 'italian', de: 'german', en: 'english', fr: 'french' };
 
 // Display name of each language, as shown in each possible UI language.
 const LANG_DISPLAY_NAME = {
-  it: { it: 'italiano', de: 'tedesco', en: 'inglese' },
-  de: { it: 'Italienisch', de: 'Deutsch', en: 'Englisch' },
-  en: { it: 'Italian', de: 'German', en: 'English' }
+  it: { es: 'spagnolo', it: 'italiano', de: 'tedesco', en: 'inglese', fr: 'francese' },
+  de: { es: 'Spanisch', it: 'Italienisch', de: 'Deutsch', en: 'Englisch', fr: 'Französisch' },
+  en: { es: 'Spanish', it: 'Italian', de: 'German', en: 'English', fr: 'French' },
+  fr: { es: 'espagnol', it: 'italien', de: 'allemand', en: 'anglais', fr: 'français' }
 };
 
-const LANG_FLAG = { it: '🇮🇹', de: '🇩🇪', en: '🇬🇧' };
+const LANG_FLAG = { es: '🇪🇸', it: '🇮🇹', de: '🇩🇪', en: '🇬🇧', fr: '🇫🇷' };
 
 // Adjective form of "[language] translation" used in the hint sentence, per UI language.
 const ADJ_FORM = {
-  it: { it: 'italiana', de: 'tedesca', en: 'inglese' },
-  de: { it: 'italienische', de: 'deutsche', en: 'englische' },
-  en: { it: 'Italian', de: 'German', en: 'English' }
+  it: { es: 'spagnola', it: 'italiana', de: 'tedesca', en: 'inglese', fr: 'francese' },
+  de: { es: 'spanische', it: 'italienische', de: 'deutsche', en: 'englische', fr: 'französische' },
+  en: { es: 'Spanish', it: 'Italian', de: 'German', en: 'English', fr: 'French' },
+  fr: { es: 'espagnole', it: 'italienne', de: 'allemande', en: 'anglaise', fr: 'française' }
 };
 
 // Word-type labels per UI language.
@@ -38,6 +52,11 @@ const WORD_TYPE_LABELS = {
     noun: 'Noun', verb: 'Verb', adjective: 'Adjective', adverb: 'Adverb',
     pronoun: 'Pronoun', determiner: 'Determiner', conjunction: 'Conjunction',
     'adverbial phrase': 'Adverbial phrase'
+  },
+  fr: {
+    noun: 'Nom', verb: 'Verbe', adjective: 'Adjectif', adverb: 'Adverbe',
+    pronoun: 'Pronom', determiner: 'Déterminant', conjunction: 'Conjonction',
+    'adverbial phrase': 'Locution adverbiale'
   }
 };
 
@@ -45,7 +64,8 @@ const WORD_TYPE_LABELS = {
 const GENDER_WORDS = {
   it: { masculine: 'maschile', feminine: 'femminile', plural: 'plurale' },
   de: { masculine: 'männlich', feminine: 'weiblich', plural: 'Plural' },
-  en: { masculine: 'masculine', feminine: 'feminine', plural: 'plural' }
+  en: { masculine: 'masculine', feminine: 'feminine', plural: 'plural' },
+  fr: { masculine: 'masculin', feminine: 'féminin', plural: 'pluriel' }
 };
 
 // All other static UI text, per UI language.
@@ -53,20 +73,19 @@ const I18N = {
   it: {
     pageTitle: 'Carte di Vocaboli',
     appTitle: 'Carte di Vocaboli',
-    subtitleSpanish: 'Spagnolo',
     subtitleSuffix: 'Allenamento del vocabolario',
     statCorrect: 'Corrette:', statIncorrect: 'Sbagliate:', statAccuracy: 'Precisione:', statStreak: 'Serie:',
     titleCorrect: 'Risposte corrette', titleIncorrect: 'Risposte sbagliate',
     titleAccuracy: 'Percentuale di successo', titleStreak: 'Serie attuale',
-    langTargetLabel: 'Lingua di destinazione:', typeFilterLabel: 'Filtro per categoria grammaticale:',
-    btnSoundText: '🔊 Ascolta', btnSoundTitle: 'Ascolta la pronuncia spagnola',
+    langSourceLabel: 'Lingua di origine:', langTargetLabel: 'Lingua di destinazione:', typeFilterLabel: 'Filtro per categoria grammaticale:',
+    difficultyFilterLabel: 'Difficoltà:',
+    speechRateLabel: 'Velocità vocale:', speechRateTitle: 'Regola la velocità della sintesi vocale',
+    btnSoundText: '🔊 Ascolta', btnSoundTitle: (adjForm) => `Ascolta la pronuncia ${adjForm}`,
     btnResetStatsText: 'Reimposta statistiche', btnResetStatsTitle: 'Reimposta le statistiche',
     cardBadgeDefault: 'Categoria', genderBadgeDefault: 'Genere',
     cardProgress: (n) => `Carta #${n}`,
     wordHint: (adjForm) => `Trova la traduzione ${adjForm} corretta con la stessa categoria grammaticale:`,
-    sentenceEsLabel: 'Frase in spagnolo',
     sentenceTargetLabel: (langName) => `Frase in ${langName}`,
-    btnPlayEsTitle: 'Ascolta la frase in spagnolo',
     btnPlayTargetTitle: (langName) => `Ascolta la frase in ${langName}`,
     btnNextText: 'Prossima carta ➔', keyHintText: '(Barra spaziatrice o Invio)',
     historyTitle: 'Parole recenti',
@@ -80,25 +99,27 @@ const I18N = {
     typeFilterNoun: (n) => `Sostantivi (${n})`,
     typeFilterVerb: (n) => `Verbi (${n})`,
     typeFilterAdjective: (n) => `Aggettivi (${n})`,
-    typeFilterAdverb: (n) => `Avverbi (${n})`
+    typeFilterAdverb: (n) => `Avverbi (${n})`,
+    difficultyFilterAll: (n) => `Tutte (${n} parole)`,
+    difficultyFilterEasy: (n) => `Facili (${n})`,
+    difficultyFilterHard: (n) => `Difficili (${n})`
   },
   de: {
     pageTitle: 'Wortkarten',
     appTitle: 'Wortkarten',
-    subtitleSpanish: 'Spanisch',
     subtitleSuffix: 'Vokabeltraining',
     statCorrect: 'Richtig:', statIncorrect: 'Falsch:', statAccuracy: 'Quote:', statStreak: 'Serie:',
     titleCorrect: 'Richtig beantwortet', titleIncorrect: 'Falsch beantwortet',
     titleAccuracy: 'Trefferquote', titleStreak: 'Aktuelle Serie',
-    langTargetLabel: 'Zielsprache:', typeFilterLabel: 'Wortart-Filter:',
-    btnSoundText: '🔊 Anhören', btnSoundTitle: 'Spanische Aussprache anhören',
+    langSourceLabel: 'Ausgangssprache:', langTargetLabel: 'Zielsprache:', typeFilterLabel: 'Wortart-Filter:',
+    difficultyFilterLabel: 'Schwierigkeit:',
+    speechRateLabel: 'Sprechgeschwindigkeit:', speechRateTitle: 'Sprechgeschwindigkeit der Sprachausgabe einstellen',
+    btnSoundText: '🔊 Anhören', btnSoundTitle: (adjForm) => `${adjForm.replace(/^./, c => c.toUpperCase())} Aussprache anhören`,
     btnResetStatsText: 'Statistik zurücksetzen', btnResetStatsTitle: 'Statistik zurücksetzen',
     cardBadgeDefault: 'Wortart', genderBadgeDefault: 'Genus',
     cardProgress: (n) => `Karte #${n}`,
     wordHint: (adjForm) => `Finde die passende ${adjForm} Übersetzung mit der gleichen Wortart:`,
-    sentenceEsLabel: 'Satz auf Spanisch',
     sentenceTargetLabel: (langName) => `Satz auf ${langName}`,
-    btnPlayEsTitle: 'Spanischen Satz anhören',
     btnPlayTargetTitle: (langName) => `Satz auf ${langName} anhören`,
     btnNextText: 'Nächste Karte ➔', keyHintText: '(Leertaste oder Enter)',
     historyTitle: 'Zuletzt geübte Wörter',
@@ -112,25 +133,27 @@ const I18N = {
     typeFilterNoun: (n) => `Substantive (${n})`,
     typeFilterVerb: (n) => `Verben (${n})`,
     typeFilterAdjective: (n) => `Adjektive (${n})`,
-    typeFilterAdverb: (n) => `Adverbien (${n})`
+    typeFilterAdverb: (n) => `Adverbien (${n})`,
+    difficultyFilterAll: (n) => `Alle (${n} Wörter)`,
+    difficultyFilterEasy: (n) => `Leicht (${n})`,
+    difficultyFilterHard: (n) => `Schwer (${n})`
   },
   en: {
     pageTitle: 'Word Cards',
     appTitle: 'Word Cards',
-    subtitleSpanish: 'Spanish',
     subtitleSuffix: 'Vocabulary training',
     statCorrect: 'Correct:', statIncorrect: 'Incorrect:', statAccuracy: 'Accuracy:', statStreak: 'Streak:',
     titleCorrect: 'Correct answers', titleIncorrect: 'Incorrect answers',
     titleAccuracy: 'Success rate', titleStreak: 'Current streak',
-    langTargetLabel: 'Target language:', typeFilterLabel: 'Word-type filter:',
-    btnSoundText: '🔊 Listen', btnSoundTitle: 'Listen to Spanish pronunciation',
+    langSourceLabel: 'Source language:', langTargetLabel: 'Target language:', typeFilterLabel: 'Word-type filter:',
+    difficultyFilterLabel: 'Difficulty:',
+    speechRateLabel: 'Speech speed:', speechRateTitle: 'Adjust the speech synthesis speed',
+    btnSoundText: '🔊 Listen', btnSoundTitle: (adjForm) => `Listen to ${adjForm} pronunciation`,
     btnResetStatsText: 'Reset statistics', btnResetStatsTitle: 'Reset statistics',
     cardBadgeDefault: 'Type', genderBadgeDefault: 'Gender',
     cardProgress: (n) => `Card #${n}`,
     wordHint: (adjForm) => `Find the correct ${adjForm} translation with the same word type:`,
-    sentenceEsLabel: 'Sentence in Spanish',
     sentenceTargetLabel: (langName) => `Sentence in ${langName}`,
-    btnPlayEsTitle: 'Listen to the Spanish sentence',
     btnPlayTargetTitle: (langName) => `Listen to the ${langName} sentence`,
     btnNextText: 'Next card ➔', keyHintText: '(Spacebar or Enter)',
     historyTitle: 'Recent words',
@@ -144,7 +167,44 @@ const I18N = {
     typeFilterNoun: (n) => `Nouns (${n})`,
     typeFilterVerb: (n) => `Verbs (${n})`,
     typeFilterAdjective: (n) => `Adjectives (${n})`,
-    typeFilterAdverb: (n) => `Adverbs (${n})`
+    typeFilterAdverb: (n) => `Adverbs (${n})`,
+    difficultyFilterAll: (n) => `All (${n} words)`,
+    difficultyFilterEasy: (n) => `Easy (${n})`,
+    difficultyFilterHard: (n) => `Hard (${n})`
+  },
+  fr: {
+    pageTitle: 'Cartes de Vocabulaire',
+    appTitle: 'Cartes de Vocabulaire',
+    subtitleSuffix: 'Entraînement au vocabulaire',
+    statCorrect: 'Correctes :', statIncorrect: 'Incorrectes :', statAccuracy: 'Précision :', statStreak: 'Série :',
+    titleCorrect: 'Réponses correctes', titleIncorrect: 'Réponses incorrectes',
+    titleAccuracy: 'Taux de réussite', titleStreak: 'Série actuelle',
+    langSourceLabel: 'Langue source :', langTargetLabel: 'Langue cible :', typeFilterLabel: 'Filtre par catégorie grammaticale :',
+    difficultyFilterLabel: 'Difficulté :',
+    speechRateLabel: 'Vitesse vocale :', speechRateTitle: 'Régler la vitesse de la synthèse vocale',
+    btnSoundText: '🔊 Écouter', btnSoundTitle: (adjForm) => `Écouter la prononciation ${adjForm}`,
+    btnResetStatsText: 'Réinitialiser les statistiques', btnResetStatsTitle: 'Réinitialiser les statistiques',
+    cardBadgeDefault: 'Catégorie', genderBadgeDefault: 'Genre',
+    cardProgress: (n) => `Carte n° ${n}`,
+    wordHint: (adjForm) => `Trouve la bonne traduction ${adjForm} de la même catégorie grammaticale :`,
+    sentenceTargetLabel: (langName) => `Phrase en ${langName}`,
+    btnPlayTargetTitle: (langName) => `Écouter la phrase en ${langName}`,
+    btnNextText: 'Carte suivante ➔', keyHintText: '(Barre d\'espace ou Entrée)',
+    historyTitle: 'Mots récents',
+    historyCount: (n) => `${n} entrées`,
+    emptyHistory: "Aucun mot joué pour l'instant. Choisis une option ci-dessus !",
+    correctBadge: 'Correct', incorrectBadge: 'Incorrect',
+    feedbackCorrect: (sym, sp, tgt) => `Excellent ! ${sym}« ${sp} » signifie « ${tgt} ».`,
+    feedbackIncorrect: (sym, sp, tgt) => `Pas tout à fait. ${sym}« ${sp} » signifie « ${tgt} ».`,
+    resetConfirm: 'Veux-tu vraiment réinitialiser les compteurs et l\'historique ?',
+    typeFilterAll: (n) => `Toutes les catégories (${n} mots)`,
+    typeFilterNoun: (n) => `Noms (${n})`,
+    typeFilterVerb: (n) => `Verbes (${n})`,
+    typeFilterAdjective: (n) => `Adjectifs (${n})`,
+    typeFilterAdverb: (n) => `Adverbes (${n})`,
+    difficultyFilterAll: (n) => `Toutes (${n} mots)`,
+    difficultyFilterEasy: (n) => `Faciles (${n})`,
+    difficultyFilterHard: (n) => `Difficiles (${n})`
   }
 };
 
@@ -153,22 +213,70 @@ const TARGET_LANG_KEY = 'spanish_cards_target_lang_v1';
 function loadTargetLang() {
   try {
     const saved = localStorage.getItem(TARGET_LANG_KEY);
-    if (saved && LANG_META[saved]) return saved;
+    if (saved && TARGET_LANG_OPTIONS.includes(saved)) return saved;
   } catch (e) {
     console.warn('LocalStorage error:', e);
   }
   return 'it';
 }
 
+const SOURCE_LANG_KEY = 'spanish_cards_source_lang_v1';
+
+function loadSourceLang() {
+  try {
+    const saved = localStorage.getItem(SOURCE_LANG_KEY);
+    if (saved && LANG_META[saved]) return saved;
+  } catch (e) {
+    console.warn('LocalStorage error:', e);
+  }
+  return 'es';
+}
+
+function saveSourceLang() {
+  try {
+    localStorage.setItem(SOURCE_LANG_KEY, state.sourceLang);
+  } catch (e) {
+    console.warn('Could not save source language:', e);
+  }
+}
+
+const SPEECH_RATE_KEY = 'spanish_cards_speech_rate_v1';
+
+function loadSpeechRate() {
+  try {
+    const saved = parseFloat(localStorage.getItem(SPEECH_RATE_KEY));
+    if (!isNaN(saved) && saved >= 0.5 && saved <= 1.5) return saved;
+  } catch (e) {
+    console.warn('LocalStorage error:', e);
+  }
+  return 1;
+}
+
+function saveSpeechRate() {
+  try {
+    localStorage.setItem(SPEECH_RATE_KEY, String(state.speechRate));
+  } catch (e) {
+    console.warn('Could not save speech rate:', e);
+  }
+}
+
 // State management
 let state = {
-  allWords: typeof WORDS_DATA !== 'undefined' ? WORDS_DATA : [],
+  // Word lists are optionally split across multiple files by difficulty (see
+  // words_data.js / words_data_2.js); combine whichever are actually loaded.
+  allWords: [
+    ...(typeof WORDS_DATA !== 'undefined' ? WORDS_DATA : []),
+    ...(typeof WORDS_DATA_2 !== 'undefined' ? WORDS_DATA_2 : [])
+  ],
   filteredWords: [],
   currentWord: null,
   currentOptions: [],
   hasAnswered: false,
   selectedFilter: 'all',
+  selectedDifficulty: 'all',
   targetLang: loadTargetLang(),
+  sourceLang: loadSourceLang(),
+  speechRate: loadSpeechRate(),
 
   // Statistics
   stats: {
@@ -186,7 +294,7 @@ const el = {
   htmlRoot: document.getElementById('html-root'),
   pageTitle: document.getElementById('page-title'),
   appTitle: document.getElementById('app-title'),
-  subtitleSpanish: document.getElementById('subtitle-spanish'),
+  subtitleSource: document.getElementById('subtitle-spanish'),
   subtitleLang: document.getElementById('subtitle-lang'),
   subtitleSuffix: document.getElementById('subtitle-suffix'),
   correctCount: document.getElementById('correct-count'),
@@ -201,10 +309,17 @@ const el = {
   statIncorrectLabel: document.getElementById('stat-incorrect-label'),
   statAccuracyLabel: document.getElementById('stat-accuracy-label'),
   statStreakLabel: document.getElementById('stat-streak-label'),
+  langSource: document.getElementById('lang-source'),
+  langSourceLabel: document.getElementById('lang-source-label'),
   langTarget: document.getElementById('lang-target'),
   langTargetLabel: document.getElementById('lang-target-label'),
   typeFilter: document.getElementById('type-filter'),
   typeFilterLabel: document.getElementById('type-filter-label'),
+  difficultyFilter: document.getElementById('difficulty-filter'),
+  difficultyFilterLabel: document.getElementById('difficulty-filter-label'),
+  speechRate: document.getElementById('speech-rate'),
+  speechRateLabel: document.getElementById('speech-rate-label'),
+  speechRateValue: document.getElementById('speech-rate-value'),
   btnResetStats: document.getElementById('btn-reset-stats'),
   btnSound: document.getElementById('btn-sound'),
   cardTypeBadge: document.getElementById('card-type-badge'),
@@ -224,12 +339,14 @@ const el = {
   sentenceTarget: document.getElementById('sentence-target'),
   btnPlayEs: document.getElementById('btn-play-es'),
   btnPlayTarget: document.getElementById('btn-play-target'),
-  detailLabelItalian: document.getElementById('detail-label-italian'),
-  detailLabelGerman: document.getElementById('detail-label-german'),
-  detailLabelEnglish: document.getElementById('detail-label-english'),
-  detailItalian: document.getElementById('detail-italian'),
-  detailGerman: document.getElementById('detail-german'),
-  detailEnglish: document.getElementById('detail-english'),
+  detailRows: Object.fromEntries(DETAIL_LANGS.map(lang => {
+    const suffix = DETAIL_LANG_SUFFIX[lang];
+    return [lang, {
+      item: document.getElementById(`detail-item-${lang}`),
+      label: document.getElementById(`detail-label-${suffix}`),
+      value: document.getElementById(`detail-${suffix}`)
+    }];
+  })),
   btnNext: document.getElementById('btn-next'),
   btnNextLabel: document.getElementById('btn-next-label'),
   keyHint: document.getElementById('key-hint'),
@@ -279,8 +396,8 @@ function getNormalizedType(typeStr) {
   if (!typeStr) return 'other';
   const t = typeStr.toLowerCase();
   if (t.includes('noun')) return 'noun';
-  if (t.includes('verb')) return 'verb';
   if (t.includes('adverb')) return 'adverb';
+  if (t.includes('verb')) return 'verb';
   if (t.includes('adj')) return 'adjective';
   if (t.includes('pronoun')) return 'pronoun';
   return t;
@@ -326,7 +443,7 @@ function applyUILanguage() {
   el.htmlRoot.lang = state.targetLang;
   el.pageTitle.textContent = t.pageTitle;
   el.appTitle.textContent = t.appTitle;
-  el.subtitleSpanish.textContent = t.subtitleSpanish;
+  el.subtitleSource.textContent = LANG_DISPLAY_NAME[state.targetLang][state.sourceLang].replace(/^./, c => c.toUpperCase());
   el.subtitleLang.textContent = LANG_DISPLAY_NAME[state.targetLang][state.targetLang].replace(/^./, c => c.toUpperCase());
   el.subtitleSuffix.textContent = t.subtitleSuffix;
 
@@ -339,15 +456,24 @@ function applyUILanguage() {
   el.statAccuracyPill.title = t.titleAccuracy;
   el.statStreakPill.title = t.titleStreak;
 
+  el.langSourceLabel.textContent = t.langSourceLabel;
   el.langTargetLabel.textContent = t.langTargetLabel;
   el.typeFilterLabel.textContent = t.typeFilterLabel;
+  el.difficultyFilterLabel.textContent = t.difficultyFilterLabel;
+  el.speechRateLabel.textContent = t.speechRateLabel;
+  el.speechRate.title = t.speechRateTitle;
 
+  [...el.langSource.options].forEach(opt => {
+    opt.textContent = `${LANG_FLAG[opt.value]} ${LANG_DISPLAY_NAME[state.targetLang][opt.value].replace(/^./, c => c.toUpperCase())}`;
+    opt.disabled = (opt.value === state.targetLang);
+  });
   [...el.langTarget.options].forEach(opt => {
     opt.textContent = `${LANG_FLAG[opt.value]} ${LANG_DISPLAY_NAME[state.targetLang][opt.value].replace(/^./, c => c.toUpperCase())}`;
+    opt.disabled = (opt.value === state.sourceLang);
   });
 
   el.btnSound.textContent = t.btnSoundText;
-  el.btnSound.title = t.btnSoundTitle;
+  el.btnSound.title = t.btnSoundTitle(ADJ_FORM[state.targetLang][state.sourceLang]);
   el.btnResetStats.textContent = t.btnResetStatsText;
   el.btnResetStats.title = t.btnResetStatsTitle;
 
@@ -355,17 +481,18 @@ function applyUILanguage() {
   el.cardGenderBadge.textContent = t.genderBadgeDefault;
 
   const targetLangName = LANG_DISPLAY_NAME[state.targetLang][state.targetLang];
+  const sourceLangName = LANG_DISPLAY_NAME[state.targetLang][state.sourceLang];
   el.wordHint.textContent = t.wordHint(ADJ_FORM[state.targetLang][state.targetLang]);
-  el.sentenceEsLabel.textContent = t.sentenceEsLabel;
+  el.sentenceEsLabel.textContent = t.sentenceTargetLabel(sourceLangName);
   el.sentenceTargetLabel.textContent = t.sentenceTargetLabel(targetLangName);
-  el.btnPlayEs.title = t.btnPlayEsTitle;
-  el.btnPlayEs.setAttribute('aria-label', t.btnPlayEsTitle);
+  el.btnPlayEs.title = t.btnPlayTargetTitle(sourceLangName);
+  el.btnPlayEs.setAttribute('aria-label', t.btnPlayTargetTitle(sourceLangName));
   el.btnPlayTarget.title = t.btnPlayTargetTitle(targetLangName);
   el.btnPlayTarget.setAttribute('aria-label', t.btnPlayTargetTitle(targetLangName));
 
-  el.detailLabelItalian.textContent = `${LANG_DISPLAY_NAME[state.targetLang].it.replace(/^./, c => c.toUpperCase())}:`;
-  el.detailLabelGerman.textContent = `${LANG_DISPLAY_NAME[state.targetLang].de.replace(/^./, c => c.toUpperCase())}:`;
-  el.detailLabelEnglish.textContent = `${LANG_DISPLAY_NAME[state.targetLang].en.replace(/^./, c => c.toUpperCase())}:`;
+  DETAIL_LANGS.forEach(lang => {
+    el.detailRows[lang].label.textContent = `${LANG_DISPLAY_NAME[state.targetLang][lang].replace(/^./, c => c.toUpperCase())}:`;
+  });
 
   el.btnNextLabel.textContent = t.btnNextText;
   el.keyHint.textContent = t.keyHintText;
@@ -373,20 +500,31 @@ function applyUILanguage() {
   el.historyTitle.textContent = t.historyTitle;
 
   buildTypeFilterOptions();
+  buildDifficultyFilterOptions();
   updateStatsUI();
+}
+
+// Words matching the *other* filter dimension, used to compute each filter's own
+// option counts against whatever the other one currently restricts the pool to.
+function wordsMatchingDifficulty(difficulty) {
+  return difficulty === 'all' ? state.allWords : state.allWords.filter(w => w.difficulty === difficulty);
+}
+function wordsMatchingType(typeFilter) {
+  return typeFilter === 'all' ? state.allWords : state.allWords.filter(w => getNormalizedType(w.type) === typeFilter);
 }
 
 // Populate Filter Options (localized, preserves current selection)
 function buildTypeFilterOptions() {
   const t = I18N[state.targetLang];
+  const pool = wordsMatchingDifficulty(state.selectedDifficulty);
   const typeCounts = {};
-  state.allWords.forEach(w => {
+  pool.forEach(w => {
     const norm = getNormalizedType(w.type);
     typeCounts[norm] = (typeCounts[norm] || 0) + 1;
   });
 
   const typeLabels = {
-    all: t.typeFilterAll(state.allWords.length),
+    all: t.typeFilterAll(pool.length),
     noun: t.typeFilterNoun(typeCounts['noun'] || 0),
     verb: t.typeFilterVerb(typeCounts['verb'] || 0),
     adjective: t.typeFilterAdjective(typeCounts['adjective'] || 0),
@@ -404,10 +542,47 @@ function buildTypeFilterOptions() {
   el.typeFilter.value = previousValue;
 }
 
+// Populate Difficulty Filter Options (localized, preserves current selection)
+function buildDifficultyFilterOptions() {
+  const t = I18N[state.targetLang];
+  const pool = wordsMatchingType(state.selectedFilter);
+  const difficultyCounts = {};
+  pool.forEach(w => {
+    const key = w.difficulty || 'easy';
+    difficultyCounts[key] = (difficultyCounts[key] || 0) + 1;
+  });
+
+  const difficultyLabels = { all: t.difficultyFilterAll(pool.length) };
+  if (difficultyCounts.easy) difficultyLabels.easy = t.difficultyFilterEasy(difficultyCounts.easy);
+  if (difficultyCounts.hard) difficultyLabels.hard = t.difficultyFilterHard(difficultyCounts.hard);
+
+  const previousValue = el.difficultyFilter.value || state.selectedDifficulty;
+  el.difficultyFilter.innerHTML = '';
+  for (const [key, label] of Object.entries(difficultyLabels)) {
+    const opt = document.createElement('option');
+    opt.value = key;
+    opt.textContent = label;
+    el.difficultyFilter.appendChild(opt);
+  }
+  el.difficultyFilter.value = Object.prototype.hasOwnProperty.call(difficultyLabels, previousValue) ? previousValue : 'all';
+  state.selectedDifficulty = el.difficultyFilter.value;
+}
+
 function initTypeFilter() {
   buildTypeFilterOptions();
   el.typeFilter.addEventListener('change', (e) => {
     state.selectedFilter = e.target.value;
+    buildDifficultyFilterOptions();
+    applyFilter();
+    nextQuestion();
+  });
+}
+
+function initDifficultyFilter() {
+  buildDifficultyFilterOptions();
+  el.difficultyFilter.addEventListener('change', (e) => {
+    state.selectedDifficulty = e.target.value;
+    buildTypeFilterOptions();
     applyFilter();
     nextQuestion();
   });
@@ -418,19 +593,48 @@ function initLangTarget() {
   el.langTarget.value = state.targetLang;
 
   el.langTarget.addEventListener('change', (e) => {
+    const oldTarget = state.targetLang;
     state.targetLang = e.target.value;
+    // oldTarget is always a valid source value (it's drawn from TARGET_LANG_OPTIONS,
+    // a subset of the source options), so this swap can never leave source invalid.
+    if (state.targetLang === state.sourceLang) {
+      state.sourceLang = oldTarget;
+      el.langSource.value = state.sourceLang;
+      saveSourceLang();
+    }
     saveTargetLang();
     applyUILanguage();
     nextQuestion();
   });
 }
 
+// Wire the source-language selector.
+function initLangSource() {
+  el.langSource.value = state.sourceLang;
+
+  el.langSource.addEventListener('change', (e) => {
+    const oldSource = state.sourceLang;
+    state.sourceLang = e.target.value;
+    if (state.sourceLang === state.targetLang) {
+      // oldSource might be 'es', which can't become the target (UI is only translated
+      // into TARGET_LANG_OPTIONS) — fall back to any other valid target in that case.
+      state.targetLang = TARGET_LANG_OPTIONS.includes(oldSource)
+        ? oldSource
+        : TARGET_LANG_OPTIONS.find(l => l !== state.sourceLang);
+      el.langTarget.value = state.targetLang;
+      saveTargetLang();
+    }
+    saveSourceLang();
+    applyUILanguage();
+    nextQuestion();
+  });
+}
+
 function applyFilter() {
-  if (state.selectedFilter === 'all') {
-    state.filteredWords = [...state.allWords];
-  } else {
-    state.filteredWords = state.allWords.filter(w => getNormalizedType(w.type) === state.selectedFilter);
-  }
+  state.filteredWords = state.allWords.filter(w =>
+    (state.selectedFilter === 'all' || getNormalizedType(w.type) === state.selectedFilter) &&
+    (state.selectedDifficulty === 'all' || w.difficulty === state.selectedDifficulty)
+  );
   if (state.filteredWords.length === 0) {
     state.filteredWords = [...state.allWords];
   }
@@ -492,10 +696,11 @@ const PREFERRED_VOICE_NAMES = {
   es: ['monica'],
   it: ['alice'],
   de: ['anna'],
-  en: ['samantha']
+  en: ['samantha'],
+  fr: ['thomas', 'amelie']
 };
 
-const FALLBACK_LANG_TAG = { es: 'es-ES', it: 'it-IT', de: 'de-DE', en: 'en-US' };
+const FALLBACK_LANG_TAG = { es: 'es-ES', it: 'it-IT', de: 'de-DE', en: 'en-US', fr: 'fr-FR' };
 
 function normalizeName(str) {
   return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
@@ -545,6 +750,11 @@ function withVoicesReady(callback) {
   }
 }
 
+// Whichever language is currently the source is the one learners are still acquiring,
+// so its audio plays 10% slower than the target-language audio to make it easier to follow.
+const SOURCE_RATE_MULTIPLIER = 0.9;
+const BASE_SPEECH_RATE = 0.92;
+
 function buildUtterance(text, langPrefix, voice) {
   const utterance = new SpeechSynthesisUtterance(text);
   if (voice) utterance.voice = voice;
@@ -553,7 +763,8 @@ function buildUtterance(text, langPrefix, voice) {
   // lang values. Setting this explicitly gives the engine the best chance of
   // selecting the right language.
   utterance.lang = FALLBACK_LANG_TAG[langPrefix];
-  utterance.rate = 0.92;
+  const baseRate = langPrefix === state.sourceLang ? BASE_SPEECH_RATE * SOURCE_RATE_MULTIPLIER : BASE_SPEECH_RATE;
+  utterance.rate = baseRate * state.speechRate;
   utterance.pitch = 1;
   return utterance;
 }
@@ -581,6 +792,7 @@ function playNetworkTTS(text, langPrefix) {
   return new Promise((resolve) => {
     const url = `https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=${langPrefix}&q=${encodeURIComponent(text)}`;
     const audio = new Audio(url);
+    audio.playbackRate = (langPrefix === state.sourceLang ? SOURCE_RATE_MULTIPLIER : 1) * state.speechRate;
     currentNetworkAudio = audio;
     const finish = () => {
       if (currentNetworkAudio === audio) currentNetworkAudio = null;
@@ -619,18 +831,18 @@ async function speakSequence(items) {
   }
 }
 
-function speakSpanishWord(word) {
+function speakSourceWord(word, langPrefix) {
   if (!word) return;
   withVoicesReady(() => {
-    speakSequence([{ text: word, langPrefix: 'es' }]);
+    speakSequence([{ text: word, langPrefix }]);
   });
 }
 
-// Speak the Spanish sentence followed by the target-language sentence, each in its own voice.
-function speakBilingualSentences(sentenceEs, sentenceTarget, targetLangCode) {
+// Speak the source-language sentence followed by the target-language sentence, each in its own voice.
+function speakBilingualSentences(sentenceSource, sentenceTarget, sourceLangCode, targetLangCode) {
   withVoicesReady(() => {
     const items = [];
-    if (sentenceEs) items.push({ text: stripSentenceMarkers(sentenceEs), langPrefix: 'es' });
+    if (sentenceSource) items.push({ text: stripSentenceMarkers(sentenceSource), langPrefix: sourceLangCode });
     if (sentenceTarget) items.push({ text: stripSentenceMarkers(sentenceTarget), langPrefix: targetLangCode });
     speakSequence(items);
   });
@@ -700,6 +912,7 @@ function nextQuestion() {
   el.cardProgress.textContent = t.cardProgress(state.cardCounter);
   el.cardTypeBadge.textContent = translateType(word.type);
   el.wordHint.textContent = t.wordHint(ADJ_FORM[state.targetLang][state.targetLang]);
+  el.sentenceEsLabel.textContent = t.sentenceTargetLabel(LANG_DISPLAY_NAME[state.targetLang][state.sourceLang]);
   el.sentenceTargetLabel.textContent = t.sentenceTargetLabel(LANG_DISPLAY_NAME[state.targetLang][state.targetLang]);
 
   const genderLabel = translateGender(word.gender);
@@ -721,7 +934,7 @@ function nextQuestion() {
     el.wordSymbol.style.display = 'none';
   }
 
-  el.spanishWord.textContent = word.spanish;
+  el.spanishWord.textContent = word[LANG_META[state.sourceLang].field];
 
   // Render 5 alternative buttons
   el.optionsContainer.innerHTML = '';
@@ -751,7 +964,10 @@ function handleOptionSelect(selectedIndex) {
   const isCorrect = chosenOption.isCorrect;
   const word = state.currentWord;
   const meta = LANG_META[state.targetLang];
+  const sourceMeta = LANG_META[state.sourceLang];
   const targetText = word[meta.field];
+  const sourceText = word[sourceMeta.field];
+  const sourceSentence = word[sourceMeta.sentenceField];
 
   // Update stats
   if (isCorrect) {
@@ -764,7 +980,7 @@ function handleOptionSelect(selectedIndex) {
 
   // Record history (most recent first)
   state.stats.history.unshift({
-    spanish: word.spanish,
+    spanish: sourceText,
     answer: targetText,
     type: word.type,
     symbol: word.symbol || '',
@@ -796,23 +1012,29 @@ function handleOptionSelect(selectedIndex) {
   if (isCorrect) {
     el.feedbackBanner.className = 'feedback-banner correct';
     el.feedbackIcon.textContent = '✓';
-    el.feedbackText.textContent = t.feedbackCorrect(symbolPrefix, word.spanish, targetText);
+    el.feedbackText.textContent = t.feedbackCorrect(symbolPrefix, sourceText, targetText);
   } else {
     el.feedbackBanner.className = 'feedback-banner incorrect';
     el.feedbackIcon.textContent = '✗';
-    el.feedbackText.textContent = t.feedbackIncorrect(symbolPrefix, word.spanish, targetText);
+    el.feedbackText.textContent = t.feedbackIncorrect(symbolPrefix, sourceText, targetText);
   }
 
-  el.sentenceSpanish.innerHTML = renderSentenceHTML(word.sentence_es);
+  el.sentenceSpanish.innerHTML = renderSentenceHTML(sourceSentence);
   el.sentenceTarget.innerHTML = renderSentenceHTML(word[meta.sentenceField]);
 
-  el.detailItalian.textContent = word.italian || '-';
-  el.detailGerman.textContent = word.german || '-';
-  el.detailEnglish.textContent = word.english || '-';
+  DETAIL_LANGS.forEach(lang => {
+    const row = el.detailRows[lang];
+    if (lang === state.sourceLang) {
+      row.item.style.display = 'none';
+    } else {
+      row.item.style.display = '';
+      row.value.textContent = word[LANG_META[lang].field] || '-';
+    }
+  });
 
-  // Automatically read the full example sentence aloud, Spanish then target language,
+  // Automatically read the full example sentence aloud, source then target language,
   // each with its own voice.
-  speakBilingualSentences(word.sentence_es, word[meta.sentenceField], meta.code);
+  speakBilingualSentences(sourceSentence, word[meta.sentenceField], sourceMeta.code, meta.code);
 }
 
 // Keyboard navigation (1-5 for options, Space/Enter for Next)
@@ -857,32 +1079,50 @@ function initEventListeners() {
   el.btnResetStats.addEventListener('click', resetStats);
   el.btnSound.addEventListener('click', () => {
     if (state.currentWord) {
-      speakSpanishWord(state.currentWord.spanish);
+      const sourceMeta = LANG_META[state.sourceLang];
+      speakSourceWord(state.currentWord[sourceMeta.field], sourceMeta.code);
     }
   });
   el.btnPlayEs.addEventListener('click', () => {
     if (state.currentWord) {
-      speakBilingualSentences(state.currentWord.sentence_es, null, LANG_META[state.targetLang].code);
+      const sourceMeta = LANG_META[state.sourceLang];
+      speakBilingualSentences(state.currentWord[sourceMeta.sentenceField], null, sourceMeta.code, null);
     }
   });
   el.btnPlayTarget.addEventListener('click', () => {
     if (state.currentWord) {
       const meta = LANG_META[state.targetLang];
-      speakBilingualSentences(null, state.currentWord[meta.sentenceField], meta.code);
+      speakBilingualSentences(null, state.currentWord[meta.sentenceField], null, meta.code);
     }
   });
+  el.speechRate.addEventListener('input', (e) => {
+    state.speechRate = parseFloat(e.target.value);
+    updateSpeechRateUI();
+    saveSpeechRate();
+  });
   window.addEventListener('keydown', handleKeydown);
+}
+
+function updateSpeechRateUI() {
+  el.speechRate.value = state.speechRate;
+  el.speechRateValue.textContent = `${Math.round(state.speechRate * 100)}%`;
 }
 
 // Initialization
 function init() {
   loadStats();
+  if (state.sourceLang === state.targetLang) {
+    state.targetLang = TARGET_LANG_OPTIONS.find(l => l !== state.sourceLang) || 'it';
+  }
+  initLangSource();
   initLangTarget();
   initTypeFilter();
+  initDifficultyFilter();
   applyUILanguage();
   applyFilter();
   initEventListeners();
   updateStatsUI();
+  updateSpeechRateUI();
   nextQuestion();
 }
 

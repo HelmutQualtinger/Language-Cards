@@ -185,6 +185,19 @@ select:focus {
   border-color: var(--primary);
 }
 
+#speech-rate {
+  width: 100px;
+  accent-color: var(--primary);
+  cursor: pointer;
+}
+
+#speech-rate-value {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  min-width: 3.2em;
+}
+
 .filter-actions {
   display: flex;
   gap: 6px;
