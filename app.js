@@ -88,12 +88,12 @@ const WORD_TYPE_LABELS = {
   }
 };
 
-// Gender-word labels per UI language. No 'hu' entry: Hungarian has no grammatical gender,
-// so translateGender() skips the lookup entirely for that language (see there).
+// Gender-word labels per UI language. No 'hu' or 'en' entry: neither language has
+// grammatical gender (no gendered article/adjective agreement), so translateGender()
+// skips the lookup entirely for both (see there).
 const GENDER_WORDS = {
   it: { masculine: 'maschile', feminine: 'femminile', plural: 'plurale' },
   de: { masculine: 'männlich', feminine: 'weiblich', plural: 'Plural' },
-  en: { masculine: 'masculine', feminine: 'feminine', plural: 'plural' },
   fr: { masculine: 'masculin', feminine: 'féminin', plural: 'pluriel' },
   ga: { masculine: 'firinscneach', feminine: 'baininscneach', plural: 'iolra' }
 };
@@ -526,11 +526,12 @@ function translateType(typeStr) {
 // Translate gender strings into the current UI language
 function translateGender(genderStr) {
   if (!genderStr || genderStr === '-') return '';
-  // Hungarian has no grammatical gender at all — nouns take no gendered article and need
-  // no gender agreement, unlike it/de/en/fr/ga. Labeling a word "hímnemű"/"nőnemű" in a
-  // language with no such concept doesn't help produce correct Hungarian, so skip the
-  // badge entirely rather than show a translated label with nothing to apply it to.
-  if (state.targetLang === 'hu') return '';
+  // Hungarian and English have no grammatical gender at all — nouns take no gendered
+  // article and need no gender agreement, unlike it/de/fr/ga. Labeling a word
+  // masculine/feminine in a language with no such concept doesn't help produce correct
+  // Hungarian or English, so skip the badge entirely rather than show a label with
+  // nothing to apply it to.
+  if (state.targetLang === 'hu' || state.targetLang === 'en') return '';
   const words = GENDER_WORDS[state.targetLang];
   return genderStr
     .replace(/masculine/gi, words.masculine)
