@@ -34,6 +34,8 @@ python3 -m http.server 8123
 
 Dann `http://localhost:8123/index.html` öffnen.
 
+Die App lässt sich auch wie eine native App installieren: Auf Android in Chrome das Menü öffnen und **App installieren** wählen (oder **Zum Startbildschirm hinzufügen**), auf iOS in Safari **Teilen → Zum Home-Bildschirm**. Sie startet dann ohne Adressleiste oder Browsermenüs.
+
 ### Dateien
 
 - `index.html`, `style.css`, `app.js` — die Anwendung.
@@ -70,6 +72,8 @@ python3 -m http.server 8123
 ```
 
 Then open `http://localhost:8123/index.html`.
+
+The app can also be installed like a native app: on Android in Chrome, open the menu and choose **Install app** (or **Add to Home screen**); on iOS in Safari, **Share → Add to Home Screen**. It then launches with no address bar or browser menus.
 
 ### Files
 
@@ -108,6 +112,8 @@ python3 -m http.server 8123
 
 Poi apri `http://localhost:8123/index.html`.
 
+L'app può anche essere installata come un'app nativa: su Android in Chrome apri il menu e scegli **Installa app** (o **Aggiungi a schermata Home**); su iOS in Safari, **Condividi → Aggiungi a Home**. Si avvierà così senza barra degli indirizzi né menu del browser.
+
 ### File
 
 - `index.html`, `style.css`, `app.js` — l'applicazione.
@@ -144,6 +150,8 @@ python3 -m http.server 8123
 ```
 
 Puis ouvre `http://localhost:8123/index.html`.
+
+L'application peut aussi être installée comme une app native : sur Android dans Chrome, ouvre le menu et choisis **Installer l'application** (ou **Ajouter à l'écran d'accueil**) ; sur iOS dans Safari, **Partager → Sur l'écran d'accueil**. Elle démarre alors sans barre d'adresse ni menus du navigateur.
 
 ### Fichiers
 
@@ -182,6 +190,8 @@ python3 -m http.server 8123
 
 Majd nyisd meg: `http://localhost:8123/index.html`.
 
+Az app natív alkalmazásként is telepíthető: Androidon Chrome-ban nyisd meg a menüt, és válaszd az **Alkalmazás telepítése** (vagy **Hozzáadás a kezdőképernyőhöz**) lehetőséget; iOS-en Safariban a **Megosztás → Hozzáadás a kezdőképernyőhöz**. Így címsor és böngészőmenük nélkül indul.
+
 ### Fájlok
 
 - `index.html`, `style.css`, `app.js` — az alkalmazás.
@@ -218,6 +228,8 @@ python3 -m http.server 8123
 ```
 
 Luego abre `http://localhost:8123/index.html`.
+
+La app también se puede instalar como una app nativa: en Android, en Chrome, abre el menú y elige **Instalar aplicación** (o **Añadir a pantalla de inicio**); en iOS, en Safari, **Compartir → Añadir a pantalla de inicio**. Así se abre sin barra de direcciones ni menús del navegador.
 
 ### Archivos
 

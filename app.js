@@ -1311,3 +1311,11 @@ function init() {
 }
 
 document.addEventListener('DOMContentLoaded', init);
+
+// Registering a service worker is one of the criteria Chrome/Android requires before it
+// will offer installing the page as a standalone app (no address bar/browser chrome).
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('sw.js').catch((e) => console.warn('Service worker registration failed:', e));
+  });
+}
