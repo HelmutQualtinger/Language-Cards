@@ -830,6 +830,11 @@ const FALLBACK_LANG_TAG = { es: 'es-ES', it: 'it-IT', de: 'de-DE', en: 'en-US', 
 // normal local-voice-first / network-fallback-second path, and simply has no audio when
 // neither is available. This is a known limitation of the free TTS backends this app uses,
 // not a bug to chase in app code.
+//
+// If the network endpoint itself is unreachable for a NETWORK_ONLY_LANGS entry (blocked by
+// an ad blocker/DNS filter, offline, etc.), speakOne() falls back to the local voice anyway
+// once playNetworkTTS's timeout gives up — the exact possibly-wrong-voice risk described
+// above, but preferred over guaranteed total silence.
 const NETWORK_ONLY_LANGS = new Set(['hu']);
 
 function normalizeName(str) {
@@ -918,6 +923,8 @@ function stopAllSpeech() {
   }
 }
 
+// Resolves true if audio actually played, false on any failure (including timeout) —
+// callers use this to decide whether a fallback is needed.
 function playNetworkTTS(text, langPrefix) {
   return new Promise((resolve) => {
     // translate.googleapis.com serves the same audio as translate.google.com/translate_tts
@@ -927,18 +934,30 @@ function playNetworkTTS(text, langPrefix) {
     const audio = new Audio(url);
     audio.playbackRate = (langPrefix === state.sourceLang ? SOURCE_RATE_MULTIPLIER : 1) * state.speechRate;
     currentNetworkAudio = audio;
-    const finish = () => {
+    let settled = false;
+    const finish = (ok) => {
+      if (settled) return;
+      settled = true;
+      clearTimeout(timeoutId);
       if (currentNetworkAudio === audio) currentNetworkAudio = null;
-      resolve();
+      resolve(ok);
     };
-    audio.addEventListener('ended', finish);
+    // A request blocked outright (ad blocker, DNS-level filter, offline) can leave the
+    // <audio> element hung forever with neither 'ended' nor 'error' ever firing — confirmed
+    // directly (a blocked translate_tts request produced no error event even after 45s).
+    // Cap the wait so speech resumes instead of freezing the playback queue permanently.
+    const timeoutId = setTimeout(() => {
+      console.warn('Network TTS timed out:', url);
+      finish(false);
+    }, 8000);
+    audio.addEventListener('ended', () => finish(true));
     audio.addEventListener('error', () => {
       console.warn('Network TTS failed to load:', url, audio.error);
-      finish();
+      finish(false);
     });
     audio.play().catch((e) => {
       console.warn('Network TTS play() rejected:', url, e);
-      finish();
+      finish(false);
     });
   });
 }
@@ -948,7 +967,8 @@ function playNetworkTTS(text, langPrefix) {
 // network fallback.
 function speakOne(text, langPrefix) {
   return new Promise((resolve) => {
-    const voice = NETWORK_ONLY_LANGS.has(langPrefix) ? null : pickVoiceForLang(langPrefix);
+    const forceNetwork = NETWORK_ONLY_LANGS.has(langPrefix);
+    const voice = forceNetwork ? null : pickVoiceForLang(langPrefix);
     if (voice) {
       const utterance = buildUtterance(text, langPrefix, voice);
       utterance.onend = () => resolve();
@@ -958,7 +978,24 @@ function speakOne(text, langPrefix) {
       };
       window.speechSynthesis.speak(utterance);
     } else {
-      playNetworkTTS(text, langPrefix).then(resolve);
+      playNetworkTTS(text, langPrefix).then((ok) => {
+        if (ok || !forceNetwork) {
+          resolve();
+          return;
+        }
+        // Network TTS is unreachable for this user (blocked endpoint, offline, ...). Falling
+        // back to whatever local voice the browser reports beats guaranteed silence, even
+        // though it's the exact possibly-wrong voice NETWORK_ONLY_LANGS exists to avoid.
+        const fallbackVoice = pickVoiceForLang(langPrefix);
+        if (!fallbackVoice) {
+          resolve();
+          return;
+        }
+        const utterance = buildUtterance(text, langPrefix, fallbackVoice);
+        utterance.onend = () => resolve();
+        utterance.onerror = () => resolve();
+        window.speechSynthesis.speak(utterance);
+      });
     }
   });
 }
